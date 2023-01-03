@@ -1,0 +1,30 @@
+---
+title: "Reporting Findings"
+---
+
+## Key ideas
+
+- Reproducibility
+- Data visualization
+- Style and contents of an APA Results section
+
+
+By now, you will have worked out every aspect of your study’s design, and you will be ready to draft the Planned Analysis sections of your report, in which you explain how you would analyze the data your proposed design would produce. This will most likely follow the outline of one of the analyses we discussed in previous lab sessions, and covered in more detail in Appendix C. 
+
+
+## Assignment
+
+You’ll submit a draft of your Planned Analysis section. Usually in an APA-formatted journal article this section would be called Results. But since you aren’t collecting data, and are instead just formalizing a plan for how you would analyze your data, we’ll call this section Planned Analysis.
+
+This will likely be your shortest section. It should be a simple, technical statement of how you would treat your data, with some sensible anticipated results.
+
+- Planned Analysis
+  - First state any necessary data cleaning and handling
+    - E.g. how you would identify outliers in the data, and any averages you would calculate, etc
+  - Then explain, using the appropriate technical terms, what you would do with your chosen variables
+      - E.g. factor analysis, validity tests, looking at the correlation(s) between variables, performing a t-test, ANOVA?
+    - Then make sensible, informed guesses (based on the research you read and cited in your Intro) about what kind of averages/differences/correlations/effect sizes you would expect to see
+      - You should mention some hypothetical results, e.g. the condition means you expect, the strength of correlation you anticipate.
+      - You should also talk about how much variability you expect to see in the data, and how strong of an effect you expect your manipulation to produce
+      - Finally, state whether you expect a significant test statistic (which, presumably, you do—but this should make sense given your overall pattern of anticipated means and variability).
+    - Include a visualization of your expected findings. This doesn’t have to be fancy—just a rough sketch is fine if it helps to visualize the trends you expect to see in the data (see p. ).

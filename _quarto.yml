@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "bc2137"
+  author: "Professor Rob Brotherton"
+  date: "1/3/2023"
+  chapters:
+    - index.qmd
+    - lab-2.qmd
+    - lab-3.qmd
+    - lab-4.qmd
+    - lab-5.qmd
+    - lab-6.qmd
+    - lab-7.qmd
+    - lab-8.qmd
+    - lab-9.qmd
+    - lab-10.qmd
+    - lab-11.qmd
+    - lab-12.qmd
+    - lab-13.qmd
+  appendices:
+    - x-reading-research.qmd
+    - x-searching-the-literature.qmd
+    - x-statistics.qmd
+
+toc-depth: 1
+number-depth: 0
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+

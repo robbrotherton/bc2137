@@ -1,0 +1,29 @@
+---
+title: "Interpreting Findings"
+---
+
+## Key ideas
+
+- Style and contents of an APA Discussion section
+- Summarizing and interpreting findings
+- Connecting findings to previous research
+
+
+By now, you have an almost-complete draft of your research proposal paper. All that remains is to add a Discussion section. While you will not have analyzed any actual data, you will still produce a Discussion section which considers the implications of the various possible outcomes of your study. 
+
+
+## Assignment
+
+You’ll submit a draft of your Discussion section. Your Discussion section should contain the following information:
+
+- What would it mean if the data is consistent with your expectations?
+    - How would it augment your interpretation of the previous research you outlined in the Introduction?
+    - What would this say about social psychology that’s new?
+- What would it mean if the data is not consistent with your expectations?
+    - Consider two possibilities:
+        - Your hypothesis is correct but your study fails to find support for it. Why might that be? Are there potential flaws in your methodology?
+        - Your study fails to find support not because of methodological flaws but because your hypothesis is mistaken. What are the implications for the previous research you outlined in the Introduction—might this call any of the previous findings into question? Why might the previous findings be questionable?
+- What are the main strengths and weaknesses of your planned research?
+    - Be critical in pointing out potential flaws, but make sure also to assert the strengths of your plan—aspects that were carefully considered, and would improve somehow upon what previous research did.
+- What is the overall importance of your project?
+    - Your final paragraph should sum up your project’s potential contribution to the field of social psychology. This may be as narrow as replicating one existing finding, or as broad as challenging an existing theoretical perspective. Be bold but realistic.

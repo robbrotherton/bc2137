@@ -1,0 +1,29 @@
+# Correlation
+
+
+## Key ideas
+
+- Correlational research questions
+- The correlation coefficient
+- Mediation
+- Correlation vs causation
+
+Having explored how social psychologists define and operationalize relevant constructs, we will now move on to looking at how such measures are used in typical research, and the analytic techniques used to uncover meaningful relationships or causal effects. We will begin with the simplest type of design, in which researchers simply measure two (or more) constructs and look at how they relate to one another. 
+
+Simple bivariate correlations quantify the extent to which changes on one variable are associated with changes on a second variable (see Appendix C, section on correlation, p. ). More complicated research might measure a third variable and ask whether it mediates the relationship between the other two; that is, can the bivariate relationship potentially be explained by the influence of a third variable?
+
+However, while correlational techniques can tell us about associations between variables, correlational designs are generally limited in what they can tell us about causal influence. Speculation about what is causing changes must be restrained, and informed by theory and existing findings.
+
+
+## Suggested reading
+
+::: {.references}
+Borgonovi, F. (2008). Doing well by doing good. The relationship between formal volunteering and self-reported health and happiness. Social science & medicine, 66(11), 2321-2334. https://doi.org/10.1016/j.socscimed.2008.01.011
+
+Fiedler, K., Schott, M., & Meiser, T. (2011). What mediation analysis can (not) do. Journal of Experimental Social Psychology, 47(6), 1231-1236. https://doi.org/10.1016/j.jesp.2011.05.007
+:::
+
+
+## Assignment
+
+You will write a summary of a fourth published research paper. By now, you should be able to point out the differences and common themes among all four papers you have summarized.

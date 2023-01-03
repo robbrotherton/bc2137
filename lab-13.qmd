@@ -1,0 +1,32 @@
+---
+title: "Final Paper"
+---
+
+
+## Key ideas
+
+- Writing an Abstract
+- Editing and proof reading
+- Incorporating feedback
+
+
+By now you have drafted and received feedback on every major section of your paper. Hopefully along the way you found the feedback useful, and you will have incorporated any useful suggestions to make your final paper a strong as it can possibly be. This editing process is a crucial part of any form of writing, including scientific reports. Most published papers you’ve read will have been through at least one round of extensive revisions, if not more. You should see editing as a part of the process of writing, rather than an annoying additional thing you have to do after the writing is done.
+
+The last remaining element to add is the Abstract. This is always the last addition to a research report, as it provides a summary of everything that follows in each section of your paper. It should be between around 100–200 words, with a sentence or two summarizing each of the main sections of your paper. (This will likely be informed by your short presentation outline from the previous session).
+
+With that done, all that remains is to submit your paper and congratulate yourself and each other on a job well done.
+
+
+
+## Assignment
+
+You will submit your complete, APA-formatted lab report. It should consist of the following sections:
+
+- Title Page
+- Abstract
+- Introduction
+- Method 
+- Planned Analysis
+- Discussion
+- References
+- Appendices

@@ -1,0 +1,43 @@
+
+# Searching the Literature {#sec-searching}
+
+## Step 1. Starting Your Research 
+If you aren’t sure where to begin, request a consultation with Barnard’s subject librarian for psychology: Erin Anthony; eanthony@Barnard.Edu
+The library also provides an Online Research Guide: https://barnard.libguides.com/PSYC
+
+## Step 2. Web searching 
+Use to brainstorm ideas and find vocabulary, synonyms, useful keywords to search. 
+Wikipedia can be a good starting off point, but is not scholarly
+Popular books and magazines are written for a general audience. The vocabulary is less specialized, and they are not peer reviewed, and they do not always have citations and references.
+Nonscholarly sources can be a good place to get ideas, but the sources you cite in your paper should be “scholarly.”
+Scholarly journals and books are written for specialized readership, by scholars or experts in a field of study, describing academic research. They are “peer reviewed” by other experts as a quality control mechanism; they have citations and references; they give the affiliation of the authors (university, research institution); and they have abstracts (in the sciences and social sciences). 
+
+## Step 3. Google Scholar
+scholar.google.com
+Searches the full text of scholarly articles
+It casts a wide net, searching across all disciplines, and including books and other materials in addition to journal articles, so will likely find many articles not very relevant to the topic as well as those that are relevant
+Use allintitle: to search in the titles only. There is no way to search in the abstracts only. 
+Set up e-Link to show links to full-text at Columbia (go to Settings – Library links). 
+The “Cited by” info can be useful – more influential articles will be cited more often. 
+
+## Step 5. CLIO 
+Quicksearch searches the Catalog, Articles, the Academic Commons and the CUL website. 
+Catalog (clio.columbia.edu/catalog) searches all the holdings of the CUL system (but NOT the articles in journals). 
+Remember to use quotes for a phrase, and * for truncation, to find variant endings. 
+For keyword (All Fields) searching, use the Boolean operators AND and OR
+e.g. (love OR sex*) AND “attachment style*” – see tinyurl.com/barnard-boolean-guide. 
+
+## Step 6. Scholarly Databases 
+PsycINFO: the best database for psychology, it gives you the ability to do much more focused searching than Google Scholar. 
+The quickest way to get to it is to enter Psycinfo (notice there is no “H” in Psycinfo) in the Quicksearch box on the library home page, and click on the CLIO resolver, columbia.edu/cgi-bin/cul/resolve?ALD2284. 
+This is an Ovid database in which you do sequential searches and then combine them with the Boolean operators AND and OR – see tinyurl.com/barnard-boolean-guide. 
+If “Map Term to Subject Heading” is checked, PsycINFO will show you a list of subjects related to the keyword you entered, which can help you to narrow down your search to articles that are actually on the topic you’re interested in (rather than just containing the keyword). 
+Click on the word “Expand” on the right hand side of the search screen if you can’t see all your previous searches. 
+Another database to try if PsycINFO doesn’t cut it: Web of Science. 
+
+
+Step 7. Managing your References 
+
+When you are dealing with a large number of references or multiple papers, I recommend using Zotero to assist you. It is a free application with a browser plugin to collect article details as you are searching the literature. When you’re on a website looking at a journal article, the Zotero browser add-on allows you to click a button to automatically download the article details into Zotero (including, if available, a PDF of the article). This allows you to keep track of all the articles you have found. Installing Zotero also installs a Word plugin that allows you to insert citations in-text and automatically generate a complete, APA-formatted references section. (Integration with Google Docs is available as well, though doesn’t seem quite as robust as with Word). See the Barnard library’s guide to Zotero at library.barnard.edu/find-books/guides/zotero 
+Alternatively, if you don’t want to take the time to install and learn your way around Zotero, you can find a paper on Google Scholar and click the ” symbol below it, then copy and paste the APA-style reference entry into your References section.
+However, always check your work. Zotero and Google Scholar don’t always get the reference details exactly right, and it would be poor form to pass along an error committed by them.

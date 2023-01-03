@@ -1,0 +1,34 @@
+---
+title: "Finalizing Methods"
+---
+
+## Key ideas
+
+- Replicability
+- Informed consent & debriefing
+- Style and contents of an APA Method section
+
+
+This week you will finalize the details of your planned methodology, including collecting/producing all required materials, and creating Informed Consent (see Appendix D, p. ) and Debriefing (see Appendix E, p. ) documents. We will consider methodological rigor and replicability, as well as what researchers are required to tell participants in the informed consent and debriefing documents, and why.
+
+
+## Assignment
+
+For this week’s assignment, you will produce a draft of your Method section, which must include all the detail necessary for someone else to actually run your study. That means you should have pretty much figured out exactly what participants in your study would see or do: the wording of every instruction you would present to participants, every question you would ask them, every response scale you would use to collect their answers, any images/videos/other materials you’d need, etc. Any aspect you’re still not quite sure about must be nailed down now.
+
+The content of an APA-style Method section is as follows:
+
+- Method [the following subsections should be included with level 2 headings]
+    - Design
+      - State the technical design of your planned research (e.g. a single-factor, within-participants design; a 2x2 ANOVA; etc). State your independent and dependent variables (you just need to name them here; you will give more detail about how you measure them in the Materials subsection). Or, for a scale design/correlation/mediation study, state your ‘variable(s) of interest’.
+    - Participants
+      - State how many participants you would require (see Appendix C, section on statistical power), any selection criteria (e.g. proportion of males/females or other relevant demographic characteristics), any exclusion criteria (e.g. people under 18)
+    - Materials
+      - Restate the constructs you plan to manipulate or measure (you can use subheadings for each construct), and for each construct, state your operational definition (i.e. how you actually plan to manipulate or measure the psychological constructs) in enough detail that any other researcher could run your study. If including complete scales or other materials as appendices, give example questions here and refer readers to the appendix.
+    - Procedure
+      - Give a step-by-step walkthrough of what participants will be required to do, in the order that they would do it, from providing Informed Consent, then completing your materials, to Debriefing.
+- Appendices
+    - Include all materials that would be required in order to actually run the study. Include everything that participants would see:
+      - All questionnaire items and response scales
+      - Any other necessary stimuli (e.g. videos participants would watch—include a still frame and a link to the video if online)
+      - Include complete Informed Consent & Debriefing documents

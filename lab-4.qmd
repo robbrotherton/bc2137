@@ -1,0 +1,31 @@
+
+# Measuring Social Psychological Constructs
+
+## Key ideas
+
+- Social psychological constructs
+- Operational definitions
+- Questionnaire design; attention checks; socially desirable responding
+
+When designing research, a key first step is defining the psychological construct you are interested in and deciding how to measure that construct. 
+
+Social psychological constructs include all the attitudes, thought processes, and behaviors that we as social psychologists might be interested in. Examples include things like aggression, attraction, conformity, obedience, stereotypes, prejudice, credulity. 
+
+The challenge researchers face is how to measure complex, hypothetical constructs in an objective and quantifiable way. The specific method a researcher decides to use to measure a construct is called the operational definition. Usually there are many possible operational definitions for a given construct. The advantages, disadvantages, and practicalities of various possibilities must be considered when designing research: will participants be willing and able to pay close attention; will they be willing and able to give you accurate and honest answers; is it possible that they could misunderstand what the researcher is asking, or that different participants might interpret the same question or instruction differently; how can researchers attempt to minimize these potential problems?
+
+
+
+## Suggested reading
+
+
+::: {.references}
+\hangindent=0.7cm Collins, N. L., & Read, S. J. (1990). Adult attachment, working models, and relationship quality in dating couples. *Journal of Personality and Social Psychology, 58*(4), 644-663.  <https://doi.org/10.1037/0022-3514.58.4.644>
+
+\hangindent=0.7cm Hone, L.C., Jarden, A., Schofield, G.M., & Duncan, S. (2014). Measuring flourishing: The impact of operational definitions on the prevalence of high levels of wellbeing. *International Journal of Wellbeing, 4*(1), 62-90. <https://doi.org/10.5502/ijw.v4i1.4>
+:::
+
+
+## Assignment
+
+You will write a summary of a third published research paper. Again, you should emphasize the connections between this paper and the previous paper you read.
+
