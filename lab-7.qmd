@@ -1,6 +1,4 @@
----
-title: "Experiments continued"
----
+# Experiments continued {.unnumbered}
 
 ## Key ideas
 
@@ -15,7 +13,7 @@ This week’s lab will focus on more complex experimental designs, focusing on t
 ## Suggested reading
 
 ::: {.references}
-Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394.
+\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394.
 :::
 
 

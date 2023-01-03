@@ -1,6 +1,4 @@
----
-title: "Final Paper"
----
+# Final Paper {.unnumbered}
 
 
 ## Key ideas

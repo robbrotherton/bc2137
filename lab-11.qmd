@@ -1,6 +1,4 @@
----
-title: "Interpreting Findings"
----
+# Interpreting Findings  {.unnumbered}
 
 ## Key ideas
 

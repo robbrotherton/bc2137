@@ -1,6 +1,4 @@
----
-title: "Finalizing Methods"
----
+# Finalizing Methods {.unnumbered}
 
 ## Key ideas
 

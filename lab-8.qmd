@@ -1,6 +1,4 @@
----
-title: "Writing the Introduction"
----
+# Writing the Introduction {.unnumbered}
 
 ## Key ideas
 

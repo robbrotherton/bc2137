@@ -1,6 +1,4 @@
----
-title: "Reporting Findings"
----
+# Reporting Findings  {.unnumbered}
 
 ## Key ideas
 
