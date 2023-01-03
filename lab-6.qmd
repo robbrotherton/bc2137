@@ -1,6 +1,4 @@
-# Experiments {.unnubered}
-
-
+# Lab 6: Experiments {.unnumbered}
 
 ## Key ideas
 

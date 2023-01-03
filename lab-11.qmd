@@ -1,4 +1,4 @@
-# Interpreting Findings  {.unnumbered}
+# Lab 11: Interpreting Findings  {.unnumbered}
 
 ## Key ideas
 

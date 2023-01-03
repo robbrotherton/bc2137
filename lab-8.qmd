@@ -1,4 +1,4 @@
-# Writing the Introduction {.unnumbered}
+# Lab 8: Writing the Introduction {.unnumbered}
 
 ## Key ideas
 

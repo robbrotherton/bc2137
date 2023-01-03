@@ -1,4 +1,4 @@
-# Presentations {.unnumbered}
+# Lab 12: Presentations {.unnumbered}
 
 This week each project team will present their proposed project to the rest of the class.
 

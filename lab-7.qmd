@@ -1,4 +1,4 @@
-# Experiments continued {.unnumbered}
+# Lab 7: Experiments continued {.unnumbered}
 
 ## Key ideas
 

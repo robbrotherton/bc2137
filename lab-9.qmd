@@ -1,4 +1,4 @@
-# Finalizing Methods {.unnumbered}
+# Lab 9: Finalizing Methods {.unnumbered}
 
 ## Key ideas
 

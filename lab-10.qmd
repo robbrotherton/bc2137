@@ -1,4 +1,4 @@
-# Reporting Findings  {.unnumbered}
+# Lab 10: Reporting Findings  {.unnumbered}
 
 ## Key ideas
 

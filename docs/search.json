@@ -2,14 +2,14 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "bc2137",
+    "title": "BC2137 Social Psychology Lab Manual",
     "section": "",
-    "text": "Lab 1: Course Overview"
+    "text": "About this handbook\nThis handbook is intended to serve as a resource allowing you to see from the outset what lies ahead, and as a place to collect your notes as we progress through the course.\nIt is important that you know in advance what to expect from this lab so that you can plan your time accordingly. That information is all here in this handbook. This laboratory handbook outlines the procedures, rationales, and techniques for lab exercises, and provides an overview of the accompanying assignment for each week.\nEach lab section contains blank pages for recording notes and for collecting observations. Therefore, you should bring the lab manual to each meeting of the lab.\nYou should skim through this handbook at the beginning of the course so that you have at least a rough sense of what will be required and when, and so you know where you can find relevant information as and when you need it.\nYou’ll find a section for each lab session, giving a brief overview of the main themes and questions for that session, some suggested (optional) additional readings, and any pertinent information about the accompanying assignment.\nYou’ll also find a number of appendices, covering things like searching the academic literature, how to approach reading journal articles, summaries of the basic statistics you should be familiar with, examples of informed consent and debriefing forms, and an extensive guide to writing a lab report.\nI will reiterate much of this information as part of each lab session’s instructional component, and we’ll greatly expand on the themes through the activities I’ll have you do and our collective discussions that follow."
   },
   {
-    "objectID": "index.html#syllabus",
-    "href": "index.html#syllabus",
-    "title": "bc2137",
+    "objectID": "lab-1.html#syllabus",
+    "href": "lab-1.html#syllabus",
+    "title": "Lab 1: Course Overview",
     "section": "Syllabus",
     "text": "Syllabus\nContent goes here."
   },
@@ -51,168 +51,168 @@
   {
     "objectID": "lab-4.html#key-ideas",
     "href": "lab-4.html#key-ideas",
-    "title": "Measuring Social Psychological Constructs",
+    "title": "Lab 4: Measuring Social Psychological Constructs",
     "section": "Key ideas",
     "text": "Key ideas\n\nSocial psychological constructs\nOperational definitions\nQuestionnaire design; attention checks; socially desirable responding\n\nWhen designing research, a key first step is defining the psychological construct you are interested in and deciding how to measure that construct.\nSocial psychological constructs include all the attitudes, thought processes, and behaviors that we as social psychologists might be interested in. Examples include things like aggression, attraction, conformity, obedience, stereotypes, prejudice, credulity.\nThe challenge researchers face is how to measure complex, hypothetical constructs in an objective and quantifiable way. The specific method a researcher decides to use to measure a construct is called the operational definition. Usually there are many possible operational definitions for a given construct. The advantages, disadvantages, and practicalities of various possibilities must be considered when designing research: will participants be willing and able to pay close attention; will they be willing and able to give you accurate and honest answers; is it possible that they could misunderstand what the researcher is asking, or that different participants might interpret the same question or instruction differently; how can researchers attempt to minimize these potential problems?"
   },
   {
     "objectID": "lab-4.html#suggested-reading",
     "href": "lab-4.html#suggested-reading",
-    "title": "Measuring Social Psychological Constructs",
+    "title": "Lab 4: Measuring Social Psychological Constructs",
     "section": "Suggested reading",
     "text": "Suggested reading\n\n Collins, N. L., & Read, S. J. (1990). Adult attachment, working models, and relationship quality in dating couples. Journal of Personality and Social Psychology, 58(4), 644-663. https://doi.org/10.1037/0022-3514.58.4.644\n Hone, L.C., Jarden, A., Schofield, G.M., & Duncan, S. (2014). Measuring flourishing: The impact of operational definitions on the prevalence of high levels of wellbeing. International Journal of Wellbeing, 4(1), 62-90. https://doi.org/10.5502/ijw.v4i1.4"
   },
   {
     "objectID": "lab-4.html#assignment",
     "href": "lab-4.html#assignment",
-    "title": "Measuring Social Psychological Constructs",
+    "title": "Lab 4: Measuring Social Psychological Constructs",
     "section": "Assignment",
     "text": "Assignment\nYou will write a summary of a third published research paper. Again, you should emphasize the connections between this paper and the previous paper you read."
   },
   {
     "objectID": "lab-5.html#key-ideas",
     "href": "lab-5.html#key-ideas",
-    "title": "Correlation",
+    "title": "Lab 5: Correlation",
     "section": "Key ideas",
     "text": "Key ideas\n\nCorrelational research questions\nThe correlation coefficient\nMediation\nCorrelation vs causation\n\nHaving explored how social psychologists define and operationalize relevant constructs, we will now move on to looking at how such measures are used in typical research, and the analytic techniques used to uncover meaningful relationships or causal effects. We will begin with the simplest type of design, in which researchers simply measure two (or more) constructs and look at how they relate to one another.\nSimple bivariate correlations quantify the extent to which changes on one variable are associated with changes on a second variable (see Appendix C, section on correlation, p. ). More complicated research might measure a third variable and ask whether it mediates the relationship between the other two; that is, can the bivariate relationship potentially be explained by the influence of a third variable?\nHowever, while correlational techniques can tell us about associations between variables, correlational designs are generally limited in what they can tell us about causal influence. Speculation about what is causing changes must be restrained, and informed by theory and existing findings."
   },
   {
     "objectID": "lab-5.html#suggested-reading",
     "href": "lab-5.html#suggested-reading",
-    "title": "Correlation",
+    "title": "Lab 5: Correlation",
     "section": "Suggested reading",
     "text": "Suggested reading\n\n Borgonovi, F. (2008). Doing well by doing good. The relationship between formal volunteering and self-reported health and happiness. Social science & medicine, 66(11), 2321-2334. https://doi.org/10.1016/j.socscimed.2008.01.011\n Fiedler, K., Schott, M., & Meiser, T. (2011). What mediation analysis can (not) do. Journal of Experimental Social Psychology, 47(6), 1231-1236. https://doi.org/10.1016/j.jesp.2011.05.007"
   },
   {
     "objectID": "lab-5.html#assignment",
     "href": "lab-5.html#assignment",
-    "title": "Correlation",
+    "title": "Lab 5: Correlation",
     "section": "Assignment",
     "text": "Assignment\nYou will write a summary of a fourth published research paper. By now, you should be able to point out the differences and common themes among all four papers you have summarized."
   },
   {
     "objectID": "lab-6.html#key-ideas",
     "href": "lab-6.html#key-ideas",
-    "title": "2  Experiments",
+    "title": "Lab 6: Experiments",
     "section": "Key ideas",
     "text": "Key ideas\n\nCorrelation vs causation\nIndependent and dependent variables\nBetween-participants and within-participants designs\n\nThis week’s lab will focus on experimental designs, in which the researcher manipulates one variable (the independent variable) and measures another (the dependent variable).\nThe simplest example of this design is one in which the researcher randomly assigns participants to one of two groups, and then uses statistical techniques to look for differences between the groups (see Appendix C, section on the t-test, p. )."
   },
   {
     "objectID": "lab-6.html#suggested-reading",
     "href": "lab-6.html#suggested-reading",
-    "title": "2  Experiments",
+    "title": "Lab 6: Experiments",
     "section": "Suggested reading",
     "text": "Suggested reading\n\n Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. Journal of Verbal Learning and Verbal Behavior, 13(5), 585–589. https://doi.org/10.1016/S0022-5371(74)80011-3"
   },
   {
     "objectID": "lab-6.html#assignment",
     "href": "lab-6.html#assignment",
-    "title": "2  Experiments",
+    "title": "Lab 6: Experiments",
     "section": "Assignment",
     "text": "Assignment\nHaving read and summarized (at least) four papers on your topic of interest by now, you should be ready to articulate the gist of this existing body of research, as it pertains to your proposal. This Brief Literature Review will be your opportunity to put all four studies together, in conversation with one another, and to make a case for what they collectively reveal about social psychology—and what they fail to reveal. That gap in the research will likely form the basis on your own proposed study.\nYour brief literature review will be based on the four individual summaries you have written, but you should rework it to be a coherent, cohesive, persuasive review of the literature rather than just stringing together your four individual summaries. I want to know how the research all fits together, as you see it.\nYour submission should include:\n\nTitle Page\n\nA page with your name, your partner’s name, and a (tentative) title for your project\nStick to the types of titles you see in published research papers\nE.g. ‘The relationship between [X] and [Y]’, or ‘Differences in [Z] between [X] and [Y]’\n\nLiterature review\n\nStart by identifying the general topic of your research—that is, the area of social psychology that you are interested in investigating.\nReview the studies you have read so far. You’ve written individual summaries of each, but here you should begin to weave them together, pointing out how they relate to one another and how they collectively inform your proposal\nTry to finish by articulating your overall interpretation of this existing body of research. What does it show about social psychology? What does it fail to show?\n\nReferences\n\nInclude an APA-formatted reference for each study you cite"
   },
   {
     "objectID": "lab-7.html#key-ideas",
     "href": "lab-7.html#key-ideas",
-    "title": "Experiments continued",
+    "title": "Lab 7: Experiments continued",
     "section": "Key ideas",
     "text": "Key ideas\n\nControl conditions\nFactorial designs\n\nThis week’s lab will focus on more complex experimental designs, focusing on the value of control conditions and factorial designs. These ideas are discussed more extensively in Appendix C, section on ANOVA, p. )."
   },
   {
     "objectID": "lab-7.html#suggested-reading",
     "href": "lab-7.html#suggested-reading",
-    "title": "Experiments continued",
+    "title": "Lab 7: Experiments continued",
     "section": "Suggested reading",
     "text": "Suggested reading\n\n Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394."
   },
   {
     "objectID": "lab-7.html#assignment",
     "href": "lab-7.html#assignment",
-    "title": "Experiments continued",
+    "title": "Lab 7: Experiments continued",
     "section": "Assignment",
     "text": "Assignment\nNow you’ve written a Brief Literature review of the existing studies you’ve read you should be ready to propose your own study. This Brief Proposal will be the first step: your initial thoughts on what form your proposed research will take. Your proposal will likely not have all the methodological details at this stage, and your thinking may yet change—that’s fine. The main purpose of this brief proposal is to serve as an outline so you can start to figure out the specifics. You’ll get feedback on this which should help you nail down and refine the details moving forward. That said, the more thought you put into this now, the less work you will have to do for the following drafts. This would be a good time to familiarize yourself with Appendix F: Guide to Writing Lab Reports (p. ), if you haven’t already, as that is what this is building towards.\nYour brief proposal should include:\n\nTitle Page\n\nSame as the previous assignment, unless you’ve changed your approach enough to require a change of title\n\nLiterature review\n\nInclude your lit review from the previous assignment, with any changes (if you’ve made them)\n\nMethod -State the basic design format of your proposed study—is it a scale design study, a correlational design, or an experiment? State any constructs you plan to manipulate or measure\n\nFor each construct, state your operational definition (i.e. how you actually plan to manipulate or measure the psychological constructs)\n\nAnalysis\n\nWhat is your fundamental analytic approach? Is this a correlational study where you’re looking for associations between variables, or an experimental study in which you’re looking for differences between randomly-assigned groups, or a quasi-experimental study in which you’re looking for differences between pre-existing groups? What is it, in a nutshell, that you expect to find?\n\nReferences\n\nInclude an APA-formatted reference for each study you cite"
   },
   {
     "objectID": "lab-8.html#key-ideas",
     "href": "lab-8.html#key-ideas",
-    "title": "Writing the Introduction",
+    "title": "Lab 8: Writing the Introduction",
     "section": "Key ideas",
     "text": "Key ideas\n\nStyle and contents of an APA Introduction section\nHow to frame previous findings to create a coherent and compelling justification\nAPA style for citations & references\n\nBy now, you should have settled on your proposed design (though you may still be refining the details in response to collaboration with your partner(s) and guidance from Prof. Brotherton and your TA). Now you will begin to draft your complete lab paper, one section at a time. Instruction in class this week will focus on writing good APA-style Introduction section.\nThere are two major components of APA style. First, there are the nitty-gritty aspects of formatting the document itself, such as how to format the title page, running head, headings of different levels, figures, page numbers etc. The APA produces a manual which details exactly how to do this. However, the conventions change from time to time; the APA style guide is now in its 7th edition, published in October 2019. Because these formatting conventions are arbitrary and subject to change, I see them as relatively unimportant for our purposes. If you won’t be writing any more psych research articles, it’s not worth your time learning this stuff; if you will then you’re better off just using a current template when starting your documents—word processors like Word and Google Docs offer such templates built-in. I will make a Google Doc template specially tailored for this lab available.\nOne exception, however, is for citations and references. Since you are writing a scientific document based on existing research, it is important to cite that existing research according to the conventions of the field so that your sources can easily be checked by any interested reader. So while you can largely ignore fiddly formatting details, you will have to make an effort to use the correct citation style (or let a reference manager app like Zotero do the work for you; see Appendix B.\nThe second component of writing an APA-style research article is the content. For our purposes this is much more important than arbitrary formatting rules. You must ensure that all the expected content is present in your work; that unneeded content is not present, so as not to distract or take away from the clarity and coherence of your writing; and that it is communicated in the tone expected of a psychological research article. The assignment description for each draft section will give an outline of required content, and you will find more advice and tips in Appendix F: Guide to Writing Lab Reports (p. )."
   },
   {
     "objectID": "lab-8.html#assignment",
     "href": "lab-8.html#assignment",
-    "title": "Writing the Introduction",
+    "title": "Lab 8: Writing the Introduction",
     "section": "Assignment",
     "text": "Assignment\nYou will submit a draft of your Introduction section. This will be based on the literature review you have already written, but it may require some changes of emphasis, style, and structure. The general structure of a good APA-formatted Introduction is as follows:\n\nThe first paragraph should introduce your broad area of research, emphasizing why it is a question of interest to psychologists, and, in a few sentences, summarizing the gist of existing research and how your proposed study would add to our understanding of social psychology.\nThe main body of the Introduction is your literature review. Identify current theories relevant to the topic at hand, and present an overview of the findings of other researchers who have tried to answer similar questions.\n\nYou should include at least 4 existing studies that relate to your question.\nThey may or may not all require the same depth of description—e.g. if your methodology is very close to a particular previous study, it would require a more thorough description than a previous study for which the methodology is less directly relevant to your project.\nThe key is to make this a logically-flowing argument rather than a simple list of studies. Make sure each paragraph focuses on a single theme (which might be one study or more than one related study), and that each paragraph also transitions from and to the next by pointing out how the studies/theme relates to the others, and how they contribute towards your own research proposal.\n\nThe last paragraph should briefly sum up your literature review, and state the question you are trying to answer. What are your specific hypotheses or expectations?\nYou should be framing this as a gap in the literature you just outlined, or a necessary extension of some existing study."
   },
   {
     "objectID": "lab-9.html#key-ideas",
     "href": "lab-9.html#key-ideas",
-    "title": "Finalizing Methods",
+    "title": "Lab 9: Finalizing Methods",
     "section": "Key ideas",
     "text": "Key ideas\n\nReplicability\nInformed consent & debriefing\nStyle and contents of an APA Method section\n\nThis week you will finalize the details of your planned methodology, including collecting/producing all required materials, and creating Informed Consent (see Appendix D, p. ) and Debriefing (see Appendix E, p. ) documents. We will consider methodological rigor and replicability, as well as what researchers are required to tell participants in the informed consent and debriefing documents, and why."
   },
   {
     "objectID": "lab-9.html#assignment",
     "href": "lab-9.html#assignment",
-    "title": "Finalizing Methods",
+    "title": "Lab 9: Finalizing Methods",
     "section": "Assignment",
     "text": "Assignment\nFor this week’s assignment, you will produce a draft of your Method section, which must include all the detail necessary for someone else to actually run your study. That means you should have pretty much figured out exactly what participants in your study would see or do: the wording of every instruction you would present to participants, every question you would ask them, every response scale you would use to collect their answers, any images/videos/other materials you’d need, etc. Any aspect you’re still not quite sure about must be nailed down now.\nThe content of an APA-style Method section is as follows:\n\nMethod [the following subsections should be included with level 2 headings]\n\nDesign\n\nState the technical design of your planned research (e.g. a single-factor, within-participants design; a 2x2 ANOVA; etc). State your independent and dependent variables (you just need to name them here; you will give more detail about how you measure them in the Materials subsection). Or, for a scale design/correlation/mediation study, state your ‘variable(s) of interest’.\n\nParticipants\n\nState how many participants you would require (see Appendix C, section on statistical power), any selection criteria (e.g. proportion of males/females or other relevant demographic characteristics), any exclusion criteria (e.g. people under 18)\n\nMaterials\n\nRestate the constructs you plan to manipulate or measure (you can use subheadings for each construct), and for each construct, state your operational definition (i.e. how you actually plan to manipulate or measure the psychological constructs) in enough detail that any other researcher could run your study. If including complete scales or other materials as appendices, give example questions here and refer readers to the appendix.\n\nProcedure\n\nGive a step-by-step walkthrough of what participants will be required to do, in the order that they would do it, from providing Informed Consent, then completing your materials, to Debriefing.\n\n\nAppendices\n\nInclude all materials that would be required in order to actually run the study. Include everything that participants would see:\n\nAll questionnaire items and response scales\nAny other necessary stimuli (e.g. videos participants would watch—include a still frame and a link to the video if online)\nInclude complete Informed Consent & Debriefing documents"
   },
   {
     "objectID": "lab-10.html#key-ideas",
     "href": "lab-10.html#key-ideas",
-    "title": "Reporting Findings",
+    "title": "Lab 10: Reporting Findings",
     "section": "Key ideas",
     "text": "Key ideas\n\nReproducibility\nData visualization\nStyle and contents of an APA Results section\n\nBy now, you will have worked out every aspect of your study’s design, and you will be ready to draft the Planned Analysis sections of your report, in which you explain how you would analyze the data your proposed design would produce. This will most likely follow the outline of one of the analyses we discussed in previous lab sessions, and covered in more detail in Appendix C."
   },
   {
     "objectID": "lab-10.html#assignment",
     "href": "lab-10.html#assignment",
-    "title": "Reporting Findings",
+    "title": "Lab 10: Reporting Findings",
     "section": "Assignment",
     "text": "Assignment\nYou’ll submit a draft of your Planned Analysis section. Usually in an APA-formatted journal article this section would be called Results. But since you aren’t collecting data, and are instead just formalizing a plan for how you would analyze your data, we’ll call this section Planned Analysis.\nThis will likely be your shortest section. It should be a simple, technical statement of how you would treat your data, with some sensible anticipated results.\n\nPlanned Analysis\n\nFirst state any necessary data cleaning and handling\n\nE.g. how you would identify outliers in the data, and any averages you would calculate, etc\n\nThen explain, using the appropriate technical terms, what you would do with your chosen variables\n\nE.g. factor analysis, validity tests, looking at the correlation(s) between variables, performing a t-test, ANOVA?\nThen make sensible, informed guesses (based on the research you read and cited in your Intro) about what kind of averages/differences/correlations/effect sizes you would expect to see\n\nYou should mention some hypothetical results, e.g. the condition means you expect, the strength of correlation you anticipate.\nYou should also talk about how much variability you expect to see in the data, and how strong of an effect you expect your manipulation to produce\nFinally, state whether you expect a significant test statistic (which, presumably, you do—but this should make sense given your overall pattern of anticipated means and variability).\n\nInclude a visualization of your expected findings. This doesn’t have to be fancy—just a rough sketch is fine if it helps to visualize the trends you expect to see in the data (see p. )."
   },
   {
     "objectID": "lab-11.html#key-ideas",
     "href": "lab-11.html#key-ideas",
-    "title": "Interpreting Findings",
+    "title": "Lab 11: Interpreting Findings",
     "section": "Key ideas",
     "text": "Key ideas\n\nStyle and contents of an APA Discussion section\nSummarizing and interpreting findings\nConnecting findings to previous research\n\nBy now, you have an almost-complete draft of your research proposal paper. All that remains is to add a Discussion section. While you will not have analyzed any actual data, you will still produce a Discussion section which considers the implications of the various possible outcomes of your study."
   },
   {
     "objectID": "lab-11.html#assignment",
     "href": "lab-11.html#assignment",
-    "title": "Interpreting Findings",
+    "title": "Lab 11: Interpreting Findings",
     "section": "Assignment",
     "text": "Assignment\nYou’ll submit a draft of your Discussion section. Your Discussion section should contain the following information:\n\nWhat would it mean if the data is consistent with your expectations?\n\nHow would it augment your interpretation of the previous research you outlined in the Introduction?\nWhat would this say about social psychology that’s new?\n\nWhat would it mean if the data is not consistent with your expectations?\n\nConsider two possibilities:\n\nYour hypothesis is correct but your study fails to find support for it. Why might that be? Are there potential flaws in your methodology?\nYour study fails to find support not because of methodological flaws but because your hypothesis is mistaken. What are the implications for the previous research you outlined in the Introduction—might this call any of the previous findings into question? Why might the previous findings be questionable?\n\n\nWhat are the main strengths and weaknesses of your planned research?\n\nBe critical in pointing out potential flaws, but make sure also to assert the strengths of your plan—aspects that were carefully considered, and would improve somehow upon what previous research did.\n\nWhat is the overall importance of your project?\n\nYour final paragraph should sum up your project’s potential contribution to the field of social psychology. This may be as narrow as replicating one existing finding, or as broad as challenging an existing theoretical perspective. Be bold but realistic."
   },
   {
     "objectID": "lab-12.html#guide-to-presenting",
     "href": "lab-12.html#guide-to-presenting",
-    "title": "Presentations",
+    "title": "Lab 12: Presentations",
     "section": "Guide to presenting",
     "text": "Guide to presenting\nEach team will give a two-minute presentation, accompanied by a single PowerPoint slide, which should encapsulate the motivation, methods, anticipated findings, and interpretation of your proposed project. Two minutes is not a lot of time. Apparently, people speak at a rate of around 125 to 150 words per minute on average. So a 2-minute presentation will be no more than around 300 words. The single-slide, not-many-words format demands clarity, conciseness, and being bold to spark the audience’s interest in your topic.\nAvoid simply reading excerpts from your paper. That would be boring, and would probably take up too many words. Make it fun and interesting. Try to grab the audience’s attention and hit them with just the most important points of your ideas.\nYou will also have a single PowerPoint slide to accompany your presentation. Make it count. You can’t just cram a load of text on there, because nobody will be able to read it. Plus, it’d distract from what you’re saying. Make it a visual aid that somehow supports or clarifies what you’re saying. It might be a visual representation of your design, a key piece of your experimental stimuli, a graph of your expected results, or just a pertinent meme which conveys the motivation for your question.\nAfter your two-minute talk you’ll take a few questions from the audience, and your responsiveness will contribute toward your grade as well as the quality of your presentation itself (remember a perfectly acceptable answer if often: “Good question; I don’t know the answer!”). It’s not usually an issue, but just in case your audience is left speechless, I suggest coming with a couple of questions or thoughts of your own that you can throw at the audience to spark more questions.\nEach pair will be allotted five minutes total for their talk and Q&A. Going over time and/or failing to leave time for questions will impact your presentation grade. It is up to each pair to decide how to divide up the two-minute talk, and to practice to make sure the presentation is to time."
   },
   {
     "objectID": "lab-12.html#guide-to-watching-presentations",
     "href": "lab-12.html#guide-to-watching-presentations",
-    "title": "Presentations",
+    "title": "Lab 12: Presentations",
     "section": "Guide to watching presentations",
     "text": "Guide to watching presentations\nAs an audience member, you are still being graded for class participation this week. That means giving everyone else’s presentation the attention and enthusiasm it deserves, and rewarding their hard work with questions. (Going to the trouble of putting together a presentation only for nobody to have anything to say about it is not a good feeling.)\nGood questions to ask are things like “Could you clarify X”, “Had you considered Y”, or “How might this relate to Z.” One reason for presenting your project is to hopefully get some useful feedback from the audience with which to refine your final paper, so try to give the kind of feedback you hope to receive."
   },
   {
     "objectID": "lab-13.html#key-ideas",
     "href": "lab-13.html#key-ideas",
-    "title": "Final Paper",
+    "title": "Lab 13: Final Paper",
     "section": "Key ideas",
     "text": "Key ideas\n\nWriting an Abstract\nEditing and proof reading\nIncorporating feedback\n\nBy now you have drafted and received feedback on every major section of your paper. Hopefully along the way you found the feedback useful, and you will have incorporated any useful suggestions to make your final paper a strong as it can possibly be. This editing process is a crucial part of any form of writing, including scientific reports. Most published papers you’ve read will have been through at least one round of extensive revisions, if not more. You should see editing as a part of the process of writing, rather than an annoying additional thing you have to do after the writing is done.\nThe last remaining element to add is the Abstract. This is always the last addition to a research report, as it provides a summary of everything that follows in each section of your paper. It should be between around 100–200 words, with a sentence or two summarizing each of the main sections of your paper. (This will likely be informed by your short presentation outline from the previous session).\nWith that done, all that remains is to submit your paper and congratulate yourself and each other on a job well done."
   },
   {
     "objectID": "lab-13.html#assignment",
     "href": "lab-13.html#assignment",
-    "title": "Final Paper",
+    "title": "Lab 13: Final Paper",
     "section": "Assignment",
     "text": "Assignment\nYou will submit your complete, APA-formatted lab report. It should consist of the following sections:\n\nTitle Page\nAbstract\nIntroduction\nMethod\nPlanned Analysis\nDiscussion\nReferences\nAppendices"
   },
