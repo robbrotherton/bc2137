@@ -34,4 +34,4 @@ You will write a summary of a third published research paper. Again, you should 
 
 ## Notes {.exclude-from-html}
 
-\cleardoublepage
+\cleartoleftpage

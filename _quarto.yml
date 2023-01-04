@@ -30,18 +30,21 @@ book:
     - x-searching-the-literature.qmd
     - x-statistics.qmd
   downloads: pdf
-  sidebar:
-    tools:
-      - icon: github
-        href: https://github.com/robbrotherton/bc2137/
+  # sidebar:
+  #   tools:
+  #     - icon: github
+  #       href: https://github.com/robbrotherton/bc2137/
 
 toc-depth: 1
 number-depth: 0
 
-comments:
-    hypothesis:
-      theme: clean
-      openSidebar: false
+# comments:
+#     hypothesis:
+#       theme: clean
+#       openSidebar: false
+
+crossref:
+  appendix-title: Appendix
 
 format:
   html:
@@ -49,6 +52,12 @@ format:
   pdf:
     documentclass: scrreprt
     classoption: twoside
+    include-in-header:
+      text: |
+        \newcommand*\cleartoleftpage{%
+        \clearpage
+        \ifodd\value{page}\hbox{}\newpage\fi
+        }
 
 
 

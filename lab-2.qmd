@@ -28,6 +28,6 @@ You'll receive a score and feedback based on the following rubric (again, even t
 
 ## Notes {.exclude-from-html}
 
-\cleardoublepage
+\cleartoleftpage
 
 

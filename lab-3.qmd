@@ -34,4 +34,4 @@ You will write a summary of a second published research paper. The rubric will b
 
 ## Notes {.exclude-from-html}
 
-\cleardoublepage
+\cleartoleftpage

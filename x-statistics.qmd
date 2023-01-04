@@ -12,7 +12,9 @@ Note that even though you will be proposing a piece of research and not actually
 
 The first step is to describe your data. These kinds of statistics are called descriptive statistics or summary statistics. With an experimental design where you want to compare groups, the most obvious place to start is to find an average value for the observations in a group. The average, or mean, is a measure of typical performance; it summarizes all the scores and produces a single number which represents the most typical value. The basic formula for the mean of a set of scores is:
 
-$M = \dfrac{\Sigma X}{n}$
+$$
+M = \dfrac{\Sigma X}{n}
+$$
 
 In this equation, $X$ refers to all the scores in the group, and n is the number of scores in the group. The symbol $\Sigma$ instructs you to sum all the scores. A simple way of saying the formula in words is: Add up all the scores in the group and divide by the number of scores in that group. If you experiment involves comparing two or more groups, you can obviously calculate the mean of each group of scores separately. If the means are different, maybe your experimental manipulation had an effect.
 
@@ -20,15 +22,21 @@ However, there is always variability in the scores in a group. The mean is a cen
 
 A mathematical way of describing the amount of variability in a group of scores is to calculate the deviation of each score from the mean, square the deviations, and then sum the squared deviations. This quantity is called Sum of Squares (SS). One mathematical formula is:
 
-$SS = \Sigma(X - M)^2$
+$$
+SS = \Sigma(X - M)^2
+$$
 
 Dividing SS by the number of scores in the group minus 1 produces a quantity called variance, which is represented by the symbol s2. Variance is the average squared deviation. (Remember that to calculate an average, you add a set of scores and divide by n. Here we add a set of deviations and divide by n – 1. We use n – 1, rather than just n, because it is a necessary statistical adjustment to account for the fact that samples tend to underestimate variability.)  
 
-$s^2 = \dfrac{\Sigma(X-M)^2}{n-1}$
+$$
+s^2 = \dfrac{\Sigma(X-M)^2}{n-1}
+$$
 
 Taking the square root of the variance produces another quantity, called standard deviation. It is represented mathematically by the symbol s, but in psychology papers you will most often see it represented by the letters SD.
 
-$SD = \sqrt{\dfrac{\Sigma(X-M)^2}{n-1}}$
+$$
+SD = \sqrt{\dfrac{\Sigma(X-M)^2}{n-1}}
+$$
 
 While variance is the average squared deviation, SD is the average deviation in the original units (i.e. not squared). This is the most intuitive way to convey how much scores typically varied about the mean.
 
@@ -38,26 +46,30 @@ While variance is the average squared deviation, SD is the average deviation in 
 
 Knowing the standard deviation and mean for each experimental group gives you a good idea of how much scores differed within each group, and how much the groups differed on average. But researchers still need to perform a statistical test to determine whether the groups differed more than would be expected by chance alone. These kinds of statistical tests are called inferential statistics, because we are using our sample data to make an inference about what would happen if everyone in the population had taken part in our experiment, rather than just the small number of people who happened to be in our samples.
 
-### Correlation
+### Correlation {#sec-correlation}
 
 When you measure two variables and wish to know if scores on one measure are related to scores on the other, you calculate the correlation coefficient. This quantifies the extent to which changes on one measure are related to changes on the other. For example, if higher scores on measure X are associated with higher scores on measure Y, there is a positive correlation. If higher scores on measure X are associated with lower scores on measure Y, there is a negative correlation. No correlation means that scores on X are unrelated to scores on Y.
 
 To calculate the correlation between two variables, you must first calculate the Sum Product, SP.  The mathematical formula is:
 
-$SP = (X-M_X)(Y-M_Y)$
+$$
+SP = (X-M_X)(Y-M_Y)
+$$
 
 Notice that X-MX and Y-MY are deviation scores, just like we calculated for the standard deviation. Here we have two variables, X and Y, so the equation is telling us to calculate the deviation of each score from its respective mean. We then multiply each deviation for variable X by its counterpart deviation from variable Y. These are the “products,” meaning multiplied deviation scores. Finally, the  tells us to add up all those products, giving the “sum of products,” SP
 Once we have calculated SP, the correlation coefficient, symbolized by r is calculated using the following equation:
 
-$r = \dfrac{SP}{\sqrt{SS_X SS_Y}}$
+$$
+r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
+$$
 
 Here, SSX and SSY are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in X and Y separately. The numerator, SP, represents the covariability of X and Y. So the equation results in covariability as a proportion of all variability. It can range from -1, meaning a perfect negative correlation, to 0, meaning no correlation at all, to +1, meaning a perfect positive correlation. As a rule of thumb, in psychology, correlations of less than around ±0.30 are considered weak, around ±0.30 to ±0.70 are considered moderate, and greater than around ±0.70 are considered large.
 
-### The $t$-test
+### The $t$-test  {#sec-ttest}
 
 One test to compare two groups of scores is the t-test. One form of the t-test formula, assuming that the two groups have equal sample sizes, is as follows:
 
-$t = \dfrac{M_1-M_2}{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}$
+$$t = \dfrac{M_1-M_2}{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}$$
 
 The numerator is simply the difference between the group means (the different group means are represented by the subscripts $1$ and $2$). The denominator quantifies how much of a difference is to be expected due to chance alone. It divides each group variance ($s^2$) by the number of scores in that group, adds the answers, and then takes the square root.
 
@@ -65,4 +77,4 @@ The size of the t statistic required to conclude that a difference between group
 
 The degrees of freedom, df, is another statistical correction that weights the number of observations in each experimental group. Basically, we lose one degree of freedom for each group, so with two groups, $df = N – 2$ ($N$ being the total number of scores), or:
 
-$df=(n_1-1)+(n_2-1)$
+$$df=(n_1-1)+(n_2-1)$$
