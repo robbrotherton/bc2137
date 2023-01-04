@@ -6,7 +6,8 @@ title-block-author-single: "Instructor"
 title-block-published: "Semester"
 
 book:
-  title: "BC2137 Social Psychology Lab Manual"
+  title: "Social Psychology Lab Manual"
+  subtitle: "PSYC BC2137"
   author: "Professor Rob Brotherton"
   date: "1/31/2023"
   date-format: "[Spring 2023]"
@@ -48,8 +49,11 @@ crossref:
 
 format:
   html:
-    theme: [cosmo, custom.scss]
+    theme:
+      light: [flatly, custom.scss]
+      dark:  [darkly, custom.scss]
   pdf:
+    # title: Social Psychology Lab Manual
     documentclass: scrreprt
     classoption: twoside
     include-in-header:
