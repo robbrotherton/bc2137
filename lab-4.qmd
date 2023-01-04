@@ -29,3 +29,9 @@ The challenge researchers face is how to measure complex, hypothetical construct
 
 You will write a summary of a third published research paper. Again, you should emphasize the connections between this paper and the previous paper you read.
 
+
+
+
+## Notes {.exclude-from-html}
+
+\cleardoublepage

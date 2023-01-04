@@ -37,3 +37,8 @@ Your submission should include:
     - Try to finish by articulating your overall interpretation of this existing body of research. What does it show about social psychology? What does it fail to show?
 - References
     - Include an APA-formatted reference for each study you cite
+
+
+## Notes {.exclude-from-html}
+
+\cleardoublepage

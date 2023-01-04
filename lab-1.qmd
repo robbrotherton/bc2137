@@ -3,3 +3,8 @@
 ## Syllabus
 
 Content goes here.
+
+
+\newpage
+
+## Notes {.exclude-from-html}

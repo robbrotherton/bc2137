@@ -25,8 +25,9 @@ To get the best possible grades for these summaries (note that your grade and fe
 
 You'll receive a score and feedback based on the following rubric (again, even though you'll post your summary publicly, your grade and feedback will be private to you, provided via SpeedGrader in Canvas).
 
-<hr>
 
-<hr>
+## Notes {.exclude-from-html}
 
-<hr>
+\cleardoublepage
+
+

@@ -27,3 +27,9 @@ However, while correlational techniques can tell us about associations between v
 ## Assignment
 
 You will write a summary of a fourth published research paper. By now, you should be able to point out the differences and common themes among all four papers you have summarized.
+
+
+
+## Notes {.exclude-from-html}
+
+\cleardoublepage

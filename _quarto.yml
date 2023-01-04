@@ -45,9 +45,10 @@ comments:
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.scss]
   pdf:
     documentclass: scrreprt
+    classoption: twoside
 
 
 
