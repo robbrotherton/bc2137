@@ -120,8 +120,8 @@ Assignments not submitted before the next class will receive a score of zero. Th
 ### Final Grades
 Your final letter grade for the course is a product of your scores for each assignment, weighted as indicated in the class schedule, and determined according to the following boundaries:
 
-Letter grade:	A+	A	A-	B+	B	B-	C+	C	C-	D	F
-Numeric score:	97	93	90	87	83	80	77	73	70	60	<60
+    Letter grade:  A+ A  A-	B+ B  B- C+ C  C- D  F
+    Numeric score: 97 93 90 87 83 80 77 73 70 60 <60
 
 ## Workload
 As a general rule for the amount of time students should expect to commit to classes, the college suggests three hours per week in or outside of class per credit. Since this class is worth 1.5 credits, that corresponds to 4.5 hours per week, split between time in the classroom and time spent completing the associated assignments.
