@@ -30,6 +30,9 @@ book:
     - x-reading-research.qmd
     - x-searching-the-literature.qmd
     - x-statistics.qmd
+    - a-consent-form.qmd
+    - a-debrief.qmd
+    - a-writing-a-report.qmd
   downloads: pdf
   # sidebar:
   #   tools:
