@@ -61,9 +61,9 @@ The link above should take you to PsycInfo, a database for scholarly psychology 
 When you are dealing with a large number of references or multiple papers, I recommend using [Zotero](https://www.zotero.org/) to assist you. It is a free application with a browser plugin to collect article details as you are searching the literature. 
 
 - See the Barnard library’s guide to Zotero at <https://guides.library.barnard.edu/citation-management/zotero>
-- When you’re on a website looking at a journal article, the Zotero browser add-on allows you to click a button to automatically download the article details into Zotero (including, if available, a PDF of the article). This allows you to keep track of all the articles you have found. 
+- When you’re on a website looking at a journal article, the Zotero Connector browser add-on allows you to click a button to automatically download the article details into Zotero (including, if available, a PDF of the article). This allows you to easily keep track of all the articles you have found. 
 - Installing Zotero also installs a Microsoft Word plugin that allows you to insert citations in-text and automatically generate a complete, APA-formatted references section. 
-- Integration with Google Docs is available as well.
+- Integration with Google Docs is available with the Zotero Connector browser extension as well.
 
 A note of caution, however: always check your work. Zotero and Google Scholar don’t always get the reference details exactly right, and it would be poor form to pass along an error committed by them.
 
