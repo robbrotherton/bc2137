@@ -215,7 +215,21 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#analyzing-data" id="toc-analyzing-data" class="nav-link active" data-scroll-target="#analyzing-data">Analyzing data</a></li>
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a></li>
+  <li><a href="#inferential-statistics" id="toc-inferential-statistics" class="nav-link" data-scroll-target="#inferential-statistics">Inferential statistics</a>
+  <ul class="collapse">
+  <li><a href="#sec-correlation" id="toc-sec-correlation" class="nav-link" data-scroll-target="#sec-correlation">Correlation</a></li>
+  <li><a href="#sec-ttest" id="toc-sec-ttest" class="nav-link" data-scroll-target="#sec-ttest">The <span class="math inline">\(t\)</span>-test</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  </ul></li>
+  <li><a href="#visualizing-data" id="toc-visualizing-data" class="nav-link" data-scroll-target="#visualizing-data">Visualizing data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -274,23 +288,272 @@ SD = \sqrt{\dfrac{\Sigma(X-M)^2}{n-1}}
 <p><span class="math display">\[
 SP = (X-M_X)(Y-M_Y)
 \]</span></p>
-<p>Notice that X-MX and Y-MY are deviation scores, just like we calculated for the standard deviation. Here we have two variables, X and Y, so the equation is telling us to calculate the deviation of each score from its respective mean. We then multiply each deviation for variable X by its counterpart deviation from variable Y. These are the “products,” meaning multiplied deviation scores. Finally, the tells us to add up all those products, giving the “sum of products,” SP Once we have calculated SP, the correlation coefficient, symbolized by r is calculated using the following equation:</p>
+<p>Notice that <span class="math inline">\(X - M_X\)</span> and <span class="math inline">\(Y - M_Y\)</span> are deviation scores, just like we calculated for the standard deviation. Here we have two variables, <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>, so the equation is telling us to calculate the deviation of each score from its respective mean. We then multiply each deviation for variable <span class="math inline">\(X\)</span> by its counterpart deviation from variable <span class="math inline">\(Y\)</span>. These are the “products,” meaning multiplied deviation scores. Finally, the tells us to add up all those products, giving the “sum of products,” <span class="math inline">\(SP\)</span>.</p>
+<p>Once we have calculated <span class="math inline">\(SP\)</span>, the correlation coefficient, symbolized by <span class="math inline">\(r\)</span> is calculated using the following equation:</p>
 <p><span class="math display">\[
 r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
 \]</span></p>
-<p>Here, SSX and SSY are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in X and Y separately. The numerator, SP, represents the covariability of X and Y. So the equation results in covariability as a proportion of all variability. It can range from -1, meaning a perfect negative correlation, to 0, meaning no correlation at all, to +1, meaning a perfect positive correlation. As a rule of thumb, in psychology, correlations of less than around ±0.30 are considered weak, around ±0.30 to ±0.70 are considered moderate, and greater than around ±0.70 are considered large.</p>
+<p>Here, <span class="math inline">\(SS_X\)</span> and <span class="math inline">\(SS_Y\)</span> are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> separately. The numerator, <span class="math inline">\(SP\)</span>, represents the covariability of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>. So the equation results in covariability as a proportion of all variability. It can range from <span class="math inline">\(-1\)</span>, meaning a perfect negative correlation, to <span class="math inline">\(0\)</span>, meaning no correlation at all, to <span class="math inline">\(+1\)</span>, meaning a perfect positive correlation. As a rule of thumb, in psychology, correlations of less than around <span class="math inline">\(\pm 0.30\)</span> are considered weak, around <span class="math inline">\(\pm 0.30\)</span> to <span class="math inline">\(\pm 0.70\)</span> are considered moderate, and greater than around <span class="math inline">\(\pm 0.70\)</span> are considered large.</p>
 </section>
 <section id="sec-ttest" class="level3">
 <h3 class="anchored" data-anchor-id="sec-ttest">The <span class="math inline">\(t\)</span>-test</h3>
-<p>One test to compare two groups of scores is the t-test. One form of the t-test formula, assuming that the two groups have equal sample sizes, is as follows:</p>
+<div class="columns">
+<div class="column" style="width:80%;">
+<p>One test to compare two groups of scores is the <span class="math inline">\(t\)</span>-test. One form of the <span class="math inline">\(t\)</span>-test formula, assuming that the two groups have equal sample sizes, is as follows:</p>
 <p><span class="math display">\[t = \dfrac{M_1-M_2}{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}\]</span></p>
 <p>The numerator is simply the difference between the group means (the different group means are represented by the subscripts <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>). The denominator quantifies how much of a difference is to be expected due to chance alone. It divides each group variance (<span class="math inline">\(s^2\)</span>) by the number of scores in that group, adds the answers, and then takes the square root.</p>
-<p>The size of the t statistic required to conclude that a difference between groups is real depends on the size of the samples (how many observations you took). The greater the number of observations, the smaller the t required to identify a real difference. In order to determine the exact value of <span class="math inline">\(t\)</span> required to declare the difference in groups to be reliable, several values must be determined. One of these is the degrees of freedom for the test (<span class="math inline">\(df\)</span>).</p>
-<p>The degrees of freedom, df, is another statistical correction that weights the number of observations in each experimental group. Basically, we lose one degree of freedom for each group, so with two groups, <span class="math inline">\(df = N – 2\)</span> (<span class="math inline">\(N\)</span> being the total number of scores), or:</p>
+<p>The size of the t statistic required to conclude that a difference between groups is real depends on the size of the samples (how many observations you took). The greater the number of observations, the smaller the t required to identify a real difference. In order to determine the exact value of <span class="math inline">\(t\)</span> required to declare the difference in groups to be reliable, several values must be determined. One of these is the degrees of freedom for the test (<span class="math inline">\(df\)</span>). q The degrees of freedom, <span class="math inline">\(df\)</span>, is another statistical correction that weights the number of observations in each experimental group. Basically, we lose one degree of freedom for each group, so with two groups, <span class="math inline">\(df = N – 2\)</span> (<span class="math inline">\(N\)</span> being the total number of scores), or:</p>
 <p><span class="math display">\[df=(n_1-1)+(n_2-1)\]</span></p>
-
-
+<p>The other quantity to determine is alpha (<span class="math inline">\(\alpha\)</span>), or the significance level. By convention, this is usually set at <span class="math inline">\(\alpha = .05\)</span>. This means that you are willing to chance being incorrect in your conclusion <span class="math inline">\(.05\)</span> (or 5%) of the time. More specifically, if you were able to repeat your experiment a hundred times, even if your experimental manipulation does nothing at all sometimes you would observe group means that are quite far apart just by chance alone. Specifying <span class="math inline">\(\alpha = .05\)</span> means that you will only regard a difference between means as statistically significant if it is one so large that it would occur just 5% of the time if your manipulation didn’t actually work.</p>
+<p>Once you know <span class="math inline">\(df\)</span> and <span class="math inline">\(\alpha\)</span>, you can proceed. Associated with each <span class="math inline">\(df\)</span> value is a critical <span class="math inline">\(t\)</span> value. This is a cutoff value; if the <span class="math inline">\(t\)</span> statistic you calculate for your data exceeds this critical cutoff, you conclude that there is a statically significant difference between the groups, i.e.&nbsp;the groups differ more than would be expected by chance alone 95% of the time (with <span class="math inline">\(\alpha = .05\)</span>, there is always a 5% chance of seeing such a difference by chance).</p>
+<p>Many tables of these cutoff values of <span class="math inline">\(t\)</span> are available, for the many possible values of <span class="math inline">\(df\)</span> and <span class="math inline">\(\alpha\)</span>. Here, we provide a table that provides a table that assumes <span class="math inline">\(\alpha = .05\)</span>. Look at the table and run down the <span class="math inline">\(df\)</span> column until you find the value of <span class="math inline">\(df\)</span> that matches the value for your data. The number to the right of that value is the critical value for <span class="math inline">\(t\)</span> at the <span class="math inline">\(\alpha = .05\)</span> significance level.</p>
+</div><div class="column" style="width:20%;">
+<div class="cell math-table">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">df</th>
+<th style="text-align: right;">t</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">12.706</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4.303</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">3.182</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2.776</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">2.571</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">2.447</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">2.365</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">2.306</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">2.262</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">2.228</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: right;">2.201</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">2.179</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: right;">2.160</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">2.145</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">2.131</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: right;">2.120</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">2.110</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">2.101</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">2.093</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">2.086</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">21</td>
+<td style="text-align: right;">2.080</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">22</td>
+<td style="text-align: right;">2.074</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">2.069</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">24</td>
+<td style="text-align: right;">2.064</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">2.060</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">2.056</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">27</td>
+<td style="text-align: right;">2.052</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">2.048</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">29</td>
+<td style="text-align: right;">2.045</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">2.042</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">31</td>
+<td style="text-align: right;">2.040</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">32</td>
+<td style="text-align: right;">2.037</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">2.035</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">34</td>
+<td style="text-align: right;">2.032</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">2.030</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">2.028</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">37</td>
+<td style="text-align: right;">2.026</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">38</td>
+<td style="text-align: right;">2.024</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">39</td>
+<td style="text-align: right;">2.023</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">2.021</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<section id="effect-size-for-two-group-designs" class="level4">
+<h4 class="anchored" data-anchor-id="effect-size-for-two-group-designs">Effect size for two-group designs</h4>
+<p>In addition to knowing whether a difference between two groups is statistically significant, it is necessary to quantify the effect size. The most common measure of effect size for two-group designs is Cohen’s <span class="math inline">\(d\)</span>. This is standardized way of quantifying the magnitude of difference between groups caused by the experimental manipulation, in relation to the random variability in the data. Again assuming that the two groups have the same sample size, the formula for Cohen’s <span class="math inline">\(d\)</span> is:</p>
+<p><span class="math display">\[d = \dfrac{M_1 - M_2}{(SD_1+ SD_2) / 2}\]</span> The numerator gives the difference between group means. The denominator adds each group’s standard deviation and divides by two to give the average standard deviation of the two groups (also called pooled standard deviation). Therefore, if Cohen’s <span class="math inline">\(d = 1.00\)</span>, there was a difference between the groups of one standard deviation.</p>
+<p>Cohen suggested the following rule of thumb for interpreting effect sizes in psychological research: <span class="math inline">\(d = 0.2\)</span> indicates a small effect; <span class="math inline">\(d = 0.5\)</span> indicates a moderate effect; <span class="math inline">\(d = 0.8\)</span> indicates a large effect.</p>
 </section>
+<section id="statistical-power-and-sample-size-for-two-group-designs" class="level4">
+<h4 class="anchored" data-anchor-id="statistical-power-and-sample-size-for-two-group-designs">Statistical power and sample size for two-group designs</h4>
+<p>An important aspect to consider when planning research is what sample size will be required—i.e, how many participants you should aim to recruit. This can be calculated in advance by using statistical principles and some assumptions about the quantities previously mentioned.</p>
+<p>First, consider alpha. As previously mentioned, for psychological research this is usually set as <span class="math inline">\(\alpha = .05\)</span>. This is also known as the Type 1 error rate, or false positive rate—the frequency at which you would mistakenly think that your experimental manipulation had an effect when really it didn’t.</p>
+<p>Second, the Type 2 error rate, or false negative rate, is how often you might fail to detect a real effect of your manipulation. This quantity is called beta (<span class="math inline">\(\beta\)</span>). It is related to alpha; a smaller alpha means a more stringent test, which means we are deliberately reducing our chances of detecting a real effect. But beta is also affected by sample size. The more participants in a study, the greater statistical power it will have, because increasing sample size makes it easier to detect real differences. For psychological research, it is common to specify a desired Type 2 error rate of 20%. The corresponding 80% is called the statistical power of the study: the chances that it will successfully detect the treatment effect it is designed to detect.</p>
+<p>Third, as previously explained, Cohen’s <span class="math inline">\(d\)</span> measures effect size by dividing the size of difference between group means by the pooled standard deviation. You should be able to estimate the effect size you expect your manipulation to have based on previous research which has studied similar constructs. Failing that, you should specify the minimum effect size you would be willing to accept as meaningful.</p>
+<p>Knowing the values for alpha, power, and effect size allows you to calculate the required sample size. The following is an approximate equation for calculating the required sample size:</p>
+<p><span class="math inline">\(n = \dfrac{2(Z_a + Z_B)^2}{d^2}\)</span></p>
+<p>Here <span class="math inline">\(d\)</span> is Cohen’s effect size. <span class="math inline">\(Z_a\)</span> and <span class="math inline">\(Z_B\)</span> are constants based on the mathematical properties of the normal distribution and our specified values for alpha (<span class="math inline">\(.05\)</span>) and desired power (<span class="math inline">\(.80\)</span>). For these values, <span class="math inline">\(Z_a = 1.96\)</span>; <span class="math inline">\(Z_B = .8416\)</span>. So if you expected your manipulation to cause a small effect (<span class="math inline">\(d = 0.2\)</span>), you would require <span class="math inline">\(2 * (1.96+0.8416)^2 / 0.22 \approx 393\)</span> participants <em>in each condition</em>. For a large effect size like <span class="math inline">\(0.8\)</span>, you would require <span class="math inline">\(2 * (1.96+0.8416)^2 / 0.80 \approx 25\)</span> participants per condition.</p>
+</section>
+</section>
+<section id="anova" class="level3">
+<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<p>The Analysis of Variance (ANOVA) test is an extension of the <span class="math inline">\(t\)</span> test. It is used where there are more than two groups to be compared. ANOVAs look at the ratio of variance between groups (deviations of group means from a grand mean) to error variance (deviation of individual scores). The larger the ratio, the more likely it is that the differences among groups are due to the experimental manipulation and not just due to chance.</p>
+<p>ANOVA can even be used with more than one independent variable. Experiments often manipulate more than one independent variable, and examine the effects of those variables using ANOVA. This kind of analysis is called a “factorial” ANOVA, because there is more than one “factor”, meaning independent variable. The experimental design is referred to by the number of “levels” (meaning conditions) of each factor. For example, if a design has two independent variables, each with two different conditions, it would be referred to as a 2x2 ANOVA design. A 4x3x2 design has one factor with four levels, another factor with three levels, and a third factor with two levels.</p>
+<p>These experiments can potentially describe the real world more completely and realistically. Consider the following example.</p>
+<p>Some research on people’s perceptions of procedural justice and fairness suggests that people feel they’ve been treated fairly when they get what they want. Some other research, however, suggests that people feel they’ve been treated fairly when they get what they deserve. So if you have behaved badly and you are then treated badly, you might be satisfied and say it was fair. A study to examine this hypothesis might manipulate people’s behavior as one independent variable; participants could put in a situation where they are led to behave either positively (not cheating on a test) or negatively (cheating on a test). The second independent variable might be how a research assistant then treats the participant, either respectfully or disrespectfully. This would be a 2x2 design—two IVs, each with two levels. The dependent variable—the thing that the researcher measures—might be participants’ feeling of how fairly they were treated.</p>
+<p>Factorial designs are more complicated to interpret, because of the more complicated design. One type of information we get is about the effect of each variable by itself. This is called the main effect. With two independent variables, there are two main effects. In the example above, either behavior or treatment could have had a significant effect on perceived fairness.</p>
+<p>The second type of information we get from factorial designs is called an interaction. If there is an interaction, the effect of one independent variable depends on the level of the other independent variable. So in the above example, one outcome may be to find a main effect of treatment but no interaction; people might simply think they have been treated fairly when they were treated with respect, regardless of their actual behavior. However, another possible outcome would be to find an interaction between treatment and behavior; maybe your perception of the fairness of your treatment depends on how you behaved. If you are treated poorly but you did something to deserve it, you might perceive it as fair. One the other hand, being treated respectfully for bad behavior might be perceived as unfair. This would indicate an interaction.</p>
+<section id="effect-size-power-for-anova" class="level4">
+<h4 class="anchored" data-anchor-id="effect-size-power-for-anova">Effect size &amp; power for ANOVA</h4>
+<p>The small, free application G*Power can help you determine required sample sizes for ANOVA designs. http://www.gpower.hhu.de/</p>
+</section>
+</section>
+</section>
+<section id="visualizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-data">Visualizing data</h2>
+<p>Even though you won’t be collecting data, you will be forecasting plausible-seeming results. Doing so requires understanding at least the gist of the relevant statistics as described above. One other piece of the puzzle is thinking about your hypothetical data and results visually: how would it look as a graph? In fact, if you’re unsure about what results to expect, or you’re unsure whether your expected results are really plausible, thinking about a corresponding graph can help clarify your thinking.</p>
+<p>There are a few standard ways of visualizing data, depending on the nature of the data and the design of the study. (Note that my examples here are deliberately rough; a pencil sketch is perfectly fine as long as it is clear.)</p>
+<p>For bivariate correlational data, a scatterplot is usually appropriate. This will have a labelled x-axis and y-axis, one for each of your two variables. Which variable goes on which axis is somewhat arbitrary, though if you can think of your variables as a “predictor” (something you would know about a person) and “predicted” (the variable you want to predict based on the predictor), you can put the predictor on the x-axis and predicted on the y-axis (see Figure 1).</p>
+<div id="fig-cor" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/correlation.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;C.1: Example of a scatterplot showing a dot for each hypothetical data point. Note that axes should have meaningful labels.</figcaption><p></p>
+</figure>
+</div>
+<p>For comparing groups—either two groups in a t-test design or three (or more) groups in a single-factor ANOVA design—a bar graph is often the best choice. Here the categorical grouping variable will be on the x-axis and scores on the dependent variables will be on the y-axis. Each bar represents a different group, and the height of the bar represents the average score on the DV of all participants within that group.</p>
+<div id="fig-bar" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/bar.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;C.2: Example of a bar graph showing average scores on the dependent variable for three groups of the independent variable. Note that, again, your graph would have more meaningful labels.</figcaption><p></p>
+</figure>
+</div>
+<p>For a 2x2 ANOVA design, a line graph can be clearest. In this case, one IV is represented as two marks on the x-axis, and the second IV is represented by separate lines (different colors, or solid and dashed, say). The y-axis represents scores on the DV.</p>
+<div id="fig-anova" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/anova.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;C.3: Example of a 2x2 line graph. The two conditions of IV1 are represented on the x-axis, and the two conditions of IV2 are represented by the solid and dashed lines.</figcaption><p></p>
+</figure>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
