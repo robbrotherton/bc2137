@@ -169,17 +169,17 @@ For bivariate correlational data, a scatterplot is usually appropriate. This wil
 
 
 ![Example of a scatterplot showing a dot for each hypothetical data point. Note that axes should have meaningful labels.
-](figures/correlation.png){#fig-cor}
+](figures/correlation.png){#fig-cor width="80%"}
 
 
 For comparing groups—either two groups in a t-test design or three (or more) groups in a single-factor ANOVA design—a bar graph is often the best choice. Here the categorical grouping variable will be on the x-axis and scores on the dependent variables will be on the y-axis. Each bar represents a different group, and the height of the bar represents the average score on the DV of all participants within that group.
 
-![Example of a bar graph showing average scores on the dependent variable for three groups of the independent variable. Note that, again, your graph would have more meaningful labels.](figures/bar.png){#fig-bar width="80%"}
+![Example of a bar graph showing average scores on the dependent variable for three conditions of the independent variable. Errorbars represent the 95% Confidence Interval for each mean. Note that, again, your graph would have more meaningful labels.](figures/bar.png){#fig-bar width="80%"}
 
 
 For a 2x2 ANOVA design, a line graph can be clearest. In this case, one IV is represented as two marks on the x-axis, and the second IV is represented by separate lines (different colors, or solid and dashed, say). The y-axis represents scores on the DV.
  
-![Example of a 2x2 line graph. The two conditions of IV1 are represented on the x-axis, and the two conditions of IV2 are represented by the solid and dashed lines.](figures/anova.png){#fig-anova width="80%]"}
+![Example of a 2x2 line graph. The two conditions of IV1 are represented on the x-axis, and the two conditions of IV2 are represented by the solid and dashed lines.](figures/anova.png){#fig-anova width="80%"}
 
 
 ```{r setup-for-xkcd-plots}
@@ -196,6 +196,12 @@ font_add("xkcd", regular = "xkcd.ttf")
 showtext_auto()
 
 library(xkcd)
+
+axis_text_size <- 40
+title_text_size <- 60
+
+plot_width <- 3
+plot_height <- 3
 ```
 
 
@@ -210,37 +216,49 @@ xrange <- range(scatter_df$X1)
 yrange <- range(scatter_df$X2)
 
 ggplot(scatter_df, aes(X1, X2)) +
-  geom_point() +
-  xkcdaxis(c(1,5),c(1,5), ) +
+  geom_point(size = 2) +
+  xkcdaxis(c(1,5),c(1,5), size = 10) +
+  scale_x_continuous(expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
   labs(x = "Variable X", y = "Variable Y") +
-  theme(axis.text = element_text(family = "xkcd", size = 15),
-        axis.title = element_text(family = "xkcd", size = 25))
+  theme(axis.text = element_text(family = "xkcd", size = axis_text_size),
+        axis.title = element_text(family = "xkcd", size = title_text_size))
 
-ggsave(here::here("figures", "correlation.svg"), width = 3, height = 3)
+ggsave(here::here("figures", "correlation.png"), 
+       dpi = 300,
+       width =  plot_width, 
+       height = plot_height)
 ```
 
 ```{r bar-plot}
 #| echo: false
 #| eval: false
 
-set.seed(1)
+set.seed(3)
 bar_df <- data.frame(x = 1:3,
                      y = 1:3) |> 
   dplyr::mutate(xmin = x - 0.25, xmax = x + 0.25,
-                ymin = 0, ymax = y)
+                ymin = 0, ymax = y,
+                error = 0.1 + abs(rnorm(3, sd = 0.1)))
 
 xrange <- range(scatter_df$X1)
 yrange <- range(scatter_df$X2)
 mapping <- aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax)
 ggplot() +
   xkcdrect(mapping, bar_df, fill = "#cccccc") +
+  geom_errorbar(aes(x = x,
+                    ymin = y - error, ymax = y + error), data = bar_df, width = 0.2) +
   xkcdaxis(c(0,4), c(0,3)) +
-  scale_x_continuous(breaks = 1:3, labels = LETTERS[1:3]) +
+  scale_x_continuous(breaks = 1:3, labels = LETTERS[1:3],
+                     expand = c(0,0)) +
+  scale_y_continuous(expand = expansion(c(0,0.1))) +
   labs(x = "Condition", y = "DV") +
-  theme(axis.text = element_text(family = "xkcd", size = 15),
-        axis.title = element_text(family = "xkcd", size = 25))
+  theme(axis.text = element_text(family = "xkcd", size = axis_text_size),
+        axis.title = element_text(family = "xkcd", size = title_text_size))
 
-ggsave(here::here("figures", "bar.svg"), width = 4, height = 3)
+ggsave(here::here("figures", "bar.png"), 
+       width = 4, 
+       height = 3)
 ```
 
 
@@ -254,15 +272,17 @@ anova_df <- data.frame(IV1 = c(1, 1, 2, 2),
 
 ggplot() +
   geom_line(data = anova_df, aes(x = IV1, y = DV, linetype = IV2)) +
-  geom_point(data = anova_df, aes(x = IV1, y = DV, color = IV2), size = 1.5) +
+  geom_point(data = anova_df, aes(x = IV1, y = DV, color = IV2), size = 2) +
   xkcdaxis(c(0.5,2.5), c(0.8,2.2)) +
-  scale_x_continuous(breaks = 1:2, labels = LETTERS[1:2]) +
+  scale_x_continuous(breaks = 1:2, labels = LETTERS[1:2],
+                     expand = c(0,0)) +
+  scale_y_continuous(expand = c(0,0)) +
   # labs(x = "Condition", y = "DV") +
-  theme(axis.text = element_text(family = "xkcd", size = 15),
+  theme(axis.text = element_text(family = "xkcd", size = axis_text_size),
         axis.text.y = element_blank(),
-        axis.title = element_text(family = "xkcd", size = 25),
-        legend.title = element_text(family = "xkcd", size = 25),
-        legend.text = element_text(family = "xkcd", size = 15))
+        axis.title = element_text(family = "xkcd", size = title_text_size),
+        legend.title = element_text(family = "xkcd", size = title_text_size, vjust = -30),
+        legend.text = element_text(family = "xkcd", size = axis_text_size))
 
 ggsave(here::here("figures", "anova.png"), width = 4, height = 3)
 ```
