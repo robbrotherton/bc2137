@@ -69,12 +69,22 @@ $$
 
 Here, $SS_X$ and $SS_Y$ are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in $X$ and $Y$ separately. The numerator, $SP$, represents the covariability of $X$ and $Y$. So the equation results in covariability as a proportion of all variability. It can range from $-1$, meaning a perfect negative correlation, to $0$, meaning no correlation at all, to $+1$, meaning a perfect positive correlation. As a rule of thumb, in psychology, correlations of less than around $\pm 0.30$ are considered weak, around $\pm 0.30$ to $\pm 0.70$ are considered moderate, and greater than around $\pm 0.70$ are considered large.
 
+
+\newpage
+
 ### The $t$-test  {#sec-ttest}
 
+```{r}
+#| echo: false
+#| class: math-table
 
-:::: {.columns}
+t_df <- tibble::tibble(df = 1:40, t = abs(qt(p = 0.025, df = df)))
 
-::: {.column width="80%"}
+knitr::kable(t_df, digits = 3) |> 
+  kableExtra::kable_styling(position = "float_right") |>
+  kableExtra::row_spec(0, italic = TRUE)
+```
+
 
 One test to compare two groups of scores is the $t$-test. One form of the $t$-test formula, assuming that the two groups have equal sample sizes, is as follows:
 
@@ -82,32 +92,20 @@ $$t = \dfrac{M_1-M_2}{\dfrac{s_1^2}{n_1}+\dfrac{s_2^2}{n_2}}$$
 
 The numerator is simply the difference between the group means (the different group means are represented by the subscripts $1$ and $2$). The denominator quantifies how much of a difference is to be expected due to chance alone. It divides each group variance ($s^2$) by the number of scores in that group, adds the answers, and then takes the square root.
 
-The size of the t statistic required to conclude that a difference between groups is real depends on the size of the samples (how many observations you took). The greater the number of observations, the smaller the t required to identify a real difference. In order to determine the exact value of $t$ required to declare the difference in groups to be reliable, several values must be determined. One of these is the degrees of freedom for the test ($df$).
- q
-The degrees of freedom, $df$, is another statistical correction that weights the number of observations in each experimental group. Basically, we lose one degree of freedom for each group, so with two groups, $df = N – 2$ ($N$ being the total number of scores), or:
+The size of the $t$ statistic required to conclude that a difference between groups is real depends on the size of the samples (how many observations you took). The greater the number of observations, the smaller the $t$ required to identify a real difference. In order to determine the exact value of $t$ required to declare the difference in groups to be reliable, several values must be determined.
+
+One of these is the degrees of freedom for the test ($df$). The degrees of freedom, $df$, is another statistical correction that weights the number of observations in each experimental group. Basically, we lose one degree of freedom for each group, so with two groups, $df = N – 2$ ($N$ being the total number of scores), or:
 
 $$df=(n_1-1)+(n_2-1)$$
 
 
 The other quantity to determine is alpha ($\alpha$), or the significance level. By convention, this is usually set at $\alpha = .05$. This means that you are willing to chance being incorrect in your conclusion $.05$ (or 5%) of the time. More specifically, if you were able to repeat your experiment a hundred times, even if your experimental manipulation does nothing at all sometimes you would observe group means that are quite far apart just by chance alone. Specifying $\alpha = .05$ means that you will only regard a difference between means as statistically significant if it is one so large that it would occur just 5% of the time if your manipulation didn’t actually work. 
 
-Once you know $df$ and $\alpha$, you can proceed. Associated with each $df$ value is a critical $t$ value. This is a cutoff value; if the $t$ statistic you calculate for your data exceeds this critical cutoff, you conclude that there is a statically significant difference between the groups, i.e. the groups differ more than would be expected by chance alone 95% of the time (with $\alpha = .05$, there is always a 5% chance of seeing such a difference by chance).
+Once you know $df$ and $\alpha$, you can proceed. Associated with each $df$ value is a critical $t$ value (see table to the right). This is a cutoff value; if the $t$ statistic you calculate for your data exceeds this critical cutoff, you conclude that there is a statically significant difference between the groups, i.e. the groups differ more than would be expected by chance alone 95% of the time (with $\alpha = .05$, there is always a 5% chance of seeing such a difference by chance).
 
 Many tables of these cutoff values of $t$ are available, for the many possible values of $df$ and $\alpha$. Here, we provide a table that provides a table that assumes $\alpha = .05$. Look at the table and run down the $df$ column until you find the value of $df$ that matches the value for your data. The number to the right of that value is the critical value for $t$ at the $\alpha = .05$ significance level.
-:::
 
-::: {.column width="20%"}
-```{r}
-#| echo: false
-#| class: math-table
 
-t_df <- tibble::tibble(df = 1:40, t = abs(qt(p = 0.025, df = df)))
-
-knitr::kable(t_df, digits = 3)
-```
-:::
-
-::::
 
 
 
@@ -118,9 +116,12 @@ knitr::kable(t_df, digits = 3)
 In addition to knowing whether a difference between two groups is statistically significant, it is necessary to quantify the effect size. The most common measure of effect size for two-group designs is Cohen’s $d$. This is standardized way of quantifying the magnitude of difference between groups caused by the experimental manipulation, in relation to the random variability in the data. Again assuming that the two groups have the same sample size, the formula for Cohen's $d$ is:
 
 $$d = \dfrac{M_1 - M_2}{(SD_1+ SD_2) / 2}$$
+
 The numerator gives the difference between group means. The denominator adds each group's standard deviation and divides by two to give the average standard deviation of the two groups (also called pooled standard deviation). Therefore, if Cohen's $d = 1.00$, there was a difference between the groups of one standard deviation.
 
 Cohen suggested the following rule of thumb for interpreting effect sizes in psychological research: $d = 0.2$ indicates a small effect; $d = 0.5$ indicates a moderate effect; $d = 0.8$ indicates a large effect.
+
+
 
 #### Statistical power and sample size for two-group designs
 
@@ -257,8 +258,8 @@ ggplot() +
         axis.title = element_text(family = "xkcd", size = title_text_size))
 
 ggsave(here::here("figures", "bar.png"), 
-       width = 4, 
-       height = 3)
+       width = 3, 
+       height = 2.5)
 ```
 
 
@@ -277,14 +278,15 @@ ggplot() +
   scale_x_continuous(breaks = 1:2, labels = LETTERS[1:2],
                      expand = c(0,0)) +
   scale_y_continuous(expand = c(0,0)) +
-  # labs(x = "Condition", y = "DV") +
   theme(axis.text = element_text(family = "xkcd", size = axis_text_size),
         axis.text.y = element_blank(),
         axis.title = element_text(family = "xkcd", size = title_text_size),
         legend.title = element_text(family = "xkcd", size = title_text_size, vjust = -30),
-        legend.text = element_text(family = "xkcd", size = axis_text_size))
+        legend.text = element_text(family = "xkcd", size = axis_text_size, hjust = -100))
 
-ggsave(here::here("figures", "anova.png"), width = 4, height = 3)
+ggsave(here::here("figures", "anova.png"), 
+       width = 3, 
+       height = 2)
 ```
 
 
