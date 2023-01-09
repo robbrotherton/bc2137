@@ -19,9 +19,9 @@ However, while correlational techniques can tell us about associations between v
 ## Suggested reading
 
 ::: {.references}
-\hangindent=0.7cm Borgonovi, F. (2008). Doing well by doing good. The relationship between formal volunteering and self-reported health and happiness. Social science & medicine, 66(11), 2321-2334. https://doi.org/10.1016/j.socscimed.2008.01.011
+\hangindent=0.7cm Borgonovi, F. (2008). Doing well by doing good. The relationship between formal volunteering and self-reported health and happiness. *Social science & medicine, 66*(11), 2321-2334. <https://doi.org/10.1016/j.socscimed.2008.01.011>
 
-\hangindent=0.7cm Fiedler, K., Schott, M., & Meiser, T. (2011). What mediation analysis can (not) do. Journal of Experimental Social Psychology, 47(6), 1231-1236. https://doi.org/10.1016/j.jesp.2011.05.007
+\hangindent=0.7cm Fiedler, K., Schott, M., & Meiser, T. (2011). What mediation analysis can (not) do. *Journal of Experimental Social Psychology, 47*(6), 1231-1236. <https://doi.org/10.1016/j.jesp.2011.05.007>
 :::
 
 

@@ -13,7 +13,7 @@ This week’s lab will focus on more complex experimental designs, focusing on t
 ## Suggested reading
 
 ::: {.references}
-\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394. <https://doi.org/10.1037/0033-2909.121.3.371>
+\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. *Psychological bulletin, 121*(3), 371–394. <https://doi.org/10.1037/0033-2909.121.3.371>
 :::
 
 

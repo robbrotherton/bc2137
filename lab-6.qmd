@@ -15,7 +15,7 @@ The simplest example of this design is one in which the researcher randomly assi
 ## Suggested reading
 
 ::: {.references}
-\hangindent=0.7cm Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. Journal of Verbal Learning and Verbal Behavior, 13(5), 585–589. https://doi.org/10.1016/S0022-5371(74)80011-3 
+\hangindent=0.7cm Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. *Journal of Verbal Learning and Verbal Behavior, 13(5)*, 585–589. <https://doi.org/10.1016/S0022-5371(74)80011-3> 
 :::
 
 

@@ -16,11 +16,11 @@ As an introduction to social psychological thought, methods, and ethical conside
 ## Suggested reading
 
 ::: {.references}
-\hangindent=0.7cm Milgram, S. (1963). Behavioral study of obedience. Journal of Abnormal and Social Psychology, 67(4), 371.
+\hangindent=0.7cm Milgram, S. (1963). Behavioral study of obedience. *Journal of Abnormal and Social Psychology, 67*(4), 371. <https://psycnet.apa.org/doi/10.1037/h0040525>
 
-\hangindent=0.7cm Haslam, S. A., & Reicher, S. D. (2012). Contesting the “nature” of conformity: What Milgram and Zimbardo's studies really show. PLoS Biology, 10(11), e1001426.
+\hangindent=0.7cm Haslam, S. A., & Reicher, S. D. (2012). Contesting the “nature” of conformity: What Milgram and Zimbardo's studies really show. *PLoS Biology, 10*(11), e1001426. <https://doi.org/10.1371/journal.pbio.1001426>
 
-\hangindent=0.7cm Reicher, S. D., Haslam, S. A., & Smith, J. R. (2012). Working toward the experimenter: Reconceptualizing obedience within the Milgram paradigm as identification-based followership. Perspectives on Psychological Science, 7(4), 315-324.
+\hangindent=0.7cm Reicher, S. D., Haslam, S. A., & Smith, J. R. (2012). Working toward the experimenter: Reconceptualizing obedience within the Milgram paradigm as identification-based followership. *Perspectives on Psychological Science, 7*(4), 315-324. <https://doi.org/10.1177/1745691612448482>
 :::
 
 
