@@ -27,9 +27,9 @@ book:
     - lab-12.qmd
     - lab-13.qmd
   appendices:
-    - x-reading-research.qmd
-    - x-searching-the-literature.qmd
-    - x-statistics.qmd
+    - a-searching-the-literature.qmd
+    - a-reading-research.qmd
+    - a-statistics.qmd
     - a-consent-form.qmd
     - a-debrief.qmd
     - a-writing-a-report.qmd

@@ -13,7 +13,7 @@ There are two major components of APA style. First, there are the nitty-gritty a
 
 One exception, however, is for citations and references. Since you are writing a scientific document based on existing research, it is important to cite that existing research according to the conventions of the field so that your sources can easily be checked by any interested reader. So while you can largely ignore fiddly formatting details, you will have to make an effort to use the correct citation style (or let a reference manager app like Zotero do the work for you; see [Appendix -@sec-searching].
 
-The second component of writing an APA-style research article is the content. For our purposes this is much more important than arbitrary formatting rules. You must ensure that all the expected content is present in your work; that unneeded content is not present, so as not to distract or take away from the clarity and coherence of your writing; and that it is communicated in the tone expected of a psychological research article. The assignment description for each draft section will give an outline of required content, and you will find more advice and tips in Appendix F: Guide to Writing Lab Reports (p. ).
+The second component of writing an APA-style research article is the content. For our purposes this is much more important than arbitrary formatting rules. You must ensure that all the expected content is present in your work; that unneeded content is not present, so as not to distract or take away from the clarity and coherence of your writing; and that it is communicated in the tone expected of a psychological research article. The assignment description for each draft section will give an outline of required content, and you will find more advice and tips in [Appendix @sec-writing]<span class="exclude-from-html">, p. \pageref{sec-writing}</span>.
 
 
 
@@ -28,3 +28,8 @@ You will submit a draft of your Introduction section. This will be based on the 
     - The key is to make this a logically-flowing argument rather than a simple list of studies. Make sure each paragraph focuses on a single theme (which might be one study or more than one related study), and that each paragraph also transitions from and to the next by pointing out how the studies/theme relates to the others, and how they contribute towards your own research proposal.
 - The last paragraph should briefly sum up your literature review, and state the question you are trying to answer. What are your specific hypotheses or expectations?
 - You should be framing this as a gap in the literature you just outlined, or a necessary extension of some existing study.
+
+
+## Notes {.exclude-from-html}
+
+\cleartoleftpage

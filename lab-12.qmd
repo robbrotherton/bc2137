@@ -21,3 +21,9 @@ Each pair will be allotted five minutes total for their talk and Q&A. Going over
 As an audience member, you are still being graded for class participation this week. That means giving everyone else’s presentation the attention and enthusiasm it deserves, and rewarding their hard work with questions. (Going to the trouble of putting together a presentation only for nobody to have anything to say about it is not a good feeling.)
 
 Good questions to ask are things like “Could you clarify X”, “Had you considered Y”, or “How might this relate to Z.” One reason for presenting your project is to hopefully get some useful feedback from the audience with which to refine your final paper, so try to give the kind of feedback you hope to receive.
+
+
+
+## Notes {.exclude-from-html}
+
+\cleartoleftpage

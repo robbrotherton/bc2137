@@ -9,7 +9,7 @@
 
 This week’s lab will focus on experimental designs, in which the researcher manipulates one variable (the independent variable) and measures another (the dependent variable).
 
-The simplest example of this design is one in which the researcher randomly assigns participants to one of two groups, and then uses statistical techniques to look for differences between the groups (see Appendix C, section on the t-test, p. ). 
+The simplest example of this design is one in which the researcher randomly assigns participants to one of two groups, and then uses statistical techniques to look for differences between the groups (see [Appendix @sec-ttest]<span class="exclude-from-html">, p. \pageref{sec-ttest}</span>). 
 
 
 ## Suggested reading

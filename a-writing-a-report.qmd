@@ -3,7 +3,7 @@ toc: true
 toc-depth: 5
 ---
 
-# Guide to writing a research report
+# Guide to writing a research report {#sec-writing}
 
 An important aspect of your project is to practice writing a paper according to the conventions of the field of psychology. The aim of a report is to inform the reader about an experiment or study, its procedures, its purpose, and its outcome—or, if you are writing a theoretical paper, to present a broad, coherent, evidence-based argument which synthesizes the existing literature and presents your own interpretation of how a body of work helps us understand a particular phenomenon.
 

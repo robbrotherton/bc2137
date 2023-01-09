@@ -7,7 +7,7 @@
 - Style and contents of an APA Method section
 
 
-This week you will finalize the details of your planned methodology, including collecting/producing all required materials, and creating Informed Consent (see Appendix D, p. ) and Debriefing (see Appendix E, p. ) documents. We will consider methodological rigor and replicability, as well as what researchers are required to tell participants in the informed consent and debriefing documents, and why.
+This week you will finalize the details of your planned methodology, including collecting/producing all required materials, and creating Informed Consent  (see [Appendix @sec-consent]<span class="exclude-from-html">, p. \pageref{sec-consent}</span>) and Debriefing (see [Appendix @sec-debrief]<span class="exclude-from-html">, p. \pageref{sec-debrief}</span>) documents. We will consider methodological rigor and replicability, as well as what researchers are required to tell participants in the informed consent and debriefing documents, and why.
 
 
 ## Assignment

@@ -1,4 +1,4 @@
-# Example consent form
+# Example consent form {#sec-consent}
 
 
 

@@ -1,4 +1,4 @@
-# Example debriefing document
+# Example debriefing document {#sec-debrief}
 
 __Here’s an example debriefing from a study on national stereotypes—a potentially sensitive topic. Notes are in [*italics*].__
 

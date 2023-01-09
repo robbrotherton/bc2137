@@ -25,3 +25,8 @@ You’ll submit a draft of your Discussion section. Your Discussion section shou
     - Be critical in pointing out potential flaws, but make sure also to assert the strengths of your plan—aspects that were carefully considered, and would improve somehow upon what previous research did.
 - What is the overall importance of your project?
     - Your final paragraph should sum up your project’s potential contribution to the field of social psychology. This may be as narrow as replicating one existing finding, or as broad as challenging an existing theoretical perspective. Be bold but realistic.
+
+
+## Notes {.exclude-from-html}
+
+\cleartoleftpage

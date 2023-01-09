@@ -140,7 +140,7 @@ $n = \dfrac{2(Z_a + Z_B)^2}{d^2}$
 Here $d$ is Cohen’s effect size. $Z_a$ and $Z_B$ are constants based on the mathematical properties of the normal distribution and our specified values for alpha ($.05$) and desired power ($.80$). For these values, $Z_a = 1.96$; $Z_B = .8416$. So if you expected your manipulation to cause a small effect ($d = 0.2$), you would require $2 * (1.96+0.8416)^2 / 0.22 \approx 393$ participants *in each condition*. For a large effect size like $0.8$, you would require $2 * (1.96+0.8416)^2 / 0.80 \approx 25$ participants per condition.
 
 
-### ANOVA
+### ANOVA {#sec-anova}
 
 The Analysis of Variance (ANOVA) test is an extension of the $t$ test. It is used where there are more than two groups to be compared. ANOVAs look at the ratio of variance between groups (deviations of group means from a grand mean) to error variance (deviation of individual scores). The larger the ratio, the more likely it is that the differences among groups are due to the experimental manipulation and not just due to chance.
 
@@ -160,7 +160,7 @@ The small, free application G*Power can help you determine required sample sizes
 
 
 
-## Visualizing data
+## Visualizing data {#sec-viz}
 
 Even though you won’t be collecting data, you will be forecasting plausible-seeming results. Doing so requires understanding at least the gist of the relevant statistics as described above. One other piece of the puzzle is thinking about your hypothetical data and results visually: how would it look as a graph? In fact, if you’re unsure about what results to expect, or you’re unsure whether your expected results are really plausible, thinking about a corresponding graph can help clarify your thinking. 
 

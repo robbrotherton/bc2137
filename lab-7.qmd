@@ -6,14 +6,14 @@
 - Factorial designs
 
 
-This week’s lab will focus on more complex experimental designs, focusing on the value of control conditions and factorial designs. These ideas are discussed more extensively in Appendix C, section on ANOVA, p. ).
+This week’s lab will focus on more complex experimental designs, focusing on the value of control conditions and factorial designs. These ideas are discussed more extensively in [Appendix @sec-anova]<span class="exclude-from-html">, p. \pageref{sec-anova}</span>.
 
 
 
 ## Suggested reading
 
 ::: {.references}
-\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394.
+\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. Psychological bulletin, 121(3), 371–394. <https://doi.org/10.1037/0033-2909.121.3.371>
 :::
 
 
@@ -36,3 +36,8 @@ Your brief proposal should include:
     - What is your fundamental analytic approach? Is this a correlational study where you’re looking for associations between variables, or an experimental study in which you’re looking for differences between randomly-assigned groups, or a quasi-experimental study in which you’re looking for differences between pre-existing groups? What is it, in a nutshell, that you expect to find?
 - References
     - Include an APA-formatted reference for each study you cite
+
+
+## Notes {.exclude-from-html}
+
+\cleartoleftpage

@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./a-consent-form.html" rel="next">
-<link href="./x-searching-the-literature.html" rel="prev">
+<link href="./a-reading-research.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -183,17 +183,17 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./x-reading-research.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Tips for Reading Research Papers</span></a>
+  <a href="./a-searching-the-literature.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Searching the Literature</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./x-searching-the-literature.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Searching the Literature</span></a>
+  <a href="./a-reading-research.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Tips for Reading Research Papers</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./x-statistics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Summary of Basic Statistics</span></a>
+  <a href="./a-statistics.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">C</span>&nbsp; <span class="chapter-title">Summary of Basic Statistics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -228,9 +228,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#sec-correlation" id="toc-sec-correlation" class="nav-link" data-scroll-target="#sec-correlation">Correlation</a></li>
   <li><a href="#sec-ttest" id="toc-sec-ttest" class="nav-link" data-scroll-target="#sec-ttest">The <span class="math inline">\(t\)</span>-test</a></li>
-  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#sec-anova" id="toc-sec-anova" class="nav-link" data-scroll-target="#sec-anova">ANOVA</a></li>
   </ul></li>
-  <li><a href="#visualizing-data" id="toc-visualizing-data" class="nav-link" data-scroll-target="#visualizing-data">Visualizing data</a></li>
+  <li><a href="#sec-viz" id="toc-sec-viz" class="nav-link" data-scroll-target="#sec-viz">Visualizing data</a></li>
   </ul>
 </nav>
     </div>
@@ -504,8 +504,8 @@ r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
 <p>Here <span class="math inline">\(d\)</span> is Cohen’s effect size. <span class="math inline">\(Z_a\)</span> and <span class="math inline">\(Z_B\)</span> are constants based on the mathematical properties of the normal distribution and our specified values for alpha (<span class="math inline">\(.05\)</span>) and desired power (<span class="math inline">\(.80\)</span>). For these values, <span class="math inline">\(Z_a = 1.96\)</span>; <span class="math inline">\(Z_B = .8416\)</span>. So if you expected your manipulation to cause a small effect (<span class="math inline">\(d = 0.2\)</span>), you would require <span class="math inline">\(2 * (1.96+0.8416)^2 / 0.22 \approx 393\)</span> participants <em>in each condition</em>. For a large effect size like <span class="math inline">\(0.8\)</span>, you would require <span class="math inline">\(2 * (1.96+0.8416)^2 / 0.80 \approx 25\)</span> participants per condition.</p>
 </section>
 </section>
-<section id="anova" class="level3">
-<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<section id="sec-anova" class="level3">
+<h3 class="anchored" data-anchor-id="sec-anova">ANOVA</h3>
 <p>The Analysis of Variance (ANOVA) test is an extension of the <span class="math inline">\(t\)</span> test. It is used where there are more than two groups to be compared. ANOVAs look at the ratio of variance between groups (deviations of group means from a grand mean) to error variance (deviation of individual scores). The larger the ratio, the more likely it is that the differences among groups are due to the experimental manipulation and not just due to chance.</p>
 <p>ANOVA can even be used with more than one independent variable. Experiments often manipulate more than one independent variable, and examine the effects of those variables using ANOVA. This kind of analysis is called a “factorial” ANOVA, because there is more than one “factor”, meaning independent variable. The experimental design is referred to by the number of “levels” (meaning conditions) of each factor. For example, if a design has two independent variables, each with two different conditions, it would be referred to as a 2x2 ANOVA design. A 4x3x2 design has one factor with four levels, another factor with three levels, and a third factor with two levels.</p>
 <p>These experiments can potentially describe the real world more completely and realistically. Consider the following example.</p>
@@ -518,8 +518,8 @@ r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
 </section>
 </section>
 </section>
-<section id="visualizing-data" class="level2">
-<h2 class="anchored" data-anchor-id="visualizing-data">Visualizing data</h2>
+<section id="sec-viz" class="level2">
+<h2 class="anchored" data-anchor-id="sec-viz">Visualizing data</h2>
 <p>Even though you won’t be collecting data, you will be forecasting plausible-seeming results. Doing so requires understanding at least the gist of the relevant statistics as described above. One other piece of the puzzle is thinking about your hypothetical data and results visually: how would it look as a graph? In fact, if you’re unsure about what results to expect, or you’re unsure whether your expected results are really plausible, thinking about a corresponding graph can help clarify your thinking.</p>
 <p>There are a few standard ways of visualizing data, depending on the nature of the data and the design of the study. (Note that my examples here are deliberately rough; a pencil sketch is perfectly fine as long as it is clear.)</p>
 <p>For bivariate correlational data, a scatterplot is usually appropriate. This will have a labelled x-axis and y-axis, one for each of your two variables. Which variable goes on which axis is somewhat arbitrary, though if you can think of your variables as a “predictor” (something you would know about a person) and “predicted” (the variable you want to predict based on the predictor), you can put the predictor on the x-axis and predicted on the y-axis (see Figure 1).</p>
@@ -810,8 +810,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./x-searching-the-literature.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Searching the Literature</span></span>
+      <a href="./a-reading-research.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Tips for Reading Research Papers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

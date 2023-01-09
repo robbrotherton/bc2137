@@ -6,7 +6,7 @@
 -   How to read a research paper
 -   Beginning to decide on an appropriate research question
 
-This session is about looking ahead to what your lab paper will consist of and starting to lay the foundations. We'll cover critical skills, including how to search the psychological literature to find existing research relevant to your interests (see Appendix A, p. ) and how to skim papers to quickly determine whether they are worth spending your time on and how to read them to get the most out of them (see Appendix B, p. ). We'll also practice coming up with viable hypotheses to test social psychological questions.
+This session is about looking ahead to what your lab paper will consist of and starting to lay the foundations. We'll cover critical skills, including how to search the psychological literature to find existing research relevant to your interests (see [Appendix @sec-searching]<span class="exclude-from-html">, p. \pageref{sec-searching}</span>) and how to skim papers to quickly determine whether they are worth spending your time on and how to read them to get the most out of them (see [Appendix @sec-reading]<span class="exclude-from-html">, p. \pageref{sec-reading}</span>). We'll also practice coming up with viable hypotheses to test social psychological questions.
 
 ## Assignment
 
