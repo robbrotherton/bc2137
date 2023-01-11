@@ -1,16 +1,47 @@
 
+
 # About this handbook {.unnumbered}
+
+
+
+> Only when certain events recur in accordance with rules or regularities, as in the case of repeatable experiments, can our observations be tested—in principle—by anyone. We do not take even our own observations quite
+seriously, or accept them as scientific observations, until we have
+repeated and tested them. Only by such repetition can we convince ourselves that we are not dealing with a mere isolated ‘coincidence,’ but with events which, on account of their regularity and reproducibility, are in principle inter-subjectively testable.
+>
+> -- <cite>Karl Popper ([1959](http://philotextes.info/spip/IMG/pdf/popper-logic-scientific-discovery.pdf))</cite>
+
+
 
 This handbook is intended to serve as a resource allowing you to see from the outset what lies ahead, and as a place to collect your notes as we progress through the course.
 
 It is important that you know in advance what to expect from this lab so that you can plan your time accordingly. That information is all here in this handbook. This laboratory handbook outlines the procedures, rationales, and techniques for lab exercises, and provides an overview of the accompanying assignment for each week. 
 
-You’ll find a section for each lab session, giving a brief overview of the main themes and questions for that session, some suggested (optional) additional readings, and any pertinent information about the accompanying assignment. 
+You’ll find a section for each lab session, giving a brief overview of the main themes and questions for that session, some suggested (optional) additional readings, and information about the accompanying assignment. 
 
-Each lab section contains blank pages for recording notes and for collecting observations. Therefore, you should bring the lab manual to each meeting of the lab.
+Each lab section contains blank space for recording notes and for collecting observations. Therefore, you should bring the lab manual to each meeting of the lab.
 
 You’ll also find a number of appendices, covering things like searching the academic literature, how to approach reading journal articles, summaries of the basic statistics you should be familiar with, examples of informed consent and debriefing forms, and an extensive guide to writing a lab report.
 
-I will reiterate much of this information as part of each lab session’s instructional component, and we’ll greatly expand on the themes through the activities I’ll have you do and our collective discussions that follow. 
+We will reiterate much of this information as part of each lab session's instructional component, and we'll greatly expand on the themes through the activities you'll do and our collective discussions that follow. 
 
 You should skim through this handbook at the beginning of the course so that you have at least a rough sense of what will be required and when, and so you know where you can find relevant information as and when you need it.
+
+
+<style>
+#TOC {
+  display: none;
+}
+
+h1 {
+  display: none;
+}
+
+#title-block-header {
+  text-align: center;
+}
+
+#title-block-header.quarto-title-block.default .quarto-title-meta {
+  display: unset;
+}
+</style>
+

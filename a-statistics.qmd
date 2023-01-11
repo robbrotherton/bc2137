@@ -123,7 +123,7 @@ Cohen suggested the following rule of thumb for interpreting effect sizes in psy
 
 
 
-#### Statistical power and sample size for two-group designs
+#### Statistical power and sample size for two-group designs {#sec-power}
 
 An important aspect to consider when planning research is what sample size will be required—i.e, how many participants you should aim to recruit. This can be calculated in advance by using statistical principles and some assumptions about the quantities previously mentioned. 
 

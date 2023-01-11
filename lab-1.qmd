@@ -1,6 +1,6 @@
 ---
 toc: true
-toc-depth: 2
+toc-depth: 3
 ---
 
 # Lab 1: Course Overview {.unnumbered}
@@ -14,14 +14,14 @@ Office hour: Monday 10-11AM, Milbank 415M
 ### Section 001
 
 Time & venue: Wednesday 10:10-1PM, Milbank 410  
-Teaching Assistant: TBC  
-TA office hour: TBC
+Teaching Assistant:  
+TA office hour:  
 
 ### Section 002
 
 Time & venue: Wednesday 1:10-4:00PM, Milbank 410  
 Teaching Assistant: Farhana Tanee (<fkt2108@barnard.edu>)  
-TA office hour: TBC
+TA office hour:  
 
 
 ## Schedule
@@ -86,52 +86,67 @@ knitr::kable(schedule_df)
 This lab is designed to offer experience participating in, reading, critiquing, and proposing research addressing social psychological phenomena. The lab will usually be taken concurrently with PSYC-BC2138 Social Psychology Lecture, and will expand upon the methodological and analytic issues introduced there, as well as giving you the opportunity to explore in greater depth a topic of your choosing from within (or beyond) those covered in the lectures by proposing your own original research project.
 
 
+### Workload
 
-## Class format
+As a general rule for the amount of time students should expect to commit to classes, the college suggests three hours per week in or outside of class per credit. Since this class is worth 1.5 credits, that corresponds to 4.5 hours per week, split between time in the classroom and time spent completing the associated assignments.
 
-In the first half of the course you’ll be finding, reading, and summarizing published research papers that may be relevant to your project, and working up a rough proposal. In class we’ll demonstrate and analyze the methodological and analytical approaches commonly employed in social psychological research, giving you the foundation upon which to build your research proposal. In the second half of the course you’ll draft each section of your proposal paper in turn before submitting the final report. In class we’ll focus on refining your proposed methodology and constructing an effective research paper.
+
+### Structure of the semester
+
+In the first half of the course you’ll be finding, reading, and summarizing published research papers that may be relevant to your project, and working up a rough proposal. In class we’ll demonstrate and analyze the methodological and analytic approaches commonly employed in social psychological research, giving you the foundation upon which to build your research proposal. 
+
+In the second half of the course you’ll draft each section of your proposal paper in turn before submitting the final report. In class we’ll focus on refining your proposed methodology and constructing an effective research paper.
+
+
+### Class format & participation
 
 Labs are substantially more interactive and discussion-based than the traditional lecture format, and depend on everyone’s participation. Your active participation across the semester will therefore contribute a substantial portion of your grade. 
+
 Usually, in-person attendance of labs is mandatory; it is departmental policy to remove students who miss more than two sessions from the course. Given current pandemic-related changes to procedures, that will not be the case for this semester. If you are feeling unwell, you should not come to class. Please notify me of nonattendance before class if possible (as well as reporting symptoms to the college as appropriate).
 
 Being part of the in-person discussion is one obvious way to participate, but it’s not the only way. Different people have different styles of participation, and the lab is designed to try and accommodate and encourage different approaches (as well as allowing for the greater-than-usual possibility of missing class for health reasons). In particular, there will be a “Class Collective Lab Notes” Google Doc that everyone in the class will be able to edit; contributions there will constitute class participation just like contributing to the in-person discussion. Your level of engagement with your TA and Prof. Brotherton as you work through your project is also an important form of participation.
 
 At a minimum, I’ll be looking for some form of participation (loosely defined) from you every week; higher participation grades will be earned through regular, enthusiastic, productive participation (note that quality is more important than quantity).
 
-## The Research Proposal
+
+### The research proposal
 
 The final paper for this lab will be a Research Proposal paper. Producing this will be an iterative process; each assignment will build on the previous ones until by the end of the semester you have a complete research proposal paper.
 
-Your proposed study can be on any social-psychological topic of your choosing. However, your proposed research should be an extension of previous research, not an exact replication of another existing study, but not an entirely new question either. Proposed studies will use one of the basic methodological approaches that we will cover in the lab this semester or one that you discuss in the lecture. For example, you may propose the development and validation of a new scale (see p. ); a correlational study looking at relationship among constructs (see p. ); or an experimental study manipulating an independent variable and measuring its effect on a dependent variable (see p. ).
+Your proposed study can be on any social-psychological topic of your choosing. However, your proposed research should be an extension of previous research, not an exact replication of another existing study, but not an entirely new question either. Proposed studies will use one of the basic methodological approaches that we will cover in the lab this semester or one that you discuss in the lecture. For example, you may propose the development and validation of a new scale ([Lab 4](./lab-4.html)); a correlational study looking at relationship among constructs ([Lab 5](./lab-5.html)); or an experimental study manipulating an independent variable and measuring its effect on a dependent variable ([Lab 6](./lab-6.html)).
 
-The project you complete will be a research proposal. You will propose a viable piece of research that could, in theory, be conducted by you or any other researcher—but you won’t actually collect data for it as part of this lab. There are a number of reasons for this. Logistically, to achieve sufficient statistical power (see Appendix C, p. ) social psychological studies often require sample sizes larger than we could feasibly collect as part of this lab. Running an underpowered study is a waste of your and your participants’ time. In addition, merely proposing a study without having to run it allows you to be more ambitious in the kind of research you can propose, which can allow you to explore questions of greater scope and meaning. For students who may be considering a career in academic psychology or another science, proposing studies will be an essential aspect of obtaining grants and fellowships to allow you to conduct that research. Additionally, even beyond the context of obtaining funding for proposed research, recent years have seen a move towards pre-registration of research designs within the field of psychology more broadly. This means creating and publishing a complete plan for your research before collecting the data. We’ll discuss the value of this as part of this and the coming lab sessions. By proposing a study here, you’ll be essentially pre-registering a potential study design.
+The project you complete will be a research proposal. You will propose a viable piece of research that could, in theory, be conducted by you or any other researcher—but you won’t actually collect data for it as part of this lab. There are a number of reasons for this. Logistically, to achieve sufficient statistical power (see [Appendix @sec-power]<span class="exclude-from-html">, p. \pageref{sec-power}</span>) social psychological studies often require sample sizes larger than we could feasibly collect as part of this lab. Running an underpowered study is a waste of your and your participants’ time. In addition, merely proposing a study without having to run it allows you to be more ambitious in the kind of research you can propose, which can allow you to explore questions of greater scope and meaning. For students who may be considering a career in academic psychology or another science, proposing studies will be an essential aspect of obtaining grants and fellowships to allow you to conduct that research. Additionally, even beyond the context of obtaining funding for proposed research, recent years have seen a move towards pre-registration of research designs within the field of psychology more broadly. This means creating and publishing a complete plan for your research before collecting the data. We’ll discuss the value of this as part of this and the coming lab sessions. By proposing a study here, you’ll be essentially pre-registering a potential study design.
 
 A few students each semester mention feeling disappointed not to get to collect data for their project. It’s understandable, but in addition to the issues mentioned above, I’d urge you to think about how much work that would add to the course, and how it would add comparatively little value to your learning experience. Not having to collect data frees us to focus on refining all the details of your study in the limited time we have available, therefore developing a deeper understanding of the crucial issues on which all successful research depends: theoretical, methodological, and interpretative rigor. If you really want to experience collecting and analyzing real data, I’d suggest aiming to run your proposed study as part of an Independent Project in future, for which you can earn 4 to 8 credits depending on whether you complete it over 1 or 2 semesters.
+
 
 ## Assignment deadlines and grading
 
 Assignments are listed in the class schedule next to the class session to which they correspond. Most assignments are due at 5pm the day after class; exceptions are noted in italics on the schedule. All the assignments relate to your project proposal—the idea is to build this major piece of work incrementally over the course of the semester. The 5pm next-day deadline is necessary to given Prof. B and your TA time to provide feedback to everyone in advance of the next assignment (however, see the next section for late policy).
 
 ### Late assignments
+
 Assignments submitted after the deadline but before the next class will receive a grade without penalty; you just need to notify Professor Brotherton in advance that your work will be late. This policy is intended to ease the stress of genuine emergencies and midterm/deadline pile-ups. Knowing when you can reasonably complete work, even if it is not always by the preordained deadline, is part of successful time-management and prioritization. However, be aware that you may not receive timely feedback on late work, and since the lab is designed to build cumulatively towards the final paper, getting behind on assignments may make it hard to catch up and will likely impact your final grade.
 
 Assignments not submitted before the next class will receive a score of zero. This policy is intended to incentivize timely submission whenever possible, and to reflect the pedagogical value that you miss out on by failing to submit work on schedule; since the assignments for this lab build iteratively on one another, it is essential that you complete them punctually and in order.
 
 ### Final Grades
+
 Your final letter grade for the course is a product of your scores for each assignment, weighted as indicated in the class schedule, and determined according to the following boundaries:
 
     Letter grade:  A+ A  A-	B+ B  B- C+ C  C- D  F
     Numeric score: 97 93 90 87 83 80 77 73 70 60 <60
 
-## Workload
-As a general rule for the amount of time students should expect to commit to classes, the college suggests three hours per week in or outside of class per credit. Since this class is worth 1.5 credits, that corresponds to 4.5 hours per week, split between time in the classroom and time spent completing the associated assignments.
 
 ## Honor code
-Even though you will collaborate in lab and on the research proposal, you may not collaborate on written assignments. You must write your own reports. Students are expected to follow the Barnard Honor Code, available at https://barnard.edu/honor-code. 
+
+Even though you will collaborate in lab and on the research proposal, you may not collaborate on written assignments. You must write your own reports. Students are expected to follow the Barnard Honor Code, available at <https://barnard.edu/honor-code>. 
+
 Note that written work will be checked for plagiarism using TurnItIn. You will be able to see the plagiarism report for your own work. This should be useful for avoiding unintentional plagiarism (such as failing to put quotation marks around a quote you made note of from a paper you read), and for encouraging you to put ideas into your own words rather than quoting or closely paraphrasing others (which the system flags up).
 
 ## Academic accommodations and general wellness
-It is always important to recognize the different pressures, burdens, and stressors you may be facing, whether personal, emotional, physical, financial, mental, or academic. The current circumstances may well add to these challenges for many people in many ways. The faculty and administration recognize this, and are prepared to provide assistance to students in need. Many of the available services and sources of help are being reshaped in response to the changing circumstances. Rather than include boilerplate text here or link to sources of information which may become outdated, I encourage you to seek advice from your advisor, Dean, or the Center for Accessibility Resources & Disability Services (CARDS), and to let me know of any issues you wish to share with me that you feel are impacting your ability to complete the course to the best of your ability. Though it isn’t always easy, it is better to proactively seek help rather than letting problems build up.
+
+It is always important to recognize the different pressures, burdens, and stressors you may be facing, whether personal, emotional, physical, financial, mental, or academic. The current circumstances may well add to these challenges for many people in many ways. The faculty and administration recognize this, and are prepared to provide assistance to students in need. Many of the available services and sources of help are being reshaped in response to the changing circumstances. Rather than include boilerplate text here or link to sources of information which may become outdated, I encourage you to seek advice from your advisor, Dean, the [Center for Accessibility Resources & Disability Services (CARDS)](https://barnard.edu/disability-services), or [Barnard Health & Wellness](https://barnard.edu/health-wellness) as needed. Please let me know of any issues you wish to share with me that you feel are impacting your ability to complete the course to the best of your ability. Though it isn’t always easy, it is better to proactively seek help rather than letting problems build up.
 
 
 ## Notes {.exclude-from-html}

@@ -3,12 +3,15 @@ project:
   output-dir: docs
 
 title-block-author-single: "Instructor"
-title-block-published: "Semester"
+title-block-published: ""
 
 book:
   title: "Social Psychology Lab Manual"
-  subtitle: "PSYC BC2137"
-  author: "Professor Rob Brotherton"
+  subtitle: |
+    | Barnard College
+    | Department of Psychology
+    | PSYC BC2137
+  # author: "Professor Rob Brotherton"
   date: "1/31/2023"
   date-format: "[Spring 2023]"
   chapters:
