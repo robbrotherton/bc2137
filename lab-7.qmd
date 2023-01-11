@@ -42,4 +42,6 @@ Your brief proposal should include:
 
 ## Notes {.exclude-from-html}
 
+\newpage
+
 \cleartoleftpage

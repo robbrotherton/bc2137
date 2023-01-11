@@ -41,4 +41,6 @@ Your submission should include:
 
 ## Notes {.exclude-from-html}
 
+\newpage
+
 \cleartoleftpage

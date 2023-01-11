@@ -30,3 +30,10 @@ The content of an APA-style Method section is as follows:
       - All questionnaire items and response scales
       - Any other necessary stimuli (e.g. videos participants would watch—include a still frame and a link to the video if online)
       - Include complete Informed Consent & Debriefing documents
+
+
+## Notes {.exclude-from-html}
+
+\clearpage
+
+\cleartoleftpage

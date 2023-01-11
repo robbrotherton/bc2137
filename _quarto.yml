@@ -65,7 +65,7 @@ format:
     include-in-header:
       text: |
         \newcommand*\cleartoleftpage{%
-        \clearpage
+        \cleardoublepage
         \ifodd\value{page}\hbox{}\newpage\fi
         }
 
