@@ -7,21 +7,18 @@ toc-depth: 3
 
 ## Course details
 
-Professor: Dr. Rob Brotherton (<rbrother@barnard.edu>)   
-Office hour: Monday 10-11AM, Milbank 415M
+### Instructor
 
+Dr. Rob Brotherton (<rbrother@barnard.edu>)
 
-### Section 001
+Office hour: Monday 9.30-11AM, Milbank 415M
 
-Time & venue: Wednesday 10:10-1PM, Milbank 410  
-Teaching Assistant:  
-TA office hour:  
+### Time & venue
 
-### Section 002
+Section 001: Wednesday 10:10-1PM, Milbank 410  
 
-Time & venue: Wednesday 1:10-4:00PM, Milbank 410  
-Teaching Assistant: Farhana Tanee (<fkt2108@barnard.edu>)  
-TA office hour:  
+Section 002: Wednesday 1:10-4:00PM, Milbank 410  
+
 
 
 ## Schedule
