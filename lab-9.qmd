@@ -15,6 +15,10 @@ This week you will finalize the details of your planned methodology, including c
 [Link to slides with Method section examples](https://docs.google.com/presentation/d/1t3RqUh14893fCACWQY7OaYUvH7P0zzh4WIJB63gg1QY/edit?usp=sharing)
 
 
+[Link to sample size calculator](https://www.statskingdom.com/sample_size_regression.html)
+
+
+
 ## Assignment
 
 For this week’s assignment, you will produce a draft of your Method section, which must include all the detail necessary for someone else to actually run your study. That means you should have pretty much figured out exactly what participants in your study would see or do: the wording of every instruction you would present to participants, every question you would ask them, every response scale you would use to collect their answers, any images/videos/other materials you’d need, etc. Any aspect you’re still not quite sure about must be nailed down now.
