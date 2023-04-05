@@ -10,6 +10,13 @@
 By now, you will have worked out every aspect of your study’s design, and you will be ready to draft the Planned Analysis sections of your report, in which you explain how you would analyze the data your proposed design would produce. This will most likely follow the outline of one of the analyses we discussed in previous lab sessions, and covered in more detail in [Appendix @sec-statistics]<span class="exclude-from-html">, p. \pageref{sec-statistics}</span>. 
 
 
+## Suggested reading
+
+::: {.references}
+\hangindent=0.7cm Funder, D. C., & Ozer, D. J. (2019). Evaluating effect size in psychological research: Sense and nonsense. *Advances in Methods and Practices in Psychological Science, 2*(2), 156-168. <https://doi.org/10.1177/2515245919847202>
+:::
+
+
 ## Assignment
 
 You’ll submit a draft of your Planned Analysis section. Usually in an APA-formatted journal article this section would be called Results. But since you aren’t collecting data, and are instead just formalizing a plan for how you would analyze your data, we’ll call this section Planned Analysis.
