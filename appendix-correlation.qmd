@@ -1,0 +1,29 @@
+
+# Correlation
+
+When you measure two variables and wish to know if scores on one measure are related to scores on the other, you calculate the correlation coefficient. This quantifies the extent to which changes on one measure are related to changes on the other. For example, if higher scores on measure X are associated with higher scores on measure Y, there is a positive correlation. If higher scores on measure X are associated with lower scores on measure Y, there is a negative correlation. No correlation means that scores on X are unrelated to scores on Y.
+
+## Calculating the correlation coefficient
+
+To calculate the correlation between two variables, you must first calculate the Sum Product, $SP$.  The mathematical formula is:
+
+$$
+SP = (X-M_X)(Y-M_Y)
+$$
+
+Notice that $X - M_X$ and $Y - M_Y$ are deviation scores, just like we calculated for the standard deviation. Here we have two variables, $X$ and $Y$, so the equation is telling us to calculate the deviation of each score from its respective mean. We then multiply each deviation for variable $X$ by its counterpart deviation from variable $Y$. These are the “products,” meaning multiplied deviation scores. Finally, the  tells us to add up all those products, giving the “sum of products,” $SP$.
+
+Once we have calculated $SP$, the correlation coefficient, symbolized by $r$ is calculated using the following equation:
+
+$$
+r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
+$$
+
+Here, $SS_X$ and $SS_Y$ are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in $X$ and $Y$ separately. The numerator, $SP$, represents the covariability of $X$ and $Y$. So the equation results in covariability as a proportion of all variability. It can range from $-1$, meaning a perfect negative correlation, to $0$, meaning no correlation at all, to $+1$, meaning a perfect positive correlation.
+
+
+## Effect size for correlation {#sec-cor-effect-size}
+
+The correlation coefficient is a measure of effect size. It's absolute value can range from 0 to 1.
+
+As a rule of thumb, in psychology, correlations of less than around $\pm 0.30$ are considered weak, around $\pm 0.30$ to $\pm 0.70$ are considered moderate, and greater than around $\pm 0.70$ are considered large.

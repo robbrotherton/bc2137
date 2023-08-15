@@ -1,40 +1,10 @@
-# Lab 10: Reporting Findings  {.unnumbered}
+# Lab 10: Proposal planning {.unnumbered}
 
-## Key ideas
-
-- Reproducibility
-- Data visualization
-- Style and contents of an APA Results section
+My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the secondary data analysis projects so far, but that you're also feeling a bit limited by choice of variables you had and the inability to decide what exactly to measure or how to measure it. In this lab we'll begin the final project: devising and piloting a novel measure of a personality trait of your choice.
 
 
-By now, you will have worked out every aspect of your study’s design, and you will be ready to draft the Planned Analysis sections of your report, in which you explain how you would analyze the data your proposed design would produce. This will most likely follow the outline of one of the analyses we discussed in previous lab sessions, and covered in more detail in [Appendix @sec-statistics]<span class="exclude-from-html">, p. \pageref{sec-statistics}</span>. 
+## Goals
 
-
-## Suggested reading
-
-::: {.references}
-\hangindent=0.7cm Funder, D. C., & Ozer, D. J. (2019). Evaluating effect size in psychological research: Sense and nonsense. *Advances in Methods and Practices in Psychological Science, 2*(2), 156-168. <https://doi.org/10.1177/2515245919847202>
-:::
-
-
-## Assignment
-
-You’ll submit a draft of your Planned Analysis section. Usually in an APA-formatted journal article this section would be called Results. But since you aren’t collecting data, and are instead just formalizing a plan for how you would analyze your data, we’ll call this section Planned Analysis.
-
-This will likely be your shortest section. It should be a simple, technical statement of how you would treat your data, with some sensible anticipated results.
-
-- Planned Analysis
-  - First state any necessary data cleaning and handling
-    - E.g. how you would identify outliers in the data, and any averages you would calculate, etc
-  - Then explain, using the appropriate technical terms, what you would do with your chosen variables
-      - E.g. factor analysis, validity tests, looking at the correlation(s) between variables, performing a t-test, ANOVA?
-    - Then make sensible, informed guesses (based on the research you read and cited in your Intro) about what kind of averages/differences/correlations/effect sizes you would expect to see
-      - You should mention some hypothetical results, e.g. the condition means you expect, the strength of correlation you anticipate.
-      - You should also talk about how much variability you expect to see in the data, and how strong of an effect you expect your manipulation to produce
-      - Finally, state whether you expect a significant test statistic (which, presumably, you do—but this should make sense given your overall pattern of anticipated means and variability).
-    - Include a visualization of your expected findings. This doesn’t have to be fancy—just a rough sketch is fine if it helps to visualize the trends you expect to see in the data (see [Appendix @sec-viz]<span class="exclude-from-html">, p. \pageref{sec-viz}</span>).
-
-
-## Notes {.exclude-from-html}
-
-\cleartoleftpage
+- Understand the process of scale design and validation
+- Pick a personality trait to design a scale around
+- Write a brief proposal of your project and expectations

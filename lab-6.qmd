@@ -1,46 +1,13 @@
-# Lab 6: Experiments {.unnumbered}
+# Lab 6: Project planning {.unnumbered}
 
-## Key ideas
+In this lab, you will start your second project: conducting a multiple regression analysis using ANES data.
 
-- Correlation vs causation
-- Independent and dependent variables
-- Between-participants and within-participants designs
+### Goals
 
-
-This week’s lab will focus on experimental designs, in which the researcher manipulates one variable (the independent variable) and measures another (the dependent variable).
-
-The simplest example of this design is one in which the researcher randomly assigns participants to one of two groups, and then uses statistical techniques to look for differences between the groups (see [Appendix @sec-ttest]<span class="exclude-from-html">, p. \pageref{sec-ttest}</span>). 
+- Understand the purpose of multiple regression
+- Identify variables for your analysis
+- Search the literature to find relevant research
+- Formulate a brief research proposal
 
 
-## Suggested reading
-
-::: {.references}
-\hangindent=0.7cm Loftus, E. F., & Palmer, J. C. (1974). Reconstruction of automobile destruction: An example of the interaction between language and memory. *Journal of Verbal Learning and Verbal Behavior, 13(5)*, 585–589. <https://doi.org/10.1016/S0022-5371(74)80011-3> 
-:::
-
-
-## Assignment
-
-Having read and summarized (at least) four papers on your topic of interest by now, you should be ready to articulate the gist of this existing body of research, as it pertains to your proposal. This Brief Literature Review will be your opportunity to put all four studies together, in conversation with one another, and to make a case for what they collectively reveal about social psychology—and what they fail to reveal. That gap in the research will likely form the basis on your own proposed study. 
-
-Your brief literature review will be based on the four individual summaries you have written, but you should rework it to be a coherent, cohesive, persuasive review of the literature rather than just stringing together your four individual summaries. I want to know how the research all fits together, as you see it.
-
-Your submission should include:
-
-- Title Page
-    - A page with your name, your partner’s name, and a (tentative) title for your project
-    - Stick to the types of titles you see in published research papers
-    - E.g. ‘The relationship between [X] and [Y]’, or ‘Differences in [Z] between [X] and [Y]’
-- Literature review
-    - Start by identifying the general topic of your research—that is, the area of social psychology that you are interested in investigating.
-    - Review the studies you have read so far. You’ve written individual summaries of each, but here you should begin to weave them together, pointing out how they relate to one another and how they collectively inform your proposal
-    - Try to finish by articulating your overall interpretation of this existing body of research. What does it show about social psychology? What does it fail to show?
-- References
-    - Include an APA-formatted reference for each study you cite
-
-
-## Notes {.exclude-from-html}
-
-\newpage
-
-\cleartoleftpage
+## Project overview

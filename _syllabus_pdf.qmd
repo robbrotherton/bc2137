@@ -1,0 +1,13 @@
+---
+format: pdf
+output-file: syllabus.pdf
+title: SOCIAL PSYCHOLOGY LAB
+subtitle: |
+  | PSYC BC2137
+  | Barnard College
+  | Department of Psychology
+  | Fall 2023
+---
+
+{{< include _syllabus_body.qmd >}}
+

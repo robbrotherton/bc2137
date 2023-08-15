@@ -1,47 +1,12 @@
-# Lab 7: Experiments continued {.unnumbered}
+# Lab 7: Data cleaning & analysis {.unnumbered}
 
-## Key ideas
+### Goals
 
-- Control conditions
-- Factorial designs
+- Read the data you need into R
+- Select required variables
+- Filter the data based on completeness (and any other criteria)
+- Compute any required variables (scale means, number of items missing, etc)
 
+## Data wrangling, description, and visualization
 
-This week’s lab will focus on more complex experimental designs, focusing on the value of control conditions and factorial designs. These ideas are discussed more extensively in [Appendix @sec-anova]<span class="exclude-from-html">, p. \pageref{sec-anova}</span>.
-
-
-
-## Suggested reading
-
-::: {.references}
-\hangindent=0.7cm Symons, C. S., & Johnson, B. T. (1997). The self-reference effect in memory: a meta-analysis. *Psychological bulletin, 121*(3), 371–394. <https://doi.org/10.1037/0033-2909.121.3.371>
-:::
-
-
-## Assignment
-
-Now you’ve written a Brief Literature review of the existing studies you’ve read you should be ready to propose your own study. This Brief Proposal will be the first step: your initial thoughts on what form your proposed research will take. 
-
-Your proposal will likely not have all the methodological details at this stage, and your thinking may yet change—that’s fine. The main purpose of this brief proposal is to serve as an outline so you can start to figure out the specifics. You’ll get feedback on this which should help you nail down and refine the details moving forward. That said, the more thought you put into this now, the less work you will have to do for the following drafts. 
-
-This would be a good time to familiarize yourself with @sec-writing <span class="exclude-from-html">(p. \pageref{sec-writing})</span> if you haven’t already, as that is what this is building towards.
-
-Your brief proposal should include:
-
-- Title Page
-    - Same as the previous assignment, unless you’ve changed your approach enough to require a change of title
-- Literature review
-    - Include your lit review from the previous assignment, with any changes (if you’ve made them)
-- Method
-    - State the basic design format of your proposed study—is it a scale design study, a correlational design, or an experiment? State any constructs you plan to manipulate or measure
-    - For each construct, state your operational definition (i.e. how you actually plan to manipulate or measure the psychological constructs)
-- Analysis
-    - What is your fundamental analytic approach? Is this a correlational study where you’re looking for associations between variables, or an experimental study in which you’re looking for differences between randomly-assigned groups, or a quasi-experimental study in which you’re looking for differences between pre-existing groups? What is it, in a nutshell, that you expect to find?
-- References
-    - Include an APA-formatted reference for each study you cite
-
-
-## Notes {.exclude-from-html}
-
-\newpage
-
-\cleartoleftpage
+### Data wrangling

@@ -1,49 +1,49 @@
 project:
   type: book
   output-dir: docs
+  resources: syllabus.pdf
+  pre-render: _render_syllabus.r
 
 title-block-author-single: "Instructor"
 title-block-published: ""
 
 book:
-  title: "Social Psychology Lab Manual"
+  title: "Social Psychology Lab Handbook"
   subtitle: |
     | Barnard College
     | Department of Psychology
     | PSYC BC2137
   # author: "Professor Rob Brotherton"
   date: "1/31/2023"
-  date-format: "[Spring 2023]"
+  date-format: "[Fall 2023]"
+
   chapters:
     - index.qmd
-    - lab-1.qmd
-    - lab-2.qmd
-    - lab-3.qmd
-    - lab-4.qmd
-    - lab-5.qmd
-    - lab-6.qmd
-    - lab-7.qmd
-    - lab-8.qmd
-    - lab-9.qmd
-    - lab-10.qmd
-    - lab-11.qmd
-    - lab-12.qmd
-    - lab-13.qmd
+    - part: "Project 1: Correlation"
+      chapters:
+        - lab-2.qmd
+        - lab-3.qmd
+        - lab-4.qmd
+        - lab-5.qmd
+    - part: "Project 2: ANOVA"
+      chapters:
+        - lab-6.qmd
+        - lab-7.qmd
+        - lab-8.qmd
+        - lab-9.qmd
+    - part: "Project 3: Experiment proposal"
+      chapters:
+        - lab-10.qmd
+        - lab-11.qmd
+        - lab-12.qmd
   appendices:
-    - a-searching-the-literature.qmd
-    - a-reading-research.qmd
-    - a-statistics.qmd
-    - a-consent-form.qmd
-    - a-debrief.qmd
-    - a-writing-a-report.qmd
-  downloads: pdf
-  # sidebar:
-  #   tools:
-  #     - icon: github
-  #       href: https://github.com/robbrotherton/bc2137/
+    - appendix-r-basics.qmd
+    - appendix-correlation.qmd
+    - appendix-rubric.qmd
 
-toc-depth: 1
+toc-depth: 3
 number-depth: 0
+number-sections: false
 
 # comments:
 #     hypothesis:
@@ -58,16 +58,6 @@ format:
     theme:
       light: [flatly, custom.scss]
       dark:  [darkly, custom.scss]
-  pdf:
-    # title: Social Psychology Lab Manual
-    documentclass: scrreprt
-    classoption: twoside
-    include-in-header:
-      text: |
-        \newcommand*\cleartoleftpage{%
-        \cleardoublepage
-        \ifodd\value{page}\hbox{}\newpage\fi
-        }
-
+    link-external-newwindow: true
 
 
