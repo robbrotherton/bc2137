@@ -12,48 +12,123 @@ In this session we will begin the first project of the course: performing a corr
 
 ## Project overview
 
-A *correlation* refers an association between two things. It is a statement of a statistical relationship--a general tendency, rather than a rigid law. To say that some aspect of personality is correlated with something else--for example, [neuroticism is correlated with lower wellbeing](https://psycnet.apa.org/fulltext/2020-03328-001.html) or [openness is correlated with greater cognitive ability](https://www.pnas.org/doi/10.1073/pnas.2212794120)--is to say that those things *tend* to go together. Not everyone who scores high on neuroticism will have lower wellbeing than anyone low on neuroticism, but there is some tendency for the two to go together on the whole.
+With this project you will examine a correlation between social psychological constructs using real survey data.
 
-Of course, these kind of correlations aren't just facts found lying around in nature; they are empirical findings produced by researchers. All the findings you learn about in the personality psychology lecture (and beyond) are the product of research procedures. Researchers decide what psychological constructs they want to investigate; how to measure those constructs; what statistical analyses are appropriate; and what conclusions may be drawn.
+A *correlation* refers an association between two things. It is a statement of a statistical relationship--a general tendency, rather than a rigid law. To say that something correlates with something else--for example, [satisfaction with ones friendships is correlated with wellbeing](https://psycnet.apa.org/record/2019-64493-001) or [prejudice is correlated with endoresement of stereotypes towards a group](https://www.pnas.org/doi/10.1073/pnas.2212794120)--is to say that those things *tend* to go together. Not everyone who feels great satisfaction in their friendships will report greater wellbeing than anyone with less social satisfaction, but there is some tendency for the two to go together on the whole.
 
-With this project, you will examine a correlation between a personality trait and another construct of your choosing by analyzing existing data.
-
-
-### Step 1. Examine the data
-
-The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2016 election. The reason for using this (rather than more recent data) is that the 2016 survey included a personality scale: the Ten-Item Personality Inventory (TIPI: [Gosling et al., 2003](https://gosling.psy.utexas.edu/wp-content/uploads/2014/09/JRP-03-tipi.pdf)). This scale is a short measure of the "Big Five" personality traits of Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism. 
-
-For this project, you will pick one of these traits and investigate its correlation with another question from the survey. The full dataset contains almost 2,000 questions in total. Since this is your first project, however, I am going to constrain your choice. For this kind of correlation analysis you will have two variables. You can think of one as the "predictor" and the other as the "outcome"; you want to see if the predictor has any association with the outcome.
-
-Your __predictor__ variable will be one of the Big Five traits:
-
-- Extraversion (V162333 & V162338)
-- Agreeableness (V162334 & V162339)
-- Conscientiousness (V162335 & V162340)
-- Neuroticism (V162336 & V162341)
-- Openness (V162337 & V162342)
+Of course, these kind of correlations aren't just facts found lying around in nature; they are empirical findings produced by researchers. All the findings you learn about in the social psychology lecture (and beyond) are the product of research procedures. Researchers decide what psychological constructs they want to investigate; how to measure those constructs; what statistical analyses are appropriate; and what conclusions may be drawn.
 
 
-Your __outcome__ variable will be one of the feeling thermometer questions for the two main presidential candidates:
 
-- Democratic presidential candidate (V162078)
-- Republican presidential candidate (V162079)
+### Step 1. Examine the data and identify your variables
+
+```{r}
+#| include: false
+library(tidyverse)
+library(anesr)
+
+data(timeseries_2020)
+
+timeseries_2020_doc <- timeseries_2020 |> 
+  map_chr(~attr(.x, "label")) |> 
+  data.frame(question = _) |> 
+  rownames_to_column(var = "id")
+
+budget_vars <- timeseries_2020_doc |> 
+  filter(str_detect(question, "Budget") | str_detect(question, "Abortion") | str_detect(question, "citizenship")) |> 
+  filter(str_detect(question, "SUMMARY"))
+
+budget_var_list <- budget_vars |>
+  mutate(li = glue::glue("<li>{question} ({id})</li>")) |> 
+  pull(li)
 
 
-To see exactly how these constructs were measured you will look up the variable IDs (the V16... codes in parentheses above) in the [Codebook](https://electionstudies.org/wp-content/uploads/2018/12/anes_timeseries_2016_userguidecodebook.pdf). The codebook details the survey methodology exhaustively, including listing every question that was asked. It's not fun reading, but it is your guide to understanding what was measured and how it was measured.
+timeseries_2020 |> 
+  haven::zap_labels() |> 
+  select(concern_job = V201540, # higher scores: more worried
+         concern_financial = V201594, # higher scores: less worried ***
+         concern_losing_health = V201621, # higher scores: more worried
+         concern_paying_health = V201622, # higher scores: more worried
+         concern_terrorist = V202358, # 1 = extrememly; 5 = not at all ***
+         concern_country = V201120, # 1 = not at all; 5 = extremely
+         budget_social_security = V201302x,
+         budget_schools = V201305x,
+         budget_border = V201308x,
+         budget_crime = V201311x,
+         budget_welfare = V201314x,
+         budget_buidling = V201317x,
+         budget_poor = V201320x,
+         budget_environment = V201323x,
+         ) |> 
+  mutate(across(everything(), ~ifelse(. < 1, NA, .))) |>
+  mutate(concern_financial = 6 - concern_financial,
+         concern_terrorist = 6 - concern_terrorist) |>
+  mutate(across(contains("budget"), ~ 6 - .)) |>
+  cor(use = "pairwise")
+
+# cor(budget, use = "pairwise")
+
+# Support for policies that reduce others' freedoms
+# `r paste("<ul>", paste(budget_var_list, collapse = ""), "</ul>")`
+
+
+# trust
+timeseries_2020 |> 
+  haven::zap_labels() |> 
+  select(concern_job = V201540, # higher scores: more worried
+         concern_financial = V201594, # higher scores: less worried ***
+         concern_losing_health = V201621, # higher scores: more worried
+         concern_paying_health = V201622, # higher scores: more worried
+         concern_terrorist = V202358, # 1 = extremely; 5 = not at all ***
+         concern_country = V201120, # 1 = not at all; 5 = extremely
+         state_of_economy = V201324, # 1 = very good; 5 = very bad
+         trust_federal_government = V201233, # 1 = always; 5 = never
+         trust_people = V201237) |> 
+  mutate(across(everything(), ~ifelse(. < 1, NA, .))) |> 
+  mutate(concern_financial = 6 - concern_financial,
+         concern_terrorist = 6 - concern_terrorist) |>
+  mutate(across(contains("trust"), ~ 6 - .)) |>
+  cor(use = "pairwise")
+
+```
+
+The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2020 election, since it's the most recently conducted complete survey.
+
+The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats affect people's trust. What kinds of threats lead to increasing distrust in government and/or other people?
+
+One of your variables will be a question assessing perceived threat:
+
+- How worried are you about losing your job in the near future? (V201540)
+- So far as you and your family are concerned, how worried are you about your current financial situation? (V201594)
+- How concerned are you about losing your health insurance in the next year? (V201621)
+- How concerned are you about being able to pay health care expenses for you and your family in the next year? (V201622)
+- How worried do you feel about how things are going in the country? (V201120)
+- What do you think about the state of the economy these days in the United States? (V201324)
+- How worried are you that the United States will experience a terrorist attack in the near future? (V202358)
+
+Your second variable will be a question about trust:
+
+- How often can you trust the federal government in Washington to do what is right? (V201233)
+- How many of the people running the government are corrupt? (V201236)
+- Generally speaking, how often can you trust other people? (V201237)
+
+To see exactly how these constructs were measured you will look up the variable IDs (the codes beginning with V in parentheses above) in the [Codebook](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf).
 
 
 ### Step 2. Read relevant research
 
-Real research doesn't happen in a vacuum; research plans and expectations should be informed by what has come before. Therefore once you know which variables you will analyze, you will see what other researchers have found about these (or related) personality traits.
+Real research doesn't happen in a vacuum; research plans and expectations should be informed by what has come before. Therefore once you know which variables you will analyze, you will see what other researchers have found about these (or related) constructs.
 
 A real research project would involve an exhaustive literature review, in which you attempt to find and understand all the research relevant to your question. Since this project of ours is just for practice and our time is limited, you don't need to read everything; pick one of these papers to skim to give you an idea of what has been found.
 
 ::: {.references}
-Gerber, A. S., Huber, G. A., Doherty, D., & Dowling, C. M. (2011). [The big five personality traits in the political arena.](https://www.annualreviews.org/doi/full/10.1146/annurev-polisci-051010-111659) *Annual Review of Political Science, 14,* 265-287.
+<!-- Rickert, E. J. (1998). Authoritarianism and economic threat: Implications for political behavior. *Political Psychology, 19(4)*, 707-720. <https://doi.org/10.1111/0162-895X.00128> -->
 
-Cooper, C. A., Golden, L., & Socha, A. (2013). [The big five personality factors and mass politics.](https://onlinelibrary-wiley-com.ezproxy.cul.columbia.edu/doi/full/10.1111/j.1559-1816.2012.00982.x) *Journal of Applied Social Psychology, 43(1)*, 68-82.
+<!-- Feldman, S., & Stenner, K. (1997). Perceived threat and authoritarianism. *Political psychology, 18(4)*, 741-770. <https://doi.org/10.1111/0162-895X.00077> -->
+
+Schlipphak, B. (2021). Threat perceptions, blame attribution, and political trust. *Journal of Elections, Public Opinion and Parties*. <https://doi.org/10.1080/17457289.2021.2001474>
 :::
+
 
 ### Step 3. Articulate your hypothesis
 
@@ -62,13 +137,5 @@ Having determined your variables and read some relevant research to inform your 
 The main issue that your hypothesis addresses is: do you think the two variables will be significantly correlated? That is, will you find an association strong enough that it doesn't just seem to be attributable to chance variation in the data (even random data will produce spurious correlations by chance some of the time; see [spuriouscorrelations.com](https://spuriouscorrelations.com#stat897f4cbec4629379cd566c68c3f40c5f)).
 
 If you do expect a significant correlation, you should also specify whether you expect it to be positive or negative, and how strong of a correlation you expect it to be (i.e. weak, moderate, strong; see [Appendix B](appendix-correlation.html#sec-cor-effect-size)).
-
-
-## To do for next time
-
-Read up on the development of the TIPI ([Gosling et al., 2003](https://gosling.psy.utexas.edu/wp-content/uploads/2014/09/JRP-03-tipi.pdf)).
-
-The more detailed your understanding of how the Big Five trait was measured, the better you will be able to interpret the results of your analysis.
-
 
 
