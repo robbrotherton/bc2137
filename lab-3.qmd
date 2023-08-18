@@ -1,4 +1,4 @@
-# Lab 3: Data cleaning {.unnumbered}
+# Lab 3: Data preparation {.unnumbered}
 
 You should begin this session with variables from the ANES 2016 dataset in mind for your analysis. In class we will introduce the R language and RStudio environment, and demonstrate necessary data cleaning and manipulation in preparation for analysis. By the end of the class you should have modified the example code to work with your selected variables.
 
@@ -9,6 +9,7 @@ You should begin this session with variables from the ANES 2016 dataset in mind 
 -   Select required variables
 -   Filter the data based on completeness (and any other criteria)
 -   Compute any required variables (scale means, number of items missing, etc)
+-   Describe and visualize your variables
 
 ## Working with data in R
 
@@ -53,7 +54,7 @@ Getting data into R often involves reading in a .csv (comma-separated values) sp
 
 ```{r}
 
-data(timeseries_2016)
+data(timeseries_2020)
 
 ```
 
@@ -63,7 +64,7 @@ Typing the name of the data.frame and running that line of code will show the fi
 
 ```{r}
 
-timeseries_2016
+timeseries_2020
 
 ```
 
@@ -71,18 +72,18 @@ You can also click on the name in the Environment pane to view the data in a new
 
 ### Select your variables
 
-As you can see, the data.frame contains a *lot* of variables; there are 1,842 columns of data. You'll only need a few of those. So the first step is selecting just the variables you need to work with.
+As you can see, the data.frame contains a *lot* of variables; there are `r scales::label_comma()(ncol(timeseries_2020))` columns of data, one for each recorded variable. You'll only need two of those. So the first step is selecting just the variables you need to work with.
 
 There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the `select()` function.[^tidyverse-note] This allows us to simply type in variable names separated by commas.
 
-For this example I'll look at the correlation between extraversion and the Democratic party feeling thermometer. Extraversion has two TIPI items; their IDs (from the codebook) are `V162333` and `V162338`. The ID for the Democratic Party feeling thermometer is `V161095`. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
+For this example code I'll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and concern that government might undermine media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
 
 ```{r}
 
-my_data <- timeseries_2016 |> 
-  select(extraversion1 = "V162333", 
-         extraversion2 = "V162338",
-         feeling_thermometer = "V161095")
+my_data <- timeseries_2020 |> 
+  select(trust = V201377, 
+         concern = V201376) |> 
+  haven::zap_labels()
 
 ```
 
@@ -116,37 +117,108 @@ nrow(my_data_complete)
 
 After filtering to keep only rows with complete data, we're left with `r format(nrow(my_data_complete), big.mark = ",")` valid responses.
 
-### Computing scale averages
 
-Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is compute any new values required for analysis. As an example, if you have a scale which has multiple questions asking about a particular construct, it is often necessary to compute an average score for each participant.
+### Recoding values
 
-The TIPI has 10 questions in total, two for each of the Big 5 personality traits, so it may be desirable to compute a mean trait score by averaging its two respective items.
+Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is recode values so they all mean what we want them to mean.
 
-Notice, however, that for each of the 5 traits, one question is positively worded and one is negatively worded. For extraversion, item `V162333` (which I renamed `extraversion1`) is "extraverted, enthusiastic", while item `V162338` (renamed `extraversion2`) is "reserved, quiet". The second one needs to be reverse-coded, so that higher scores on both items indicate greater extraversion. Since answers can range from 1 to 7, an easy way to recode the scores is to subtract the participant's response from 8; 1 becomes 7, 2 becomes 6, etc.
+Notice that valid responses for the "undermine the news media" concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that's fine. So the "trust in news media" question, responses are 1 (none) though 5 (a great deal). But I'm thinking of the psychological construct as *dis*trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).
 
-```{r}
-
-my_data_complete <- my_data_complete |>
-    mutate(extraversion2 = 8 - extraversion2)
-
-```
-
-Now we can go ahead and compute the average, using `mutate()` to create a new column (named `extraversion_mean`) consisting of the `rowMeans()` (i.e. an average for each row) `across()` the specified columns (those for which the column name `contains("extraversion")`.
 
 ```{r}
 
 my_data_complete <- my_data_complete |>
-    mutate(extraversion_mean = rowMeans(across(contains("extraversion"))))
+  mutate(distrust = 6 - trust) |> 
+  select(-trust) # don't need the original trust column any more
 
 ```
 
-Let's see how it looks.
+
+Now I have my two variables, concern about the news media, and (reverse-coded) distrust of the news media, for each of the `r scales::label_comma()(nrow(my_data_complete))` participants with complete data. We're ready to start exploring the data.
+
+
+## Start examining the data
+
+### Descriptive statistics
+
+The most common descriptive statistics are the mean ($M$) and standard deviation ($SD$). You should report these for each variable in your analysis.
 
 ```{r}
-my_data_complete
+mean(my_data_complete$concern)
+sd(my_data_complete$concern)
+
+mean(my_data_complete$distrust)
+sd(my_data_complete$distrust)
 ```
 
-We have our two extraversion items (one reverse-coded), the feeling thermometer rating, and the computed extraversion mean scores for each of the 3,540 participants with complete data. We're ready to analyze the data!
+
+### Visuaizating distributions
+
+In addition to reporting the mean and standard deviation, it is useful to visualize the distribution of the data. This can reveal nuances that are not obvious in those single numeric summary values.
+
+As with most things, there are a lot of different ways of producing graphs using R. One of the most widely used and powerful is the `ggplot2` package.^[The `ggplot2` package is part of the `tidyverse`, so because we already ran `library(tidyverse)` earlier the `ggplot2` functions are already available to us. If you needed to, you could always run `library(ggplot2)` to activate it separately.] The name refers to the idea of the "grammar of graphics", and it is built around a layering approach. You first specify your data and aesthetics (what should data will go on the x and y axes), then geometry (do you want data to be represented by points or bars or as a histogram?), any scaling (e.g. what values should be labeled on each axis), and theme elements (how do you want the plot to look generally?). There can be a lot of complexity, but building things up layer by layer, gradually adding and refining elements, is a powerful and satisfying approach.
+
+Here's a simple histogram of the concern item. I pipe the data into the `ggplot()` function, specifying that I want the `concern` column to be represented as the `x` aesthetic. Then I add geometry using `geom_histogram`. That geom function automatically computes bins and counts; here I just specify I want a `binwidth` of 1, i.e. each column of the histogram will represent one scale point. Note that ggplot layers are added using `+` rather than the usual `|>` pipe.
+
+
+```{r}
+#| label: fig-concern-no-theme
+#| fig-cap: Histogram of responses to "concern about government undermining news media" question
+
+my_data_complete |> 
+  ggplot(aes(x = concern)) +
+  geom_histogram(binwidth = 1)
+
+```
+
+
+The default theme is perfectly serviceable, but you can customize every element. Here I'll specify a couple of aspects using the `theme()` function, and I'll assign it to the name `theme_apa`. Then I can always add `theme_apa` as a layer to my plots going forward. 
+
+```{r}
+
+theme_apa <- theme(
+  panel.background = element_blank(),
+  axis.line = element_line()
+)
+
+```
+
+I'll also customize the "breaks" on the x-axis (where the ticks and numeric labels go) and the axis labels.
+
+```{r}
+#| label: fig-extraverted
+#| fig-cap: Histogram of responses to "extraverted, enthusiastic" TIPI item
+
+my_data_complete |> 
+  ggplot(aes(x = concern)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  scale_x_continuous(breaks = 1:5, 
+                     labels = c(" Not at all", "A little", "Moderately", "Very", "Extremely")) +
+  labs(x = "How concerned are you that some people in the government today might want to undermine the news media’s ability to serve
+as a check on governmental power?",
+       y = "Number of responses") +
+  theme_apa
+
+```
+
+Here's a histogram of the distrust item.
+
+```{r}
+#| label: fig-distrust
+#| fig-cap: Histogram of responses to "reserved, quiet" TIPI item
+
+my_data_complete |> 
+  ggplot(aes(x = distrust)) +
+  geom_histogram(binwidth = 1, color = "white") +
+  scale_x_continuous(breaks = 1:5,
+                     labels = c("A great deal", "A lot", "A moderate amount", "A little", "None")) +
+  labs(x = "In general, how much trust and confidence do you have in the news media \n when it comes to reporting the news fully, accurately, and fairly?",
+       y = "Number of responses") +
+  theme_apa
+
+```
+
+
 
 [^tidyverse-note]: The `select()` function, along with `filter()`, `mutate()`, `across()`, `everything()`, and others that you'll see in my example code, is part of the `tidyverse` family of packages (specifically these all come from the `dplyr` package, but we'll also use functions from other `tidyverse` packages like `tidyr` and `ggplot2`). There are other ways to do all these things without using `tidyverse` packages, just relying on what's referred to as "base" R functions. The `tidyverse` approach just makes this kind of data manipulation generally easier and makes the code more interpretable. If you're curious to see how base R and tidyverse functions differ in syntax, a good place to start is <https://dplyr.tidyverse.org/articles/base.html>.
 
@@ -160,9 +232,8 @@ We have our two extraversion items (one reverse-coded), the feeling thermometer 
 [^2]: If the data wasn't as simple or if we just wanted to be more explicit about things, we could filter based on valid responses for each item. For example, valid reponses to the feeling thermometer item are are anything from 0 to 100; anything else is invalid. Therefore we could write a `filter()` condition stating that `feeling_thermometer` (the name of the column) values must be `%in%` the set of values from `0:100`. Likewise for each of the extraversion columns, rows will be retained only if their values are `%in%` the range `1:7`.
 
         my_data_complete <- my_data |>
-          filter(feeling_thermometer %in% 0:100,
-                 extraversion1 %in% 1:7,
-                 extraversion2 %in% 1:7)
+          filter(trust %in% 1:5,
+                 concern %in% 1:5)
 
 
 

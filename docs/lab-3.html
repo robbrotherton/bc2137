@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Psychology Lab Handbook - Lab 3: Data cleaning</title>
+<title>Social Psychology Lab Handbook - Lab 3: Data preparation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -135,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Lab 3: Data cleaning</h1>
+      <h1 class="quarto-secondary-nav-title">Lab 3: Data preparation</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -181,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-3.html" class="sidebar-item-text sidebar-link active">Lab 3: Data cleaning</a>
+  <a href="./lab-3.html" class="sidebar-item-text sidebar-link active">Lab 3: Data preparation</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -292,7 +293,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#getting-data-into-r" id="toc-getting-data-into-r" class="nav-link" data-scroll-target="#getting-data-into-r">Getting data into R</a></li>
   <li><a href="#select-your-variables" id="toc-select-your-variables" class="nav-link" data-scroll-target="#select-your-variables">Select your variables</a></li>
   <li><a href="#cleaning-the-data" id="toc-cleaning-the-data" class="nav-link" data-scroll-target="#cleaning-the-data">Cleaning the data</a></li>
-  <li><a href="#computing-scale-averages" id="toc-computing-scale-averages" class="nav-link" data-scroll-target="#computing-scale-averages">Computing scale averages</a></li>
+  <li><a href="#recoding-values" id="toc-recoding-values" class="nav-link" data-scroll-target="#recoding-values">Recoding values</a></li>
+  </ul></li>
+  <li><a href="#start-examining-the-data" id="toc-start-examining-the-data" class="nav-link" data-scroll-target="#start-examining-the-data">Start examining the data</a>
+  <ul class="collapse">
+  <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a></li>
+  <li><a href="#visuaizating-distributions" id="toc-visuaizating-distributions" class="nav-link" data-scroll-target="#visuaizating-distributions">Visuaizating distributions</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -302,7 +308,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Lab 3: Data cleaning</h1>
+<h1 class="title d-none d-lg-block">Lab 3: Data preparation</h1>
 </div>
 
 
@@ -326,6 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Select required variables</li>
 <li>Filter the data based on completeness (and any other criteria)</li>
 <li>Compute any required variables (scale means, number of items missing, etc)</li>
+<li>Describe and visualize your variables</li>
 </ul>
 </section>
 <section id="working-with-data-in-r" class="level2">
@@ -353,66 +360,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="getting-data-into-r">Getting data into R</h3>
 <p>Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you could download the ANES 2016 data file as a .csv from the ANES website and read it into R that way. However, the <code>anesr</code> package contains the data so you don’t need to download it separately. Instead you can make it available by running this line of code:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(timeseries_2016)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(timeseries_2020)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When you execute the code you won’t see any output, but you should see the name <code>timeseries_2016</code> appear in your Environment pane. That is now an object in R called a data.frame. You can think of it as a spreadsheet like you’re familiar with from Excel or Google Sheets; a set of columns, one for each variable in the dataset, and a row for each participant’s answers.</p>
 <p>Typing the name of the data.frame and running that line of code will show the first few columns and rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>timeseries_2016</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>timeseries_2020</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4,270 × 1,842
-   version       V160001 V160001_orig V160101 V160101f V160101w V160102 V160102f
-   &lt;chr&gt;           &lt;dbl&gt;        &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
- 1 ANES2016Time…       1       300001   0.827    0.888        0   0.842    0.927
- 2 ANES2016Time…       2       300002   1.08     1.16         0   1.01     1.08 
- 3 ANES2016Time…       3       300003   0.388    0.416        0   0.367    0.398
- 4 ANES2016Time…       4       300004   0.360    0.385        0   0.366    0.418
- 5 ANES2016Time…       5       300006   0.647    0.693        0   0.646    0.726
- 6 ANES2016Time…       6       300007   0.706    0.759        0   0.688    0.725
- 7 ANES2016Time…       7       300008   3.96     4.25         0   4.62     4.79 
- 8 ANES2016Time…       8       300012   0.962    1.03         0   0.943    1.04 
- 9 ANES2016Time…       9       300018   0.976    1.05         0   1.01     1.07 
-10 ANES2016Time…      10       300020   0.618    0.664        0   0.600    0.638
-# ℹ 4,260 more rows
-# ℹ 1,834 more variables: V160102w &lt;dbl&gt;, V160201 &lt;dbl&gt;, V160201f &lt;dbl&gt;,
-#   V160201w &lt;dbl&gt;, V160202 &lt;dbl&gt;, V160202f &lt;dbl&gt;, V160202w &lt;dbl&gt;,
-#   V160501 &lt;hvn_lbll&gt;, V160502 &lt;hvn_lbll&gt;, V161001 &lt;hvn_lbll&gt;,
-#   V161002 &lt;hvn_lbll&gt;, V161003 &lt;hvn_lbll&gt;, V161004 &lt;hvn_lbll&gt;,
-#   V161005 &lt;hvn_lbll&gt;, V161006 &lt;hvn_lbll&gt;, V161007 &lt;hvn_lbll&gt;,
-#   V161008 &lt;hvn_lbll&gt;, V161009 &lt;hvn_lbll&gt;, V161010a &lt;hvn_lbll&gt;, …</code></pre>
+<pre><code># A tibble: 8,280 × 1,381
+   version         V200001 V160001_orig V200002 V200003 V200004 V200005 V200010a
+   &lt;chr&gt;             &lt;dbl&gt;   &lt;hvn_lbll&gt; &lt;hvn_l&gt; &lt;hvn_l&gt; &lt;hvn_l&gt; &lt;hvn_l&gt;    &lt;dbl&gt;
+ 1 ANES2020TimeSe…  200015       401318       3       2      -2       0    0.828
+ 2 ANES2020TimeSe…  200022       300261       3       2      -2       0    1.09 
+ 3 ANES2020TimeSe…  200039       400181       3       2      -2       0    0.672
+ 4 ANES2020TimeSe…  200046       300171       3       2      -2       0    0.492
+ 5 ANES2020TimeSe…  200053       405145       3       2      -2       1    1.19 
+ 6 ANES2020TimeSe…  200060       400374       3       2      -2       0    0.339
+ 7 ANES2020TimeSe…  200084       407013       3       2      -2       0    0.525
+ 8 ANES2020TimeSe…  200091       407174       3       2      -2       0    0.729
+ 9 ANES2020TimeSe…  200107       406264       3       2      -2       0    1.42 
+10 ANES2020TimeSe…  200114       402782       3       2      -2       1    2.56 
+# ℹ 8,270 more rows
+# ℹ 1,373 more variables: V200010b &lt;dbl&gt;, V200010c &lt;dbl&gt;, V200010d &lt;dbl&gt;,
+#   V200011a &lt;dbl&gt;, V200011b &lt;dbl&gt;, V200011c &lt;dbl&gt;, V200011d &lt;dbl&gt;,
+#   V200012a &lt;dbl&gt;, V200012b &lt;dbl&gt;, V200012c &lt;dbl&gt;, V200012d &lt;dbl&gt;,
+#   V200013a &lt;dbl&gt;, V200013b &lt;dbl&gt;, V200013c &lt;dbl&gt;, V200013d &lt;dbl&gt;,
+#   V200014a &lt;dbl&gt;, V200014b &lt;dbl&gt;, V200014c &lt;dbl&gt;, V200014d &lt;dbl&gt;,
+#   V200015a &lt;dbl&gt;, V200015b &lt;dbl&gt;, V200015c &lt;dbl&gt;, V200015d &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 <p>You can also click on the name in the Environment pane to view the data in a new tab.</p>
 </section>
 <section id="select-your-variables" class="level3">
 <h3 class="anchored" data-anchor-id="select-your-variables">Select your variables</h3>
-<p>As you can see, the data.frame contains a <em>lot</em> of variables; there are 1,842 columns of data. You’ll only need a few of those. So the first step is selecting just the variables you need to work with.</p>
+<p>As you can see, the data.frame contains a <em>lot</em> of variables; there are 1,381 columns of data, one for each recorded variable. You’ll only need two of those. So the first step is selecting just the variables you need to work with.</p>
 <p>There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the <code>select()</code> function.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This allows us to simply type in variable names separated by commas.</p>
-<p>For this example I’ll look at the correlation between extraversion and the Democratic party feeling thermometer. Extraversion has two TIPI items; their IDs (from the codebook) are <code>V162333</code> and <code>V162338</code>. The ID for the Democratic Party feeling thermometer is <code>V161095</code>. Since I’ll probably forget which ID is which, I’ll give the columns more meaningful names as I select them.</p>
+<p>For this example code I’ll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and concern that government might undermine media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I’ll probably forget which ID is which, I’ll give the columns more meaningful names as I select them.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> timeseries_2016 <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">extraversion1 =</span> <span class="st">"V162333"</span>, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">extraversion2 =</span> <span class="st">"V162338"</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">feeling_thermometer =</span> <span class="st">"V161095"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> timeseries_2020 <span class="sc">|&gt;</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">concern =</span> V201376) <span class="sc">|&gt;</span> </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s see what this new data.frame looks like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4,270 × 3
-   extraversion1 extraversion2 feeling_thermometer
-   &lt;hvn_lbll&gt;    &lt;hvn_lbll&gt;    &lt;hvn_lbll&gt;         
- 1 6             5              0                 
- 2 6             6             15                 
- 3 6             2             50                 
- 4 6             4             30                 
- 5 5             7             70                 
- 6 5             6             15                 
- 7 5             1             85                 
- 8 6             3              0                 
- 9 7             1             15                 
-10 5             5             50                 
-# ℹ 4,260 more rows</code></pre>
+<pre><code># A tibble: 8,280 × 2
+   trust concern
+   &lt;dbl&gt;   &lt;dbl&gt;
+ 1     1       1
+ 2     1       1
+ 3     3       5
+ 4     4       3
+ 5     2       4
+ 6     4       4
+ 7     2       5
+ 8     1       1
+ 9     3       2
+10     3       2
+# ℹ 8,270 more rows</code></pre>
 </div>
 </div>
 <p>It all looks good so far. But if you inspect the data more extensively (click the name in your Environment to open a tab showing the data and scroll down a bit) you’ll notice that there are some negative numbers in the data. That’s from survey codes which record missing data. If you try to calculate an average score with those included it’ll mess up the sums, so we need to do some data cleaning to handle things like that.</p>
@@ -430,50 +437,115 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(my_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4270</code></pre>
+<pre><code>[1] 8280</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(my_data_complete) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3540</code></pre>
+<pre><code>[1] 8211</code></pre>
 </div>
 </div>
-<p>After filtering to keep only rows with complete data, we’re left with 3,540 valid responses.</p>
+<p>After filtering to keep only rows with complete data, we’re left with 8,211 valid responses.</p>
 </section>
-<section id="computing-scale-averages" class="level3">
-<h3 class="anchored" data-anchor-id="computing-scale-averages">Computing scale averages</h3>
-<p>Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is compute any new values required for analysis. As an example, if you have a scale which has multiple questions asking about a particular construct, it is often necessary to compute an average score for each participant.</p>
-<p>The TIPI has 10 questions in total, two for each of the Big 5 personality traits, so it may be desirable to compute a mean trait score by averaging its two respective items.</p>
-<p>Notice, however, that for each of the 5 traits, one question is positively worded and one is negatively worded. For extraversion, item <code>V162333</code> (which I renamed <code>extraversion1</code>) is “extraverted, enthusiastic”, while item <code>V162338</code> (renamed <code>extraversion2</code>) is “reserved, quiet”. The second one needs to be reverse-coded, so that higher scores on both items indicate greater extraversion. Since answers can range from 1 to 7, an easy way to recode the scores is to subtract the participant’s response from 8; 1 becomes 7, 2 becomes 6, etc.</p>
+<section id="recoding-values" class="level3">
+<h3 class="anchored" data-anchor-id="recoding-values">Recoding values</h3>
+<p>Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is recode values so they all mean what we want them to mean.</p>
+<p>Notice that valid responses for the “undermine the news media” concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that’s fine. So the “trust in news media” question, responses are 1 (none) though 5 (a great deal). But I’m thinking of the psychological construct as <em>dis</em>trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="ot">&lt;-</span> my_data_complete <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">extraversion2 =</span> <span class="dv">8</span> <span class="sc">-</span> extraversion2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distrust =</span> <span class="dv">6</span> <span class="sc">-</span> trust) <span class="sc">|&gt;</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>trust) <span class="co"># don't need the original trust column any more</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now we can go ahead and compute the average, using <code>mutate()</code> to create a new column (named <code>extraversion_mean</code>) consisting of the <code>rowMeans()</code> (i.e.&nbsp;an average for each row) <code>across()</code> the specified columns (those for which the column name <code>contains("extraversion")</code>.</p>
+<p>Now I have my two variables, concern about the news media, and (reverse-coded) distrust of the news media, for each of the 8,211 participants with complete data. We’re ready to start exploring the data.</p>
+</section>
+</section>
+<section id="start-examining-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="start-examining-the-data">Start examining the data</h2>
+<section id="descriptive-statistics" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h3>
+<p>The most common descriptive statistics are the mean (<span class="math inline">\(M\)</span>) and standard deviation (<span class="math inline">\(SD\)</span>). You should report these for each variable in your analysis.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="ot">&lt;-</span> my_data_complete <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">extraversion_mean =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">contains</span>(<span class="st">"extraversion"</span>))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Let’s see how it looks.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_data_complete</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_data_complete<span class="sc">$</span>concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3,540 × 4
-   extraversion1 extraversion2 feeling_thermometer extraversion_mean
-   &lt;hvn_lbll&gt;    &lt;hvn_lbll&gt;    &lt;hvn_lbll&gt;                      &lt;dbl&gt;
- 1 6             3              0                                4.5
- 2 6             2             15                                4  
- 3 6             6             50                                6  
- 4 6             4             30                                5  
- 5 5             1             70                                3  
- 6 5             2             15                                3.5
- 7 5             7             85                                6  
- 8 6             5              0                                5.5
- 9 7             7             15                                7  
-10 5             3             50                                4  
-# ℹ 3,530 more rows</code></pre>
+<pre><code>[1] 3.446718</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_data_complete<span class="sc">$</span>concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.363856</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_data_complete<span class="sc">$</span>distrust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3.54086</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_data_complete<span class="sc">$</span>distrust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.208428</code></pre>
 </div>
 </div>
-<p>We have our two extraversion items (one reverse-coded), the feeling thermometer rating, and the computed extraversion mean scores for each of the 3,540 participants with complete data. We’re ready to analyze the data!</p>
+</section>
+<section id="visuaizating-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="visuaizating-distributions">Visuaizating distributions</h3>
+<p>In addition to reporting the mean and standard deviation, it is useful to visualize the distribution of the data. This can reveal nuances that are not obvious in those single numeric summary values.</p>
+<p>As with most things, there are a lot of different ways of producing graphs using R. One of the most widely used and powerful is the <code>ggplot2</code> package.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The name refers to the idea of the “grammar of graphics”, and it is built around a layering approach. You first specify your data and aesthetics (what should data will go on the x and y axes), then geometry (do you want data to be represented by points or bars or as a histogram?), any scaling (e.g.&nbsp;what values should be labeled on each axis), and theme elements (how do you want the plot to look generally?). There can be a lot of complexity, but building things up layer by layer, gradually adding and refining elements, is a powerful and satisfying approach.</p>
+<p>Here’s a simple histogram of the concern item. I pipe the data into the <code>ggplot()</code> function, specifying that I want the <code>concern</code> column to be represented as the <code>x</code> aesthetic. Then I add geometry using <code>geom_histogram</code>. That geom function automatically computes bins and counts; here I just specify I want a <code>binwidth</code> of 1, i.e.&nbsp;each column of the histogram will represent one scale point. Note that ggplot layers are added using <code>+</code> rather than the usual <code>|&gt;</code> pipe.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern)) <span class="sc">+</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-concern-no-theme" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab-3_files/figure-html/fig-concern-no-theme-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Histogram of responses to “concern about government undermining news media” question</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The default theme is perfectly serviceable, but you can customize every element. Here I’ll specify a couple of aspects using the <code>theme()</code> function, and I’ll assign it to the name <code>theme_apa</code>. Then I can always add <code>theme_apa</code> as a layer to my plots going forward.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>theme_apa <span class="ot">&lt;-</span> <span class="fu">theme</span>(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.line =</span> <span class="fu">element_line</span>()</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>I’ll also customize the “breaks” on the x-axis (where the ticks and numeric labels go) and the axis labels.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern)) <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">" Not at all"</span>, <span class="st">"A little"</span>, <span class="st">"Moderately"</span>, <span class="st">"Very"</span>, <span class="st">"Extremely"</span>)) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"How concerned are you that some people in the government today might want to undermine the news media’s ability to serve</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="st">as a check on governmental power?"</span>,</span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of responses"</span>) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  theme_apa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-extraverted" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab-3_files/figure-html/fig-extraverted-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Histogram of responses to “extraverted, enthusiastic” TIPI item</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here’s a histogram of the distrust item.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> distrust)) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A great deal"</span>, <span class="st">"A lot"</span>, <span class="st">"A moderate amount"</span>, <span class="st">"A little"</span>, <span class="st">"None"</span>)) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"In general, how much trust and confidence do you have in the news media </span><span class="sc">\n</span><span class="st"> when it comes to reporting the news fully, accurately, and fairly?"</span>,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of responses"</span>) <span class="sc">+</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  theme_apa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-distrust" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="lab-3_files/figure-html/fig-distrust-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: Histogram of responses to “reserved, quiet” TIPI item</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -488,10 +560,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>That would mutate (i.e.&nbsp;change values) across every column. You can read the second part (after the <code>~</code>) as “replace the original values (indicated by the placeholder <code>.</code>), where the value is less than zero, with <code>NA</code>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>If the data wasn’t as simple or if we just wanted to be more explicit about things, we could filter based on valid responses for each item. For example, valid reponses to the feeling thermometer item are are anything from 0 to 100; anything else is invalid. Therefore we could write a <code>filter()</code> condition stating that <code>feeling_thermometer</code> (the name of the column) values must be <code>%in%</code> the set of values from <code>0:100</code>. Likewise for each of the extraversion columns, rows will be retained only if their values are <code>%in%</code> the range <code>1:7</code>.</p>
 <pre><code>my_data_complete &lt;- my_data |&gt;
-  filter(feeling_thermometer %in% 0:100,
-         extraversion1 %in% 1:7,
-         extraversion2 %in% 1:7)</code></pre>
+  filter(trust %in% 1:5,
+         concern %in% 1:5)</code></pre>
 <a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<li id="fn4"><p>The <code>ggplot2</code> package is part of the <code>tidyverse</code>, so because we already ran <code>library(tidyverse)</code> earlier the <code>ggplot2</code> functions are already available to us. If you needed to, you could always run <code>library(ggplot2)</code> to activate it separately.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
