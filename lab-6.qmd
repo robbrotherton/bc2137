@@ -1,41 +1,41 @@
 # Lab 6: Project planning {.unnumbered}
 
-In this lab, you will start your second project: conducting an ANOVA interaction using the same ANES data as before.
+In this lab, you will start your second project: conducting an ANOVA interaction analysis using the same ANES data as before.
 
 
 ### Goals
 
-- Understand the purpose of multiple regression
+- Understand the purpose of ANOVA
 - Identify variables for your analysis
 - Search the literature to find relevant research
-- Formulate a brief research proposal
+- Articulate your hypotheses
 
 
-## Project overview
+<!-- ## Project overview -->
 
-Dependent variable:
+<!-- Dependent variable: -->
 
-- Authoritarianism
+<!-- - Authoritarianism -->
 
-Potential independent variables
+<!-- Potential independent variables -->
 
-- Racial identity
-- Gender identity
-- Partisanship (stated; vote)
-- Income
-- Age
-- Media
-- Personal (in)security
+<!-- - Racial identity -->
+<!-- - Gender identity -->
+<!-- - Partisanship (stated; vote) -->
+<!-- - Income -->
+<!-- - Age -->
+<!-- - Media -->
+<!-- - Personal (in)security -->
 
-- Life experiences (Next, we have a few questions about your personal
-experiences.)
-  - Do you personally know someone who moved to the U.S. from another country, or not? (V202561)
-  - Do you currently owe money on student loans, or not? (V202562)
-  - Have you ever received food stamps or another form of public assistance, or not? (V202563)
-  - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564)
-  - Do you regularly choose products because they are made in America, or not? (V202565)
-  - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566)
-  - Have you gone hunting or fishing in the past year, or not? (V202567)
-  - Have you used public transportation in the past year, or not? (V202568)
-  - Have you ever been bitten by a shark, or not? (V202569)
+<!-- - Life experiences (Next, we have a few questions about your personal -->
+<!-- experiences.) -->
+<!--   - Do you personally know someone who moved to the U.S. from another country, or not? (V202561) -->
+<!--   - Do you currently owe money on student loans, or not? (V202562) -->
+<!--   - Have you ever received food stamps or another form of public assistance, or not? (V202563) -->
+<!--   - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564) -->
+<!--   - Do you regularly choose products because they are made in America, or not? (V202565) -->
+<!--   - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566) -->
+<!--   - Have you gone hunting or fishing in the past year, or not? (V202567) -->
+<!--   - Have you used public transportation in the past year, or not? (V202568) -->
+<!--   - Have you ever been bitten by a shark, or not? (V202569) -->
 

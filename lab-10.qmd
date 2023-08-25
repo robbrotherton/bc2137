@@ -1,10 +1,9 @@
-# Lab 10: Proposal planning {.unnumbered}
+# Lab 10: Project planning {.unnumbered}
 
-My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the secondary data analysis projects so far, but that you're also feeling a bit limited by choice of variables you had and the inability to decide what exactly to measure or how to measure it. In this lab we'll begin the final project: devising and piloting a novel measure of a personality trait of your choice.
+My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the secondary data analysis projects so far, but that you're also feeling a bit limited by the constrained choice of variables you had. In this lab we'll begin the final project: you will execute a project of your own design, with the freedom to choose any variables you like from the full data set.
 
 
 ## Goals
 
-- Understand the process of scale design and validation
-- Pick a personality trait to design a scale around
-- Write a brief proposal of your project and expectations
+- Decide on an analysis and identify the relevant variables
+- Start preparing the data in R

@@ -212,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">Lab 7: Data cleaning &amp; analysis</a>
+  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">Lab 7: Data preparation &amp; analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -237,17 +237,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">Lab 10: Proposal planning</a>
+  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">Lab 10: Project planning</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 11: Proposal progress</span></a>
+  <a href="./lab-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 11: Analysis, visualization &amp; interpretation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 12: Proposal Presentations</span></a>
+  <a href="./lab-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 12: Presentation &amp; report</span></a>
   </div>
 </li>
       </ul>
@@ -298,7 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#start-examining-the-data" id="toc-start-examining-the-data" class="nav-link" data-scroll-target="#start-examining-the-data">Start examining the data</a>
   <ul class="collapse">
   <li><a href="#descriptive-statistics" id="toc-descriptive-statistics" class="nav-link" data-scroll-target="#descriptive-statistics">Descriptive statistics</a></li>
-  <li><a href="#visuaizating-distributions" id="toc-visuaizating-distributions" class="nav-link" data-scroll-target="#visuaizating-distributions">Visuaizating distributions</a></li>
+  <li><a href="#visualizing-distributions" id="toc-visualizing-distributions" class="nav-link" data-scroll-target="#visualizing-distributions">Visualizing distributions</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -323,7 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>You should begin this session with variables from the ANES 2016 dataset in mind for your analysis. In class we will introduce the R language and RStudio environment, and demonstrate necessary data cleaning and manipulation in preparation for analysis. By the end of the class you should have modified the example code to work with your selected variables.</p>
+<p>You should begin this session with variables from the ANES dataset in mind for your analysis. In class we will introduce the R language and RStudio environment, and demonstrate necessary data cleaning and manipulation in preparation for analysis. By the end of the class you should have modified the example code to work with your selected variables.</p>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <ul>
@@ -339,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="working-with-data-in-r">Working with data in R</h2>
 <section id="getting-r-ready" class="level3">
 <h3 class="anchored" data-anchor-id="getting-r-ready">Getting R ready</h3>
-<p>In addition to containing a Big 5 personality scale, the ANES 2016 dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the ANES data relatively straightforward (not that you won’t still run into issues!): <code>anesr</code> (<a href="https://github.com/jamesmartherus/anesr">github.com/jamesmartherus/anesr</a>).</p>
+<p>In addition to being a high-quality source of social-psychology-related data, the ANES dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the data relatively straightforward (not that you won’t still run into issues!): <code>anesr</code> (<a href="https://github.com/jamesmartherus/anesr">github.com/jamesmartherus/anesr</a>).</p>
 <p>To start exploring the data in R, you first need to set up your environment. This means installing the <code>anesr</code> package. Usually packages can be installed from within R using the <code>install.packages()</code> function. However since the <code>anesr</code> package is hosted on GitHub (as opposed to the official R repository of packages), the easiest way to install it is by first installing the <code>devtools</code> package, which has a special function for installing packages from GitHub.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
@@ -358,11 +358,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="getting-data-into-r" class="level3">
 <h3 class="anchored" data-anchor-id="getting-data-into-r">Getting data into R</h3>
-<p>Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you could download the ANES 2016 data file as a .csv from the ANES website and read it into R that way. However, the <code>anesr</code> package contains the data so you don’t need to download it separately. Instead you can make it available by running this line of code:</p>
+<p>Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you could download the ANES data file as a .csv from the ANES website and read it into R that way. However, the <code>anesr</code> package contains the data so you don’t need to download it separately. Instead you can make it available by running this line of code:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(timeseries_2020)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>When you execute the code you won’t see any output, but you should see the name <code>timeseries_2016</code> appear in your Environment pane. That is now an object in R called a data.frame. You can think of it as a spreadsheet like you’re familiar with from Excel or Google Sheets; a set of columns, one for each variable in the dataset, and a row for each participant’s answers.</p>
+<p>When you execute the code you won’t see any output, but you should see the name <code>timeseries_2020</code> appear in your Environment pane. That is now an object in R called a data.frame. You can think of it as a spreadsheet like you’re familiar with from Excel or Google Sheets; a set of columns, one for each variable in the dataset, and a row for each participant’s answers.</p>
 <p>Typing the name of the data.frame and running that line of code will show the first few columns and rows.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>timeseries_2020</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -402,6 +402,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">concern =</span> V201376) <span class="sc">|&gt;</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>I did something else there as well: <code>haven::zap_labels()</code>. Even though when you look at the data it’s a bunch of numbers, it’s actually a special format called “haven-labelled”, meaning there is some extra info stored about the numbers behind-the-scenes. That can be useful to have, but it actually interferes with some of the numeric filtering and mutating we need to do momentarily, so the <code>zap_labels()</code> function drops that label information and turns the data into plain old numbers.</p>
 <p>Let’s see what this new data.frame looks like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -449,7 +450,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="recoding-values" class="level3">
 <h3 class="anchored" data-anchor-id="recoding-values">Recoding values</h3>
 <p>Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is recode values so they all mean what we want them to mean.</p>
-<p>Notice that valid responses for the “undermine the news media” concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that’s fine. So the “trust in news media” question, responses are 1 (none) though 5 (a great deal). But I’m thinking of the psychological construct as <em>dis</em>trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).</p>
+<p>Notice that valid responses for the “undermine the news media” concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that’s fine.</p>
+<p>For the “trust in news media” question, responses are 1 (none) though 5 (a great deal). But I’m thinking of the psychological construct as <em>dis</em>trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="ot">&lt;-</span> my_data_complete <span class="sc">|&gt;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distrust =</span> <span class="dv">6</span> <span class="sc">-</span> trust) <span class="sc">|&gt;</span> </span>
@@ -463,6 +465,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="descriptive-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h3>
 <p>The most common descriptive statistics are the mean (<span class="math inline">\(M\)</span>) and standard deviation (<span class="math inline">\(SD\)</span>). You should report these for each variable in your analysis.</p>
+<p>There are many ways of doing this, but for now I’ll just use the <code>mean()</code> and <code>sd()</code> functions. I can refer to a particular column in a data.frame using the <code>$</code> operator, i.e.&nbsp;<code>my_data$concern</code> and so on.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_data_complete<span class="sc">$</span>concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -482,8 +485,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="visuaizating-distributions" class="level3">
-<h3 class="anchored" data-anchor-id="visuaizating-distributions">Visuaizating distributions</h3>
+<section id="visualizing-distributions" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-distributions">Visualizing distributions</h3>
 <p>In addition to reporting the mean and standard deviation, it is useful to visualize the distribution of the data. This can reveal nuances that are not obvious in those single numeric summary values.</p>
 <p>As with most things, there are a lot of different ways of producing graphs using R. One of the most widely used and powerful is the <code>ggplot2</code> package.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The name refers to the idea of the “grammar of graphics”, and it is built around a layering approach. You first specify your data and aesthetics (what should data will go on the x and y axes), then geometry (do you want data to be represented by points or bars or as a histogram?), any scaling (e.g.&nbsp;what values should be labeled on each axis), and theme elements (how do you want the plot to look generally?). There can be a lot of complexity, but building things up layer by layer, gradually adding and refining elements, is a powerful and satisfying approach.</p>
 <p>Here’s a simple histogram of the concern item. I pipe the data into the <code>ggplot()</code> function, specifying that I want the <code>concern</code> column to be represented as the <code>x</code> aesthetic. Then I add geometry using <code>geom_histogram</code>. That geom function automatically computes bins and counts; here I just specify I want a <code>binwidth</code> of 1, i.e.&nbsp;each column of the histogram will represent one scale point. Note that ggplot layers are added using <code>+</code> rather than the usual <code>|&gt;</code> pipe.</p>
@@ -507,22 +510,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">axis.line =</span> <span class="fu">element_line</span>()</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>I’ll also customize the “breaks” on the x-axis (where the ticks and numeric labels go) and the axis labels.</p>
+<p>I’ll also customize the “breaks” and “labels” on the x-axis (to show the verbal scale responses rather than just numeric codes), and the labels for the x and y axes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern)) <span class="sc">+</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">" Not at all"</span>, <span class="st">"A little"</span>, <span class="st">"Moderately"</span>, <span class="st">"Very"</span>, <span class="st">"Extremely"</span>)) <span class="sc">+</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"How concerned are you that some people in the government today might want to undermine the news media’s ability to serve</span></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="st">as a check on governmental power?"</span>,</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of responses"</span>) <span class="sc">+</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  theme_apa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"How concerned are you that some people in the government today might want to</span><span class="sc">\n</span><span class="st">undermine the news media’s ability to serve as a check on governmental power?"</span>,</span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Number of responses"</span>) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>  theme_apa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-extraverted" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="lab-3_files/figure-html/fig-extraverted-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Histogram of responses to “extraverted, enthusiastic” TIPI item</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Histogram of responses to concern about news being undermined</figcaption><p></p>
 </figure>
 </div>
 </div>

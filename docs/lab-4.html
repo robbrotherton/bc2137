@@ -212,7 +212,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">Lab 7: Data cleaning &amp; analysis</a>
+  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">Lab 7: Data preparation &amp; analysis</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -237,17 +237,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">Lab 10: Proposal planning</a>
+  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">Lab 10: Project planning</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 11: Proposal progress</span></a>
+  <a href="./lab-11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 11: Analysis, visualization &amp; interpretation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 12: Proposal Presentations</span></a>
+  <a href="./lab-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 12: Presentation &amp; report</span></a>
   </div>
 </li>
       </ul>
@@ -290,7 +290,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#correlation" id="toc-correlation" class="nav-link" data-scroll-target="#correlation">Correlation</a>
   <ul class="collapse">
   <li><a href="#the-correlation-statistic" id="toc-the-correlation-statistic" class="nav-link" data-scroll-target="#the-correlation-statistic">The correlation statistic</a></li>
-  <li><a href="#correlation-in-r" id="toc-correlation-in-r" class="nav-link" data-scroll-target="#correlation-in-r">Correlation in R</a></li>
+  <li><a href="#computing-a-correlation" id="toc-computing-a-correlation" class="nav-link" data-scroll-target="#computing-a-correlation">Computing a correlation</a></li>
+  <li><a href="#visualizing-a-correlation" id="toc-visualizing-a-correlation" class="nav-link" data-scroll-target="#visualizing-a-correlation">Visualizing a correlation</a></li>
   </ul></li>
   <li><a href="#interpreting-your-findings" id="toc-interpreting-your-findings" class="nav-link" data-scroll-target="#interpreting-your-findings">Interpreting your findings</a></li>
   </ul>
@@ -316,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>You will start this session with your cleaned data ready to use in R. By the end of the session you will have computed the correlation statistic, produced some visualizations of your data, and be ready to present and write up your findings.</p>
+<p>You will start this session with your cleaned data ready to use in R. By the end of the session you will have computed the correlation statistic, thought about how to interpret your finding, and be ready to present and write up your project.</p>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <ul>
@@ -327,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="correlation" class="level2">
 <h2 class="anchored" data-anchor-id="correlation">Correlation</h2>
-<p>Running with my example from last week, my variables were average extraversion scores and the Democratic Party feeling thermometer score. I made a data.frame with just those variables; filtered the data down to complete, valid responses; recoded the negatively-worded item; and computed an extraversion mean score. To refresh your memory, here’s the entire pipeline from start to finish:</p>
+<p>Running with my example from last week, I made a data.frame with just the two variables I needed; filtered the data down to complete, valid responses; and recoded the trust item so higher scores indicate greater distrust. To refresh your memory, here’s the entire pipeline from start to finish:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(anesr)</span>
@@ -343,10 +344,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="the-correlation-statistic" class="level3">
 <h3 class="anchored" data-anchor-id="the-correlation-statistic">The correlation statistic</h3>
 <p>The correlation statistic can be computed with a single line of code, as you’ll see. But it’s important to understand the math happening behind the scenes.</p>
+<p>If you need to refresh your memory from a past statistics class, refer to <a href="./appendix-correlation.html">the correlation statistic Appendix</a>.</p>
 </section>
-<section id="correlation-in-r" class="level3">
-<h3 class="anchored" data-anchor-id="correlation-in-r">Correlation in R</h3>
-<p>The data is ready to be analyzed. The correlation between two variables can be found using the <code>cor()</code> function.</p>
+<section id="computing-a-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="computing-a-correlation">Computing a correlation</h3>
+<p>The correlation between two variables can be found using the <code>cor()</code> function.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>concern, </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> my_data_complete<span class="sc">$</span>distrust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -381,21 +383,23 @@ sample estimates:
 -0.4955168 </code></pre>
 </div>
 </div>
+</section>
+<section id="visualizing-a-correlation" class="level3">
+<h3 class="anchored" data-anchor-id="visualizing-a-correlation">Visualizing a correlation</h3>
 <p>Lastly, let’s make a scatterplot visualizing the correlation.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern, <span class="at">y =</span> distrust)) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_point() +</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.45</span>, <span class="at">height =</span> <span class="fl">0.45</span>, <span class="at">seed =</span> <span class="dv">1</span>),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">" Not at all"</span>, <span class="st">"A little"</span>, <span class="st">"Moderately"</span>, <span class="st">"Very"</span>, <span class="st">"Extremely"</span>)) <span class="sc">+</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A great deal"</span>, <span class="st">"A lot"</span>, <span class="st">"A moderate amount"</span>, <span class="st">"A little"</span>, <span class="st">"None"</span>)) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Concern about government undermining the news media"</span>,</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trust in news media"</span>) <span class="sc">+</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.45</span>, <span class="at">height =</span> <span class="fl">0.45</span>, <span class="at">seed =</span> <span class="dv">1</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">" Not at all"</span>, <span class="st">"A little"</span>, <span class="st">"Moderately"</span>, <span class="st">"Very"</span>, <span class="st">"Extremely"</span>)) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"A great deal"</span>, <span class="st">"A lot"</span>, <span class="st">"A moderate amount"</span>, <span class="st">"A little"</span>, <span class="st">"None"</span>)) <span class="sc">+</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Concern about government undermining the news media"</span>,</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Trust in news media"</span>) <span class="sc">+</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.line =</span> <span class="fu">element_line</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-scatter" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -405,11 +409,12 @@ sample estimates:
 </div>
 </div>
 </div>
+<p>Most of that will look familiar from the previous plots we made. One new element is the <code>position = position_jitter()</code> part inside the <code>geom_point()</code> function. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it’ll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.</p>
 </section>
 </section>
 <section id="interpreting-your-findings" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-your-findings">Interpreting your findings</h2>
-<p>Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people’s answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you’ll need to consider a number of things.</p>
+<p>Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people’s answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you’ll need to consider a number of things:</p>
 <ul>
 <li>What features of how the questions were asked might have affected people’s answers?</li>
 <li>What, if anything, about the context in which the questions were asked might have influenced people’s answers?</li>

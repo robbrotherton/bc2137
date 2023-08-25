@@ -8,21 +8,21 @@ schedule <- tibble::tribble(
   
   # Project 1 header goes here
   "9/21",   "Project planning",          "",
-  "9/28",   "Data cleaning",             "",
+  "9/28",   "Data preparation",             "",
   "10/5",   "Analysis",                  "Presentation slide",
   "10/12",  "Presentations",             "Project 1 report",
   
   # Project 2 header goes here
   "10/19",  "Project planning",          "",
-  "10/26",  "Data cleaning & analysis",  "",
-  "11/2",   "Visualization & reporting", "Presentation slide",
+  "10/26",  "Data preparation & analysis",  "",
+  "11/2",   "Visualization & interpretation", "Presentation slide",
   "11/9",   "Presentations",             "Project 2 report",
   
   # Project 3 header goes here
   "11/16",  "Project planning",          "",
   "11/23",  "No class (Thanksgiving)",   "",
-  "11/30",  "Questionnaire design",      "Presentation slide",
-  "12/7",   "Presentations",             "Project 3 report",
+  "11/30",  "Analysis, visualization & interpretation",      "Presentation slide",
+  "12/7",   "Presentation & report",             "Project 3 report",
 )
 ```
 
@@ -46,7 +46,7 @@ Office hour: TBC
 This lab will usually be taken concurrently with BC2138 Social lecture. It will expand upon some of the theoretical, methodological and analytic issues introduced there, as well as giving you the opportunity to explore topics of your choosing from within (or beyond) those covered in the lectures in greater depth through hands-on experience with research design and data analysis.
 
 
-The semester is broken into 3 projects. The first will involve planning and executing a correlational analysis of existing data. The second will involve performing an ANOVA analysis on existing data. The third project will involve proposing a novel experiment. Through these projects you will gain experience in formulating social-psychological research questions; collecting, analyzing and visualizing data; and interpreting and communicating your findings. Projects will be undertaken in groups; group members will collaborate on design and analysis. Each project will culminate in an in-class group presentation and submission of a brief individual write up of your project.
+The semester is broken into 3 projects, each involving an analysis of existing data. The first will involve planning and executing a correlational analysis. The second will involve performing an ANOVA analysis. For the third project, you will design your own analysis. Through these projects you will gain experience in formulating social-psychological research questions; analyzing and visualizing data; and interpreting and communicating your findings. Projects will be undertaken in groups; group members will collaborate on design and analysis. Each project will culminate in an in-class group presentation and submission of a brief individual write up of your project.
 
 
 
@@ -56,7 +56,7 @@ Labs are substantially more interactive and discussion-based than the traditiona
 
 If you have questions, thoughts, or ideas you want to share, feel free to do so at any time (while keeping within the bounds of polite conversation, obviously--don't interrupt or talk over other people! But do feel free to respond to others without having to raise your hand or wait to be called on). Everyone will get the most out of this lab when the discussion can develop organically and everyone feels free to be part of the conversation if & when they have something to add.
 
-Being part of the in-person discussion is one obvious way to participate, but it’s not the only way. Different people have different styles of participation, and the lab is designed to try and accommodate and encourage different approaches. Your level of engagement with your project partner(s), your TA and Prof. Brotherton as you work through your projects is also an important form of participation. You can also participate by coming to office hours.
+Being part of the in-person discussion is one obvious way to participate, but it’s not the only way. Different people have different styles of participation, and the lab is designed to try and accommodate and encourage different approaches. Your level of engagement with your project partners and Prof. Brotherton as you work through your projects is also an important form of participation. You can also participate by coming to office hours.
 
 At a minimum (i.e. for a passing grade), I’ll be looking for some form of participation (loosely defined) from you every week. Higher participation grades will be earned through regular, enthusiastic, productive participation (note that quality is more important than quantity).
 

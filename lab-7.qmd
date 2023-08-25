@@ -1,4 +1,4 @@
-# Lab 7: Data cleaning & analysis {.unnumbered}
+# Lab 7: Data preparation & analysis {.unnumbered}
 
 ### Goals
 
@@ -6,7 +6,8 @@
 - Select required variables
 - Filter the data based on completeness (and any other criteria)
 - Compute any required variables (scale means, number of items missing, etc)
+- Compute your ANOVA
 
-## Data wrangling, description, and visualization
+<!-- ## Data wrangling, description, and visualization -->
 
-### Data wrangling
+<!-- ### Data wrangling -->

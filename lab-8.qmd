@@ -2,10 +2,8 @@
 
 ### Goals
 
-- Check the assumptions of multiple regression have been met
-- Visualize your regression model
+- Visualize the interaction
 - Interpret the findings
 
-## Checking model assumptions
 
 

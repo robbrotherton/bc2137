@@ -1,6 +1,6 @@
 # Lab 4: Analysis {.unnumbered}
 
-You will start this session with your cleaned data ready to use in R. By the end of the session you will have computed the correlation statistic, produced some visualizations of your data, and be ready to present and write up your findings.
+You will start this session with your cleaned data ready to use in R. By the end of the session you will have computed the correlation statistic, thought about how to interpret your finding, and be ready to present and write up your project.
 
 
 ### Goals
@@ -12,7 +12,7 @@ You will start this session with your cleaned data ready to use in R. By the end
 
 ## Correlation
 
-Running with my example from last week, my variables were average extraversion scores and the Democratic Party feeling thermometer score. I made a data.frame with just those variables; filtered the data down to complete, valid responses; recoded the negatively-worded item; and computed an extraversion mean score. To refresh your memory, here's the entire pipeline from start to finish:
+Running with my example from last week, I made a data.frame with just the two variables I needed; filtered the data down to complete, valid responses; and recoded the trust item so higher scores indicate greater distrust. To refresh your memory, here's the entire pipeline from start to finish:
 
 
 ```{r}
@@ -37,13 +37,14 @@ my_data_complete <- timeseries_2020 |>
 
 The correlation statistic can be computed with a single line of code, as you'll see. But it's important to understand the math happening behind the scenes.
 
-
-
-### Correlation in R
+If you need to refresh your memory from a past statistics class, refer to [the correlation statistic Appendix](appendix-correlation.qmd).
 
 
 
-The data is ready to be analyzed. The correlation between two variables can be found using the `cor()` function.
+### Computing a correlation
+
+The correlation between two variables can be found using the `cor()` function.
+
 ```{r}
 
 cor(x = my_data_complete$concern, 
@@ -71,6 +72,8 @@ cor.test(x = my_data_complete$concern,
 ```
 
 
+### Visualizing a correlation
+
 Lastly, let's make a scatterplot visualizing the correlation.
 
 
@@ -80,7 +83,6 @@ Lastly, let's make a scatterplot visualizing the correlation.
 
 my_data_complete |> 
   ggplot(aes(x = concern, y = distrust)) +
-  # geom_point() +
   geom_point(position = position_jitter(width = 0.45, height = 0.45, seed = 1),
              alpha = 0.1) +
   scale_x_continuous(breaks = 1:5, 
@@ -94,10 +96,11 @@ my_data_complete |>
 
 ```
 
+Most of that will look familiar from the previous plots we made. One new element is the `position = position_jitter()` part inside the `geom_point()` function. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it'll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.
 
 ## Interpreting your findings
 
-Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people's answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you'll need to consider a number of things.
+Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people's answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you'll need to consider a number of things:
 
 - What features of how the questions were asked might have affected people's answers?
 - What, if anything, about the context in which the questions were asked might have influenced people's answers?

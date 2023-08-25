@@ -16,7 +16,7 @@ With this project you will examine a correlation between social psychological co
 
 A *correlation* refers an association between two things. It is a statement of a statistical relationship--a general tendency, rather than a rigid law. To say that something correlates with something else--for example, [satisfaction with ones friendships is correlated with wellbeing](https://psycnet.apa.org/record/2019-64493-001) or [prejudice is correlated with endoresement of stereotypes towards a group](https://www.pnas.org/doi/10.1073/pnas.2212794120)--is to say that those things *tend* to go together. Not everyone who feels great satisfaction in their friendships will report greater wellbeing than anyone with less social satisfaction, but there is some tendency for the two to go together on the whole.
 
-Of course, these kind of correlations aren't just facts found lying around in nature; they are empirical findings produced by researchers. All the findings you learn about in the social psychology lecture (and beyond) are the product of research procedures. Researchers decide what psychological constructs they want to investigate; how to measure those constructs; what statistical analyses are appropriate; and what conclusions may be drawn.
+Of course, these kind of correlations aren't just facts found lying around in nature; they are empirical findings produced by researchers. All the findings you learn about in the social psychology lecture (and beyond) are the product of research procedures. Researchers decide what psychological constructs they want to investigate; how to measure those constructs; what statistical analyses are appropriate; and what conclusions may be drawn. There are strengths, limitations, and trade offs involved in every decision along the way.
 
 
 
@@ -94,9 +94,9 @@ timeseries_2020 |>
 
 The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2020 election, since it's the most recently conducted complete survey.
 
-The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats affect people's trust. What kinds of threats lead to increasing distrust in government and/or other people?
+The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats affect people's trust. What kinds of threats are associated with distrust of the government and/or other people?
 
-One of your variables will be a question assessing perceived threat:
+One of your variables will be a question assessing __perceived threat__:
 
 - How worried are you about losing your job in the near future? (V201540)
 - So far as you and your family are concerned, how worried are you about your current financial situation? (V201594)
@@ -106,7 +106,7 @@ One of your variables will be a question assessing perceived threat:
 - What do you think about the state of the economy these days in the United States? (V201324)
 - How worried are you that the United States will experience a terrorist attack in the near future? (V202358)
 
-Your second variable will be a question about trust:
+Your second variable will be a question about __trust__:
 
 - How often can you trust the federal government in Washington to do what is right? (V201233)
 - How many of the people running the government are corrupt? (V201236)
@@ -136,13 +136,13 @@ Schlipphak, B. (2021). Threat perceptions, blame attribution, and political trus
 
 By this point you should be able to state your:
 
-- __Operational definitions__ (that is, the specific questions that were asked of participants per the codebook)
+- __Operational definitions__ (that is, the specific questions that participants were asked, per the codebook)
 - The __constructs__ that those operational definitions measure (i.e. does the question measure perceived threat *in general*? Or some more specific form of perceived threat?)
 - Your __hypothesis__
 
 Your hypothesis is a formal statement of your expectation about how your constructs are (or aren't) associated, and it will be tested quantitatively by calculating a correlation statistic.
 
-The main question that your hypothesis addresses is: do you think the two variables will be significantly correlated? That is, will you find an association consistent enough that it doesn't just seem to be attributable to chance variation in the data (even random data will produce spurious correlations by chance some of the time; see [spuriouscorrelations.com](https://spuriouscorrelations.com#stat897f4cbec4629379cd566c68c3f40c5f)).
+The main question that your hypothesis addresses is: do you think the two variables will be significantly correlated? That is, will you find an association consistent enough that it doesn't just seem to be attributable to chance variation in the data? (Even random data will produce spurious correlations by chance some of the time; see [spuriouscorrelations.com](https://spuriouscorrelations.com#stat897f4cbec4629379cd566c68c3f40c5f))
 
 If you do expect a significant correlation, you should also specify whether you expect it to be positive or negative, and how strong you expect it to be (i.e. weak, moderate, strong; see [Appendix B](appendix-correlation.html#sec-cor-effect-size)).
 
