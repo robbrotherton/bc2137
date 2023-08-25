@@ -15,9 +15,19 @@ In this lab, you will start your second project: conducting an ANOVA interaction
 
 ### Understanding ANOVA
 
-ANOVA stands for ANalysis Of VAriance; it is a statistical procedure which quantifies the relative contribution of difference sources of variability (variability between groups and variability within groups) to understand whether categorial variables appear to be associated with differences *between* groups over and above what would be expected by chance (i.e, based on the random variability *within* the groups).
+ANOVA stands for ANalysis Of VAriance. It is a statistical procedure which quantifies the relative contribution of difference sources of variability (variability between groups and variability within groups) to understand whether categorial variables appear to be associated with differences *between* groups over and above what would be expected by chance (i.e, based on the random variability *within* the groups).
+
+ANOVA will always have a single, continuous dependent variable (DV). A factorial ANOVA can have any number of independent variables (IV; also called factors), each with any number of conditions (also called levels). The design will be described as something like "a 3x5 ANOVA", which would mean that there were 3 factors with 5 levels each. Will will stick to a 2x2 design, meaning 2 factors, each with 2 levels.
+
+In social psychology, researchers will often manipulate and randomly assign at least one of the IVs in a study, making it an "experiment". 
+In this content, the name "independent variable" implies that the researcher manipulates and randomly determines which category a participant will be in. The ANES, however, consists only of survey data; there is no experimental random assignment.[^random-note] Categorical variables that are not randomly assigned are called quasi-independent variables; they can still be used to look for differences between groups of participants, but since participants' membership of a group is an existing characteristic of theirs rather than something the research randomly assigns, it isn't truly "independent". 
+
+It may sound like a limitation, but there are good reasons to use quasi-IVs in research. It isn't always possible or ethical to randomly assign group membership, and there is value in comparing existing groups. As an example, participants' age can't be randomly assigned, but it is still often useful to compare different age groups on some dependent variable. There are important implications for causal inference that you should consider when it comes time to interpret your findings.
 
 
+
+
+### Step 1. Examine the data and identify your variables
 
 #### Dependent variable
 
@@ -57,3 +67,21 @@ Your second quasi-independent variable will be one of the "life experiences" tha
   - Have you used public transportation in the past year, or not? (V202568)
   <!-- - Have you ever been bitten by a shark, or not? (V202569) -->
 
+
+### Step 2. Read relevant research
+
+Since you choice is more open-ended, I can't point you towards a particular paper like I did for the previous project.
+
+
+### Step 3. Articulate your design and hypothesis
+
+As before, you should be able to state your:
+
+- __Operational definitions__ (that is, the specific questions that participants were asked, per the codebook)
+- The __constructs__ that those operational definitions measure (i.e. does the question measure perceived threat *in general*? Or some more specific form of perceived threat?)
+- Your __hypotheses__
+
+In the context of a 2x2 ANOVA design, you will have three different hypotheses. For each IV, you will hypothesize the existence (or not) of a main effect; that is, do you expect to see a difference between the different categories of that IV by itself (ignoring differences on the other IV). On top of the two hypothetical "main effects" you will ave a hypothesis about the "interaction" of the two IVs; that is, do you expect them to have a *combined* effect? In more techincal terms, do you expect that the effect of one IV depends on the level of the other IV?
+
+
+[^random-note]: That's not *quite* true. Some elements of the survey are randomized, such as the order of certain questions or answer options. And the ANES often tests different versions of questions before including them in the full survey; answers to different versions of questions can be compared to check whether seemingly minor differences to wording substantively affect people's answers.
