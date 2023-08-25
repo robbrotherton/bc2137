@@ -1,6 +1,6 @@
 # Lab 6: Project planning {.unnumbered}
 
-In this lab, you will start your second project: conducting an ANOVA interaction analysis using the same ANES data as before.
+In this lab, you will start your second project: conducting an ANOVA interaction analysis using the same ANES data as before. In this project you'll investigate how political partisanship and life experiences might interact to predict social trust.
 
 
 ### Goals
@@ -11,13 +11,31 @@ In this lab, you will start your second project: conducting an ANOVA interaction
 - Articulate your hypotheses
 
 
-<!-- ## Project overview -->
+## Project overview
 
-<!-- Dependent variable: -->
+### Understanding ANOVA
 
-<!-- - Authoritarianism -->
+ANOVA stands for ANalysis Of VAriance; it is a statistical procedure which quantifies the relative contribution of difference sources of variability (variability between groups and variability within groups) to understand whether categorial variables appear to be associated with differences *between* groups over and above what would be expected by chance (i.e, based on the random variability *within* the groups).
 
-<!-- Potential independent variables -->
+
+
+#### Dependent variable
+
+You dependent variable should be continuous, that is, measured on a numeric scale. For this project, we will stick with the idea of trust. 
+
+- How often can you trust the federal government in Washington to do what is right? (V201233)
+- How many of the people running the government are corrupt? (V201236)
+- Generally speaking, how often can you trust other people? (V201237)
+
+
+#### (Quasi)independent variables
+
+The first of your quasi-independent variables will be some indication of participants' political affiliation. There's a whole literature about ideology and partisanship, and I don't expect you to get into the weeds with it. 
+
+- What political party are you registered with, if any? (V201018)
+- Who did you vote for? (V202073)
+- If you had to choose, would you consider yourself a liberal or a
+conservative? (V201201)
 
 <!-- - Racial identity -->
 <!-- - Gender identity -->
@@ -27,15 +45,15 @@ In this lab, you will start your second project: conducting an ANOVA interaction
 <!-- - Media -->
 <!-- - Personal (in)security -->
 
-<!-- - Life experiences (Next, we have a few questions about your personal -->
-<!-- experiences.) -->
-<!--   - Do you personally know someone who moved to the U.S. from another country, or not? (V202561) -->
-<!--   - Do you currently owe money on student loans, or not? (V202562) -->
-<!--   - Have you ever received food stamps or another form of public assistance, or not? (V202563) -->
-<!--   - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564) -->
-<!--   - Do you regularly choose products because they are made in America, or not? (V202565) -->
-<!--   - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566) -->
-<!--   - Have you gone hunting or fishing in the past year, or not? (V202567) -->
-<!--   - Have you used public transportation in the past year, or not? (V202568) -->
-<!--   - Have you ever been bitten by a shark, or not? (V202569) -->
+Your second quasi-independent variable will be one of the "life experiences" that the ANES survey asks about:
+
+  - Do you personally know someone who moved to the U.S. from another country, or not? (V202561)
+  - Do you currently owe money on student loans, or not? (V202562)
+  - Have you ever received food stamps or another form of public assistance, or not? (V202563)
+  - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564)
+  - Do you regularly choose products because they are made in America, or not? (V202565)
+  - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566)
+  - Have you gone hunting or fishing in the past year, or not? (V202567)
+  - Have you used public transportation in the past year, or not? (V202568)
+  <!-- - Have you ever been bitten by a shark, or not? (V202569) -->
 
