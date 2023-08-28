@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.78">
+<meta name="generator" content="quarto-1.3.310">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -70,11 +70,16 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Lab 6: Project planning</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab-6.html">Project 2: ANOVA</a></li><li class="breadcrumb-item"><a href="./lab-6.html">Lab 6: Project planning</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -82,20 +87,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Social Psychology Lab Handbook</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -105,75 +110,87 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Project 1: Correlation</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Project 1: Correlation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-2.html" class="sidebar-item-text sidebar-link">Lab 2: Project Planning</a>
+  <a href="./lab-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 2: Project Planning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-3.html" class="sidebar-item-text sidebar-link">Lab 3: Data preparation</a>
+  <a href="./lab-3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 3: Data preparation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-4.html" class="sidebar-item-text sidebar-link">Lab 4: Analysis</a>
+  <a href="./lab-4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 4: Analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-5.html" class="sidebar-item-text sidebar-link">Lab 5: Presentation &amp; report</a>
+  <a href="./lab-5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 5: Presentation &amp; report</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Project 2: ANOVA</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Project 2: ANOVA</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-6.html" class="sidebar-item-text sidebar-link active">Lab 6: Project planning</a>
+  <a href="./lab-6.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lab 6: Project planning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">Lab 7: Data preparation &amp; analysis</a>
+  <a href="./lab-7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 7: Data preparation &amp; analysis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-8.html" class="sidebar-item-text sidebar-link">Lab 8: Visualization &amp; interpretation</a>
+  <a href="./lab-8.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 8: Visualization &amp; interpretation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-9.html" class="sidebar-item-text sidebar-link">Lab 9: Presentation &amp; report</a>
+  <a href="./lab-9.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 9: Presentation &amp; report</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">Project 3: Experiment proposal</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Project 3: Experiment proposal</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">Lab 10: Project planning</a>
+  <a href="./lab-10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lab 10: Project planning</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -190,8 +207,9 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">Appendices</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -216,6 +234,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -223,6 +242,13 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
+  <li><a href="#project-overview" id="toc-project-overview" class="nav-link" data-scroll-target="#project-overview">Project overview</a>
+  <ul class="collapse">
+  <li><a href="#understanding-anova" id="toc-understanding-anova" class="nav-link" data-scroll-target="#understanding-anova">Understanding ANOVA</a></li>
+  <li><a href="#step-1.-examine-the-data-and-identify-your-variables" id="toc-step-1.-examine-the-data-and-identify-your-variables" class="nav-link" data-scroll-target="#step-1.-examine-the-data-and-identify-your-variables">Step 1. Examine the data and identify your variables</a></li>
+  <li><a href="#step-2.-read-relevant-research" id="toc-step-2.-read-relevant-research" class="nav-link" data-scroll-target="#step-2.-read-relevant-research">Step 2. Read relevant research</a></li>
+  <li><a href="#step-3.-articulate-your-design-and-hypothesis" id="toc-step-3.-articulate-your-design-and-hypothesis" class="nav-link" data-scroll-target="#step-3.-articulate-your-design-and-hypothesis">Step 3. Articulate your design and hypothesis</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -231,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Lab 6: Project planning</h1>
+<h1 class="title">Lab 6: Project planning</h1>
 </div>
 
 
@@ -246,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>In this lab, you will start your second project: conducting an ANOVA interaction analysis using the same ANES data as before.</p>
+<p>In this lab, you will start your second project: conducting an ANOVA interaction analysis using the same ANES data as before. In this project you’ll investigate how political partisanship and life experiences might interact to predict social trust.</p>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <ul>
@@ -255,10 +281,35 @@ ul.task-list li input[type="checkbox"] {
 <li>Search the literature to find relevant research</li>
 <li>Articulate your hypotheses</li>
 </ul>
-<!-- ## Project overview -->
-<!-- Dependent variable: -->
-<!-- - Authoritarianism -->
-<!-- Potential independent variables -->
+</section>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project overview</h2>
+<section id="understanding-anova" class="level3">
+<h3 class="anchored" data-anchor-id="understanding-anova">Understanding ANOVA</h3>
+<p>ANOVA stands for ANalysis Of VAriance. It is a statistical procedure which quantifies the relative contribution of difference sources of variability (variability between groups and variability within groups) to understand whether categorial variables appear to be associated with differences <em>between</em> groups over and above what would be expected by chance (i.e, based on the random variability <em>within</em> the groups).</p>
+<p>ANOVA will always have a single, continuous dependent variable (DV). A factorial ANOVA can have any number of independent variables (IV; also called factors), each with any number of conditions (also called levels). The design will be described as something like “a 3x5 ANOVA”, which would mean that there were 3 factors with 5 levels each. Will will stick to a 2x2 design, meaning 2 factors, each with 2 levels.</p>
+<p>In social psychology, researchers will often manipulate and randomly assign at least one of the IVs in a study, making it an “experiment”. In this content, the name “independent variable” implies that the researcher manipulates and randomly determines which category a participant will be in. The ANES, however, consists only of survey data; there is no experimental random assignment.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Categorical variables that are not randomly assigned are called quasi-independent variables; they can still be used to look for differences between groups of participants, but since participants’ membership of a group is an existing characteristic of theirs rather than something the research randomly assigns, it isn’t truly “independent”.</p>
+<p>It may sound like a limitation, but there are good reasons to use quasi-IVs in research. It isn’t always possible or ethical to randomly assign group membership, and there is value in comparing existing groups. As an example, participants’ age can’t be randomly assigned, but it is still often useful to compare different age groups on some dependent variable. There are important implications for causal inference that you should consider when it comes time to interpret your findings.</p>
+</section>
+<section id="step-1.-examine-the-data-and-identify-your-variables" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-examine-the-data-and-identify-your-variables">Step 1. Examine the data and identify your variables</h3>
+<section id="dependent-variable" class="level4">
+<h4 class="anchored" data-anchor-id="dependent-variable">Dependent variable</h4>
+<p>You dependent variable should be continuous, that is, measured on a numeric scale. For this project, we will stick with the idea of trust.</p>
+<ul>
+<li>How often can you trust the federal government in Washington to do what is right? (V201233)</li>
+<li>How many of the people running the government are corrupt? (V201236)</li>
+<li>Generally speaking, how often can you trust other people? (V201237)</li>
+</ul>
+</section>
+<section id="quasiindependent-variables" class="level4">
+<h4 class="anchored" data-anchor-id="quasiindependent-variables">(Quasi)independent variables</h4>
+<p>The first of your quasi-independent variables will be some indication of participants’ political affiliation. There’s a whole literature about ideology and partisanship, and I don’t expect you to get into the weeds with it.</p>
+<ul>
+<li>What political party are you registered with, if any? (V201018)</li>
+<li>Who did you vote for? (V202073)</li>
+<li>If you had to choose, would you consider yourself a liberal or a conservative? (V201201)</li>
+</ul>
 <!-- - Racial identity -->
 <!-- - Gender identity -->
 <!-- - Partisanship (stated; vote) -->
@@ -266,19 +317,41 @@ ul.task-list li input[type="checkbox"] {
 <!-- - Age -->
 <!-- - Media -->
 <!-- - Personal (in)security -->
-<!-- - Life experiences (Next, we have a few questions about your personal -->
-<!-- experiences.) -->
-<!--   - Do you personally know someone who moved to the U.S. from another country, or not? (V202561) -->
-<!--   - Do you currently owe money on student loans, or not? (V202562) -->
-<!--   - Have you ever received food stamps or another form of public assistance, or not? (V202563) -->
-<!--   - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564) -->
-<!--   - Do you regularly choose products because they are made in America, or not? (V202565) -->
-<!--   - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566) -->
-<!--   - Have you gone hunting or fishing in the past year, or not? (V202567) -->
-<!--   - Have you used public transportation in the past year, or not? (V202568) -->
-<!--   - Have you ever been bitten by a shark, or not? (V202569) -->
+<p>Your second quasi-independent variable will be one of the “life experiences” that the ANES survey asks about:</p>
+<ul>
+<li>Do you personally know someone who moved to the U.S. from another country, or not? (V202561)</li>
+<li>Do you currently owe money on student loans, or not? (V202562)</li>
+<li>Have you ever received food stamps or another form of public assistance, or not? (V202563)</li>
+<li>Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564)</li>
+<li>Do you regularly choose products because they are made in America, or not? (V202565)</li>
+<li>Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566)</li>
+<li>Have you gone hunting or fishing in the past year, or not? (V202567)</li>
+<li>Have you used public transportation in the past year, or not? (V202568) <!-- - Have you ever been bitten by a shark, or not? (V202569) --></li>
+</ul>
+</section>
+</section>
+<section id="step-2.-read-relevant-research" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-read-relevant-research">Step 2. Read relevant research</h3>
+<p>Since you choice is more open-ended, I can’t point you towards a particular paper like I did for the previous project.</p>
+</section>
+<section id="step-3.-articulate-your-design-and-hypothesis" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-articulate-your-design-and-hypothesis">Step 3. Articulate your design and hypothesis</h3>
+<p>As before, you should be able to state your:</p>
+<ul>
+<li><strong>Operational definitions</strong> (that is, the specific questions that participants were asked, per the codebook)</li>
+<li>The <strong>constructs</strong> that those operational definitions measure (i.e.&nbsp;does the question measure perceived threat <em>in general</em>? Or some more specific form of perceived threat?)</li>
+<li>Your <strong>hypotheses</strong></li>
+</ul>
+<p>In the context of a 2x2 ANOVA design, you will have three different hypotheses. For each IV, you will hypothesize the existence (or not) of a main effect; that is, do you expect to see a difference between the different categories of that IV by itself (ignoring differences on the other IV). On top of the two hypothetical “main effects” you will ave a hypothesis about the “interaction” of the two IVs; that is, do you expect them to have a <em>combined</em> effect? In more techincal terms, do you expect that the effect of one IV depends on the level of the other IV?</p>
 
 
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>That’s not <em>quite</em> true. Some elements of the survey are randomized, such as the order of certain questions or answer options. And the ANES often tests different versions of questions before including them in the full survey; answers to different versions of questions can be compared to check whether seemingly minor differences to wording substantively affect people’s answers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -424,9 +497,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -491,6 +578,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -534,7 +707,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
