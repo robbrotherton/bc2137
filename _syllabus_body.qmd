@@ -135,7 +135,7 @@ knitr::kable(schedule) |>
   kableExtra::row_spec(no_class_row, italic = TRUE, color = "#BBBBBB") |>
   kableExtra::pack_rows("Project 1: Correlation", 2, 5, indent = FALSE) |>
   kableExtra::pack_rows("Project 2: ANOVA", 6, 9, indent = FALSE) |>
-  kableExtra::pack_rows("Project 3: Experiment proposal", 10, 13, indent = FALSE) |>
+  kableExtra::pack_rows("Project 3: Own design", 10, 13, indent = FALSE) |>
   kableExtra::add_footnote("due by the following class", notation = "symbol") |>
   kableExtra::kable_styling(full_width = TRUE)
 

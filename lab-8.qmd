@@ -6,4 +6,63 @@
 - Interpret the findings
 
 
+## Visualize
 
+```{r}
+#| echo: false
+#| message: false
+
+library(anesr)
+library(tidyverse)
+data(timeseries_2020)
+
+ci <- function(x) {
+  qt(0.975, df = length(x) - 1) * sqrt( var(x) / length(x))
+}
+
+my_data <- timeseries_2020 |> 
+  haven::zap_labels() |> 
+  select(trust = V201377, 
+         party = V201018,
+         experience = V202569) |> 
+  filter(if_all(everything(), ~ . > 0)) |>
+  mutate(party = case_when(
+    party == 1 ~ "Democratic",
+    party == 2 ~ "Republican"
+  )) |> 
+  mutate(experience = case_when(
+    experience == 1 ~ "Yes",
+    experience == 2 ~ "No"
+  )) 
+
+my_data_summary <- my_data |> 
+  summarise(mean = mean(trust), 
+            n = n(),
+            ci = ci(trust),
+            .by = c(party, experience)) |> 
+  drop_na()
+```
+
+
+```{r}
+my_data_summary |> 
+  ggplot(aes(x = party, y = mean, group = experience, fill = experience)) +
+  geom_col(position = position_dodge()) +
+  geom_errorbar(aes(ymax = mean + ci, ymin = mean - ci), position = position_dodge(width = 0.9), width = 0.3) +
+  coord_cartesian(ylim = c(1, 5))
+```
+
+
+## Analyze
+
+```{r}
+summary(aov(trust ~ party * experience, data = my_data))
+
+```
+
+
+## Interpret
+
+- Main effect of partisanship
+- Main effect of life experience
+- Interaction: does the effect of life experience depend on partisanship?

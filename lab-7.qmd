@@ -8,50 +8,90 @@
 - Compute any required variables (scale means, number of items missing, etc)
 - Compute your ANOVA
 
-<!-- ## Data wrangling, description, and visualization -->
+
+## Data preparation
+
+### Set up and select variables
+
+For this example, I'm going to use the "trust the media" question--the same one I used for the correlation example--as my dependent variable.^[In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?] For the partisanship variable, I'll use the party registration one. And for the life experience, I'm going to use one I didn't let you choose from (because not many people said yes, and... well, you'll see): "Have you ever been bitten by a shark, or not?" (V202569).
 
 ```{r}
+#| message: false
+
 library(anesr)
 library(tidyverse)
 data(timeseries_2020)
 
-ci <- function(x) {
-  qt(0.975, df = length(x) - 1) * sqrt( var(x) / length(x))
-}
-
-my_data <- timeseries_2020 |> 
+my_data_raw <- timeseries_2020 |> 
   haven::zap_labels() |> 
-  select(trust = V201237, 
+  select(trust = V201377, 
          party = V201018,
-         experience = V202568)
+         experience = V202569)
+```
 
-my_data_summary <- my_data |> 
-  filter(if_all(everything(), ~ . >= 0)) |> 
+
+### Recode variables
+
+`dplyr`'s `case_when()` allows us to specify a condition and the value to assign if that condition is met. So for example `party == 1 ~ "Democratic"` can be read as "if the value of `party` is `1` then the value becomes "Democratic".
+
+```{r}
+my_data <- my_data_raw |> 
+  filter(if_all(everything(), ~ . > 0)) |>
   mutate(party = case_when(
     party == 1 ~ "Democratic",
-    party == 2 ~ "Republican",
-    # party == 4 ~ "None/Independent",
-    TRUE ~ NA
+    party == 2 ~ "Republican"
   )) |> 
   mutate(experience = case_when(
     experience == 1 ~ "Yes",
-    experience == 2 ~ "No",
-    TRUE ~ NA
-  )) |> 
+    experience == 2 ~ "No"
+  )) 
+```
+
+
+
+### Describe
+
+First we'll find the "marginal means". These are relevant to testing and interpreting the "main effects".
+
+Finding this kind of mean is slightly more complicated than when we just needed to find the mean of each column in a data.frame like we did for the correlation project. This time, we want the mean from one column broken into groups based on the value of a different column; mean trust by party affiliation, and mean trust by life experience. As usual there are a lot of ways of doing this, but one of the most powerful is `dplyr`'s `summarize()` function. It allows you to compute summary values using other functions, such as `mean(trust)` to compute the mean of the trust column, and you can specify a grouping variable using the `.by` argument. And you aren't limited to computing a single summary variable; here I also compute the number of observations in each group using the `n()` function.
+
+```{r}
+my_data |> 
+  summarize(mean = mean(trust), 
+            n = n(),
+            .by = party) |> 
+  drop_na()
+
+my_data |> 
+  summarize(mean = mean(trust), 
+            n = n(),
+            .by = experience)
+
+```
+
+
+In addition to those marginal means, we need to find all 4 "cell means".
+
+Thinking ahead, I'm going to want to make a graph showing these 4 means, and I'd like the graph to have "error bars" representing the confidence interval for each mean. There's no built-in function to compute a confidence interval, so I'm going to make my own.
+
+```{r}
+ci <- function(x) {
+  qt(0.975, df = length(x) - 1) * sqrt( var(x) / length(x))
+}
+```
+
+Now I'm ready to compute the mean, number of observations, and confidence interval for each of the 4 groups. 
+
+```{r}
+my_data_summary <- my_data |> 
   summarise(mean = mean(trust), 
             n = n(),
             ci = ci(trust),
             .by = c(party, experience)) |> 
   drop_na()
 
-
-ggplot(my_data_summary, aes(x = party, y = mean, group = experience, fill = experience)) +
-  geom_col(position = position_dodge()) +
-  geom_errorbar(aes(ymax = mean + ci, ymin = mean - ci), position = position_dodge(width = 0.9), width = 0.3) +
-  coord_cartesian(ylim = c(1, 5))
-
-
-summary(aov(trust ~ party * experience, data = my_data))
-
+my_data_summary
 ```
+
+
 

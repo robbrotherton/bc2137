@@ -31,7 +31,7 @@ book:
         - lab-7.qmd
         - lab-8.qmd
         - lab-9.qmd
-    - part: "Project 3: Experiment proposal"
+    - part: "Project 3: Own design"
       chapters:
         - lab-10.qmd
         - lab-11.qmd
