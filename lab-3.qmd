@@ -1,6 +1,6 @@
 # Lab 3: Data preparation {.unnumbered}
 
-You should begin this session with variables from the ANES dataset in mind for your analysis. In class we will introduce the R language and RStudio environment, and demonstrate necessary data cleaning and manipulation in preparation for analysis. By the end of the class you should have modified the example code to work with your selected variables.
+You will begin this session with variables from the ANES dataset in mind for your analysis. In class we will introduce the R language and RStudio environment, and demonstrate necessary data cleaning and manipulation in preparation for analysis. By the end of the class you should have modified the example code to work with your selected variables.
 
 ### Goals
 
@@ -15,7 +15,7 @@ You should begin this session with variables from the ANES dataset in mind for y
 
 ### Getting R ready
 
-In addition to being a high-quality source of social-psychology-related data, the ANES dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the data relatively straightforward (not that you won't still run into issues!): `anesr` ([github.com/jamesmartherus/anesr](https://github.com/jamesmartherus/anesr)).
+In addition to being a source of high-quality data relevant to social psychology, the ANES dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the data relatively straightforward (not that you won't still run into issues!): `anesr` ([github.com/jamesmartherus/anesr](https://github.com/jamesmartherus/anesr)).
 
 To start exploring the data in R, you first need to set up your environment. This means installing the `anesr` package. Usually packages can be installed from within R using the `install.packages()` function. However since the `anesr` package is hosted on GitHub (as opposed to the official R repository of packages), the easiest way to install it is by first installing the `devtools` package, which has a special function for installing packages from GitHub.
 
@@ -95,7 +95,15 @@ Let's see what this new data.frame looks like:
 my_data
 ```
 
-It all looks good so far. But if you inspect the data more extensively (click the name in your Environment to open a tab showing the data and scroll down a bit) you'll notice that there are some negative numbers in the data. That's from survey codes which record missing data. If you try to calculate an average score with those included it'll mess up the sums, so we need to do some data cleaning to handle things like that.
+It all looks good so far. But if you inspect the data more extensively (click the name in your Environment to open a tab showing the data and scroll down a bit) you'll notice that there are some negative numbers in the data. You can see all the unique values recorded for a column in the data like so: 
+
+```{r}
+unique(my_data$trust)
+```
+
+The negatives are from survey codes which record missing data. If you try to calculate an average score with those included it'll mess up the sums, so we need to do some data cleaning to handle things like that.
+
+
 
 ### Cleaning the data
 
@@ -132,8 +140,7 @@ For the "trust in news media" question, responses are 1 (none) though 5 (a great
 ```{r}
 
 my_data_complete <- my_data_complete |>
-  mutate(distrust = 6 - trust) |> 
-  select(-trust) # don't need the original trust column any more
+  mutate(distrust = 6 - trust)
 
 ```
 

@@ -136,7 +136,7 @@ Schlipphak, B. (2021). Threat perceptions, blame attribution, and political trus
 
 By this point you should be able to state your:
 
-- __Operational definitions__ (that is, the specific questions that participants were asked, per the codebook)
+- __Operational definitions__ (that is, the specific questions that participants were asked and how they could answer, per the codebook)
 - The __constructs__ that those operational definitions measure (i.e. does the question measure perceived threat *in general*? Or some more specific form of perceived threat?)
 - Your __hypothesis__
 
