@@ -3,7 +3,34 @@
 My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the secondary data analysis projects so far, but that you're also feeling a bit limited by the constrained choice of variables you had. In this lab we'll begin the final project: you will execute a project of your own design, with the freedom to choose any variables you like from the full data set.
 
 
-## Goals
+### Goals
 
 - Decide on an analysis and identify the relevant variables
-- Start preparing the data in R
+- Find some relevant research
+- Articulate your hypotheses
+
+
+
+## Project overview
+
+### Decide on your constructs/operational definitions
+
+Suggestions:
+
+- Feeling thermometers
+- Political knowledge
+- Media consumption
+- Authoritarianism
+- Stereotypes
+- Policy positions
+- Conspiracy beliefs
+- Religiosity
+
+
+### Find relevant research
+
+At least 1 paper.
+
+
+### Articulate your hypotheses
+

@@ -1,12 +1,19 @@
 # Lab 8: Visualization & interpretation {.unnumbered}
 
+By the end of the session you will have computed and created a visualization of your 2x2 interaction, thought about how to interpret the findings, and be ready to present and write up your project.
+
+
 ### Goals
 
 - Visualize the interaction
 - Interpret the findings
 
 
-## Visualize
+## Visualizing ANOVA
+
+In the example code for the previous lab session, I created a summary of descriptive statistics named `my_data_summary`. It included the average trust score for each of the 4 combinations of my 2 IVs, as well as a 95% confidence interval. I'm going to use that summary data.frame (rather than the full data) to create a graph of the interaction.
+
+There are two main ways of visualizing the interaction: as a bar graph, or as a line graph. They show exactly the same information just in a slightly different way, and which you find to be better--i.e., more intuitive and effective for conveying your findings--is a matter of personal preference.
 
 ```{r}
 #| echo: false
@@ -43,6 +50,7 @@ my_data_summary <- my_data |>
   drop_na()
 ```
 
+### Bar graph
 
 ```{r}
 my_data_summary |> 
@@ -52,13 +60,19 @@ my_data_summary |>
   coord_cartesian(ylim = c(1, 5))
 ```
 
+### Line graph
 
-## Analyze
+Here I use several aesthetic mappings for the "life experience" variable: the color of the lines and points, the type of point and type of line (solid or dashed) all differ. It's redundant to map the same variable to so many aesthetics, but it can still be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.
 
 ```{r}
-summary(aov(trust ~ party * experience, data = my_data))
-
+my_data_summary |> 
+  ggplot(aes(x = party, y = mean, group = experience, color = experience, linetype = experience, shape = experience)) +
+  geom_point() +
+  geom_line() +
+  geom_errorbar(aes(ymax = mean + ci, ymin = mean - ci), width = 0.1) +
+  coord_cartesian(ylim = c(1, 5))
 ```
+
 
 
 ## Interpret

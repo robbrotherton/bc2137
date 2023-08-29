@@ -395,11 +395,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="select-your-variables">Select your variables</h3>
 <p>As you can see, the data.frame contains a <em>lot</em> of variables; there are 1,381 columns of data, one for each recorded variable. You’ll only need two of those. So the first step is selecting just the variables you need to work with.</p>
 <p>There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the <code>select()</code> function.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> This allows us to simply type in variable names separated by commas.</p>
-<p>For this example code I’ll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and concern that government might undermine media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I’ll probably forget which ID is which, I’ll give the columns more meaningful names as I select them.</p>
+<p>For this example code I’ll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and perceived threat to the media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I’ll probably forget which ID is which, I’ll give the columns more meaningful names as I select them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> timeseries_2020 <span class="sc">|&gt;</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">concern =</span> V201376) <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">threat =</span> V201376) <span class="sc">|&gt;</span> </span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>I did something else there as well: <code>haven::zap_labels()</code>. Even though when you look at the data it’s a bunch of numbers, it’s actually a special format called “haven-labelled”, meaning there is some extra info stored about the numbers behind-the-scenes. That can be useful to have, but it actually interferes with some of the numeric filtering and mutating we need to do momentarily, so the <code>zap_labels()</code> function drops that label information and turns the data into plain old numbers.</p>
@@ -408,18 +408,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8,280 × 2
-   trust concern
-   &lt;dbl&gt;   &lt;dbl&gt;
- 1     1       1
- 2     1       1
- 3     3       5
- 4     4       3
- 5     2       4
- 6     4       4
- 7     2       5
- 8     1       1
- 9     3       2
-10     3       2
+   trust threat
+   &lt;dbl&gt;  &lt;dbl&gt;
+ 1     1      1
+ 2     1      1
+ 3     3      5
+ 4     4      3
+ 5     2      4
+ 6     4      4
+ 7     2      5
+ 8     1      1
+ 9     3      2
+10     3      2
 # ℹ 8,270 more rows</code></pre>
 </div>
 </div>
@@ -457,13 +457,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="recoding-values" class="level3">
 <h3 class="anchored" data-anchor-id="recoding-values">Recoding values</h3>
 <p>Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is recode values so they all mean what we want them to mean.</p>
-<p>Notice that valid responses for the “undermine the news media” concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that’s fine.</p>
+<p>Notice that valid responses for the “undermine the news media” threat item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater perceived threat, so that’s fine.</p>
 <p>For the “trust in news media” question, responses are 1 (none) though 5 (a great deal). But I’m thinking of the psychological construct as <em>dis</em>trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="ot">&lt;-</span> my_data_complete <span class="sc">|&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distrust =</span> <span class="dv">6</span> <span class="sc">-</span> trust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now I have my two variables, concern about the news media, and (reverse-coded) distrust of the news media, for each of the 8,211 participants with complete data. We’re ready to start exploring the data.</p>
+<p>Now I have my two variables, perceived threat to the news media, and (reverse-coded) distrust of the news media, for each of the 8,211 participants with complete data. We’re ready to start exploring the data.</p>
 </section>
 </section>
 <section id="start-examining-the-data" class="level2">
@@ -471,13 +471,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="descriptive-statistics" class="level3">
 <h3 class="anchored" data-anchor-id="descriptive-statistics">Descriptive statistics</h3>
 <p>The most common descriptive statistics are the mean (<span class="math inline">\(M\)</span>) and standard deviation (<span class="math inline">\(SD\)</span>). You should report these for each variable in your analysis.</p>
-<p>There are many ways of doing this, but for now I’ll just use the <code>mean()</code> and <code>sd()</code> functions. I can refer to a particular column in a data.frame using the <code>$</code> operator, i.e.&nbsp;<code>my_data$concern</code> and so on.</p>
+<p>There are many ways of doing this, but for now I’ll just use the <code>mean()</code> and <code>sd()</code> functions. I can refer to a particular column in a data.frame using the <code>$</code> operator, i.e.&nbsp;<code>my_data$threat</code> and so on.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_data_complete<span class="sc">$</span>concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(my_data_complete<span class="sc">$</span>threat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3.446718</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_data_complete<span class="sc">$</span>concern)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(my_data_complete<span class="sc">$</span>threat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.363856</code></pre>
 </div>
@@ -495,16 +495,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="visualizing-distributions">Visualizing distributions</h3>
 <p>In addition to reporting the mean and standard deviation, it is useful to visualize the distribution of the data. This can reveal nuances that are not obvious in those single numeric summary values.</p>
 <p>As with most things, there are a lot of different ways of producing graphs using R. One of the most widely used and powerful is the <code>ggplot2</code> package.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> The name refers to the idea of the “grammar of graphics”, and it is built around a layering approach. You first specify your data and aesthetics (what should data will go on the x and y axes), then geometry (do you want data to be represented by points or bars or as a histogram?), any scaling (e.g.&nbsp;what values should be labeled on each axis), and theme elements (how do you want the plot to look generally?). There can be a lot of complexity, but building things up layer by layer, gradually adding and refining elements, is a powerful and satisfying approach.</p>
-<p>Here’s a simple histogram of the concern item. I pipe the data into the <code>ggplot()</code> function, specifying that I want the <code>concern</code> column to be represented as the <code>x</code> aesthetic. Then I add geometry using <code>geom_histogram</code>. That geom function automatically computes bins and counts; here I just specify I want a <code>binwidth</code> of 1, i.e.&nbsp;each column of the histogram will represent one scale point. Note that ggplot layers are added using <code>+</code> rather than the usual <code>|&gt;</code> pipe.</p>
+<p>Here’s a simple histogram of the threat item. I pipe the data into the <code>ggplot()</code> function, specifying that I want the <code>threat</code> column to be represented as the <code>x</code> aesthetic. Then I add geometry using <code>geom_histogram</code>. That geom function automatically computes bins and counts; here I just specify I want a <code>binwidth</code> of 1, i.e.&nbsp;each column of the histogram will represent one scale point. Note that ggplot layers are added using <code>+</code> rather than the usual <code>|&gt;</code> pipe.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> threat)) <span class="sc">+</span></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="fig-concern-no-theme" class="quarto-figure quarto-figure-center anchored">
+<div id="fig-threat-no-theme" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="lab-3_files/figure-html/fig-concern-no-theme-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Histogram of responses to “concern about government undermining news media” question</figcaption><p></p>
+<p><img src="lab-3_files/figure-html/fig-threat-no-theme-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Histogram of responses to perceived threat to news media question</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -519,7 +519,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>I’ll also customize the “breaks” and “labels” on the x-axis (to show the verbal scale responses rather than just numeric codes), and the labels for the x and y axes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern)) <span class="sc">+</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> threat)) <span class="sc">+</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">" Not at all"</span>, <span class="st">"A little"</span>, <span class="st">"Moderately"</span>, <span class="st">"Very"</span>, <span class="st">"Extremely"</span>)) <span class="sc">+</span></span>
@@ -530,7 +530,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="fig-extraverted" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="lab-3_files/figure-html/fig-extraverted-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Histogram of responses to concern about news being undermined</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: Histogram of responses to perceived threat to news media</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -569,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li id="fn3"><p>If the data wasn’t as simple or if we just wanted to be more explicit about things, we could filter based on valid responses for each item. For example, valid reponses to the feeling thermometer item are are anything from 0 to 100; anything else is invalid. Therefore we could write a <code>filter()</code> condition stating that <code>feeling_thermometer</code> (the name of the column) values must be <code>%in%</code> the set of values from <code>0:100</code>. Likewise for each of the extraversion columns, rows will be retained only if their values are <code>%in%</code> the range <code>1:7</code>.</p>
 <pre><code>my_data_complete &lt;- my_data |&gt;
   filter(trust %in% 1:5,
-         concern %in% 1:5)</code></pre>
+         threat %in% 1:5)</code></pre>
 <a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></li>
 <li id="fn4"><p>The <code>ggplot2</code> package is part of the <code>tidyverse</code>, so because we already ran <code>library(tidyverse)</code> earlier the <code>ggplot2</code> functions are already available to us. If you needed to, you could always run <code>library(ggplot2)</code> to activate it separately.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>

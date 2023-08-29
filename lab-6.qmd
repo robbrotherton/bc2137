@@ -19,24 +19,26 @@ ANOVA stands for <b>AN</b>alysis <b>O</b>f <b>VA</b>riance. It is a statistical 
 
 ANOVA will always have a single, continuous dependent variable (DV). A factorial ANOVA can have any number of independent variables (IV; also called factors), each with any number of conditions (also called levels). The design will be described as something like "a 3x5 ANOVA", which would mean that there were 3 factors with 5 levels each. Will will stick to a 2x2 design, meaning 2 factors, each with 2 levels.
 
-In social psychology, researchers will often manipulate and randomly assign at least one of the IVs in a study, making it an "experiment". 
-In this content, the name "independent variable" implies that the researcher manipulates and randomly determines which category a participant will be in. The ANES, however, consists only of survey data; there is no experimental random assignment.[^random-note] Categorical variables that are not randomly assigned are called quasi-independent variables; they can still be used to look for differences between groups of participants, but since participants' membership of a group is an existing characteristic of theirs rather than something the research randomly assigns, it isn't truly "independent". 
+#### Quasi-independent variables
+In social psychology, researchers often manipulate at least one of the IVs in a study, making it an "experiment." In this context, the name "independent variable" implies that the researcher manipulates and randomly determines which category a participant will be in; the manipulated variable is theoretically "independent" of other variables in the study. The ANES, however, consists only of survey data; there is no experimental random assignment.[^random-note] Categorical variables that are not randomly assigned are called quasi-independent variables; they can still be used to look for differences between groups of participants, but since participants' membership of a group is an existing characteristic of theirs rather than something the research randomly assigns, it isn't truly "independent."
 
 It may sound like a limitation, but there are good reasons to use quasi-IVs in research. It isn't always possible or ethical to randomly assign group membership, and there is value in comparing existing groups. As an example, participants' age can't be randomly assigned, but it is still often useful to compare different age groups on some dependent variable. There are important implications for causal inference that you should consider when it comes time to interpret your findings.
 
+#### Interaction
 
+The value of a factorial ANOVA design is in revealing the "interaction" between variables: does the effect of one (quasi)-IV depend on which group of another (quasi)-IV? For this project, we will stick with the idea of trust: it will be the DV. One of the quasi-IVs will be an indicator of political ideology/partisanship. It makes sense that some types of social trust could depend on your political preferences (or something related, like whether your preferred political party is currently "winning"). But political affiliation isn't the only thing that could be associated with trust. Maybe one's life experiences also play a role. Having had, or not had, some particular experience might be associated with expressing more or less trust. But crucially, maybe the two variables *interact*: maybe the link (if any) between partisanship and trust depends on what kind of experience a person has had (or not had). It could be that an experience affects trust among people who lean one way but not people who lean the other.
 
 
 ### Step 1. Examine the data and identify your variables
 
 #### Dependent variable
 
-You dependent variable should be continuous, that is, measured on a numeric scale. For this project, we will stick with the idea of trust. 
+You dependent variable should be continuous (measured on a numeric scale). For this project, we will stick with the idea of trust. 
 
 - How often can you trust the federal government in Washington to do what is right? (V201233)
 - How many of the people running the government are corrupt? (V201236)
 - Generally speaking, how often can you trust other people? (V201237)
-
+- In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly? (V201377)
 
 #### (Quasi)independent variables
 
@@ -44,8 +46,7 @@ The first of your quasi-independent variables will be some indication of partici
 
 - What political party are you registered with, if any? (V201018)
 - Who did you vote for? (V202073)
-- If you had to choose, would you consider yourself a liberal or a
-conservative? (V201201)
+- If you had to choose, would you consider yourself a liberal or a conservative? (V201201)
 
 <!-- - Racial identity -->
 <!-- - Gender identity -->
@@ -99,7 +100,7 @@ As before, you should be able to state your:
 - The __constructs__ that those operational definitions measure
 - Your __hypotheses__
 
-In the context of a 2x2 ANOVA design, you will have three different hypotheses. For each IV, you will hypothesize the existence (or not) of a main effect; that is, do you expect to see a difference between the different categories of that IV by itself (ignoring differences on the other IV). On top of the two hypothetical "main effects" you will ave a hypothesis about the "interaction" of the two IVs; that is, do you expect them to have a *combined* effect? In more techincal terms, do you expect that the effect of one IV depends on the level of the other IV?
+In the context of a 2x2 ANOVA design, you will have three different hypotheses. For each IV, you will hypothesize the existence (or not) of a main effect; that is, do you expect to see a difference between the different categories of that IV by itself (ignoring differences on the other IV). In addition, you will have a hypothesis about the "interaction" of the two IVs; that is, do you expect them to have a *combined* effect? In more technical terms, do you expect that the effect of one IV depends on the level of the other IV?
 
 
 [^random-note]: That's not *quite* true. Some elements of the survey are randomized, such as the order of certain questions or answer options. And the ANES often tests different versions of questions before including them in the full survey; answers to different versions of questions can be compared to check whether seemingly minor differences to wording substantively affect people's answers.

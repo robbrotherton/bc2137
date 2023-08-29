@@ -1,1 +1,34 @@
+---
+execute: 
+  eval: false
+---
+
 # Lab 11: Analysis, visualization & interpretation
+
+Groups should have decided on what variables to use and what analysis is appropriate, and begun any preliminary data preparation. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.
+
+
+### Data wrangling tips
+
+Compute an average of several variables.
+
+```{r}
+my_data |> 
+  mutate(mean = rowMeans(across(all_of(scale_vars))))
+```
+
+
+Compute a sum score.
+
+```{r}
+my_data |> 
+  mutate(sum = rowSums(across(all_of(scale_vars))))
+```
+
+
+Ntiles.
+
+```{r}
+my_data |> 
+  mutate(income_bracket = ntile(income, 2))
+```

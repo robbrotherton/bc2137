@@ -286,8 +286,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    
   <ul>
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
-  <li><a href="#visualize" id="toc-visualize" class="nav-link" data-scroll-target="#visualize">Visualize</a></li>
-  <li><a href="#analyze" id="toc-analyze" class="nav-link" data-scroll-target="#analyze">Analyze</a></li>
+  <li><a href="#visualizing-anova" id="toc-visualizing-anova" class="nav-link" data-scroll-target="#visualizing-anova">Visualizing ANOVA</a>
+  <ul class="collapse">
+  <li><a href="#bar-graph" id="toc-bar-graph" class="nav-link" data-scroll-target="#bar-graph">Bar graph</a></li>
+  <li><a href="#line-graph" id="toc-line-graph" class="nav-link" data-scroll-target="#line-graph">Line graph</a></li>
+  </ul></li>
   <li><a href="#interpret" id="toc-interpret" class="nav-link" data-scroll-target="#interpret">Interpret</a></li>
   </ul>
 </nav>
@@ -312,6 +315,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p>By the end of the session you will have computed and created a visualization of your 2x2 interaction, thought about how to interpret the findings, and be ready to present and write up your project.</p>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <ul>
@@ -319,11 +323,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Interpret the findings</li>
 </ul>
 </section>
-<section id="visualize" class="level2">
-<h2 class="anchored" data-anchor-id="visualize">Visualize</h2>
+<section id="visualizing-anova" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-anova">Visualizing ANOVA</h2>
+<p>In the example code for the previous lab session, I created a summary of descriptive statistics named <code>my_data_summary</code>. It included the average trust score for each of the 4 combinations of my 2 IVs, as well as a 95% confidence interval. I’m going to use that summary data.frame (rather than the full data) to create a graph of the interaction.</p>
+<p>There are two main ways of visualizing the interaction: as a bar graph, or as a line graph. They show exactly the same information just in a slightly different way, and which you find to be better–i.e., more intuitive and effective for conveying your findings–is a matter of personal preference.</p>
 <div class="cell">
 
 </div>
+<section id="bar-graph" class="level3">
+<h3 class="anchored" data-anchor-id="bar-graph">Bar graph</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> mean, <span class="at">group =</span> experience, <span class="at">fill =</span> experience)) <span class="sc">+</span></span>
@@ -335,21 +343,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </section>
-<section id="analyze" class="level2">
-<h2 class="anchored" data-anchor-id="analyze">Analyze</h2>
+<section id="line-graph" class="level3">
+<h3 class="anchored" data-anchor-id="line-graph">Line graph</h3>
+<p>Here I use several aesthetic mappings for the “life experience” variable: the color of the lines and points, the type of point and type of line (solid or dashed) all differ. It’s redundant to map the same variable to so many aesthetics, but it can still be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">aov</span>(trust <span class="sc">~</span> party <span class="sc">*</span> experience, <span class="at">data =</span> my_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                   Df Sum Sq Mean Sq  F value Pr(&gt;F)    
-party               1 1343.3  1343.3 1238.597 &lt;2e-16 ***
-experience          1    1.5     1.5    1.421  0.233    
-party:experience    1    0.1     0.1    0.098  0.754    
-Residuals        2838 3077.9     1.1                    
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-943 observations deleted due to missingness</code></pre>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> mean, <span class="at">group =</span> experience, <span class="at">color =</span> experience, <span class="at">linetype =</span> experience, <span class="at">shape =</span> experience)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mean <span class="sc">+</span> ci, <span class="at">ymin =</span> mean <span class="sc">-</span> ci), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="lab-8_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+</section>
 </section>
 <section id="interpret" class="level2">
 <h2 class="anchored" data-anchor-id="interpret">Interpret</h2>

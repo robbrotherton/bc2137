@@ -336,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="ot">&lt;-</span> timeseries_2020 <span class="sc">|&gt;</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">concern =</span> V201376) <span class="sc">|&gt;</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">threat =</span> V201376) <span class="sc">|&gt;</span> </span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>() <span class="sc">|&gt;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="fu">everything</span>(), <span class="sc">~</span> . <span class="sc">&gt;=</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span> </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">distrust =</span> <span class="dv">6</span> <span class="sc">-</span> trust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -350,7 +350,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="computing-a-correlation">Computing a correlation</h3>
 <p>The correlation between two variables can be found using the <code>cor()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>concern, </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>threat, </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> my_data_complete<span class="sc">$</span>distrust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] -0.4955168</code></pre>
@@ -358,7 +358,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>If you got an answer of <code>NA</code> instead of a number, it is probably because your data has some missing data. You just need to tell <code>cor()</code> to only use data for which both pairs of values are nonmissing:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>concern, </span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>threat, </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> my_data_complete<span class="sc">$</span>distrust,</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -367,13 +367,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>The <code>cor.test()</code> function goes further than <code>cor()</code>, giving you the <span class="math inline">\(p\)</span>-value necessary for determining statistical significance<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and some other information about the correlation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>concern, </span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(<span class="at">x =</span> my_data_complete<span class="sc">$</span>threat, </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> my_data_complete<span class="sc">$</span>distrust)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
 
-data:  my_data_complete$concern and my_data_complete$distrust
+data:  my_data_complete$threat and my_data_complete$distrust
 t = -51.687, df = 8209, p-value &lt; 2.2e-16
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
@@ -389,7 +389,7 @@ sample estimates:
 <p>Lastly, let’s make a scatterplot visualizing the correlation.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data_complete <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> concern, <span class="at">y =</span> distrust)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> threat, <span class="at">y =</span> distrust)) <span class="sc">+</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.45</span>, <span class="at">height =</span> <span class="fl">0.45</span>, <span class="at">seed =</span> <span class="dv">1</span>),</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">alpha =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, </span>
@@ -404,7 +404,7 @@ sample estimates:
 <div id="fig-scatter" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="lab-4_files/figure-html/fig-scatter-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Scatterplot (with jitter) of concern and distrust</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Scatterplot (with jitter) of perceived threat and distrust</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -414,7 +414,7 @@ sample estimates:
 </section>
 <section id="interpreting-your-findings" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-your-findings">Interpreting your findings</h2>
-<p>Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people’s answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you’ll need to consider a number of things:</p>
+<p>Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people’s answers to your perceived threat question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you’ll need to consider a number of things:</p>
 <ul>
 <li>What features of how the questions were asked might have affected people’s answers?</li>
 <li>What, if anything, about the context in which the questions were asked might have influenced people’s answers?</li>

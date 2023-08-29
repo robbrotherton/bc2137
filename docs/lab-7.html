@@ -126,6 +126,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -288,9 +289,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#goals" id="toc-goals" class="nav-link active" data-scroll-target="#goals">Goals</a></li>
   <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data preparation</a>
   <ul class="collapse">
-  <li><a href="#set-up-and-select-variables" id="toc-set-up-and-select-variables" class="nav-link" data-scroll-target="#set-up-and-select-variables">Set up and select variables</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
+  <li><a href="#select-variables" id="toc-select-variables" class="nav-link" data-scroll-target="#select-variables">Select variables</a></li>
   <li><a href="#recode-variables" id="toc-recode-variables" class="nav-link" data-scroll-target="#recode-variables">Recode variables</a></li>
-  <li><a href="#describe" id="toc-describe" class="nav-link" data-scroll-target="#describe">Describe</a></li>
+  </ul></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a>
+  <ul class="collapse">
+  <li><a href="#describe-the-data" id="toc-describe-the-data" class="nav-link" data-scroll-target="#describe-the-data">Describe the data</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -315,105 +321,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<p>You will start this lab with your variables determined. By the end, you will have prepared the data in R and computed the required descriptive statistics and the ANOVA itself.</p>
 <section id="goals" class="level3">
 <h3 class="anchored" data-anchor-id="goals">Goals</h3>
 <ul>
-<li>Read the data you need into R</li>
 <li>Select required variables</li>
-<li>Filter the data based on completeness (and any other criteria)</li>
-<li>Compute any required variables (scale means, number of items missing, etc)</li>
+<li>Recode categorical variables</li>
 <li>Compute your ANOVA</li>
 </ul>
 </section>
 <section id="data-preparation" class="level2">
 <h2 class="anchored" data-anchor-id="data-preparation">Data preparation</h2>
-<section id="set-up-and-select-variables" class="level3">
-<h3 class="anchored" data-anchor-id="set-up-and-select-variables">Set up and select variables</h3>
-<p>For this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For the partisanship variable, I’ll use the party registration one. And for the life experience, I’m going to use one I didn’t let you choose from (because not many people said yes, and… well, you’ll see): “Have you ever been bitten by a shark, or not?” (V202569).</p>
+<section id="set-up" class="level3">
+<h3 class="anchored" data-anchor-id="set-up">Set up</h3>
+<p>As before, the first step is to prepare your R environment by loading required packages and loading the data. The will be exactly the same as with the previous project.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(anesr)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(timeseries_2020)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>my_data_raw <span class="ot">&lt;-</span> timeseries_2020 <span class="sc">|&gt;</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">party =</span> V201018,</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">experience =</span> V202569)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(timeseries_2020)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-variables" class="level3">
+<h3 class="anchored" data-anchor-id="select-variables">Select variables</h3>
+<p>For this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For the partisanship quasi-IV, I’ll use the party registration question. And for the life experience, I’m going to use one I didn’t let you choose from (because not many people said yes, and… well, you’ll see): “Have you ever been bitten by a shark, or not?” (V202569).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data_raw <span class="ot">&lt;-</span> timeseries_2020 <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  haven<span class="sc">::</span><span class="fu">zap_labels</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">party =</span> V201018,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">experience =</span> V202569)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="recode-variables" class="level3">
 <h3 class="anchored" data-anchor-id="recode-variables">Recode variables</h3>
-<p><code>dplyr</code>’s <code>case_when()</code> allows us to specify a condition and the value to assign if that condition is met. So for example <code>party == 1 ~ "Democratic"</code> can be read as “if the value of <code>party</code> is <code>1</code> then the value becomes”Democratic”.</p>
+<p>In its current state, the two categorical quasi-IVs are coded as numbers: 1s and 2s, and some other numeric codes. You’ll need to check the codebook to determine exactly what the numbers mean. Our first step is to “recode” the raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into <code>NA</code>–R’s representation of missing data.</p>
+<p>We’ll use <code>dplyr</code>’s <code>mutate()</code> function, which creates new variables or changes (<em>mutates</em>) existing ones. To achieve the desired result we’ll use <code>dplyr</code>’s <code>case_when()</code> function, which allows us to specify a condition and the value to assign if that condition is met. So for example <code>party == 1 ~ "Democratic"</code> can be read as “if the value of <code>party</code> is <code>1</code> then the value becomes”Democratic”. Since the original variable is named “party” and I’m using that name for the mutated variable, the column will be changed in place. Not that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become <code>NA</code> since I don’t specify otherwise.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> my_data_raw <span class="sc">|&gt;</span> </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="fu">everything</span>(), <span class="sc">~</span> . <span class="sc">&gt;</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democratic"</span>,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Republican"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience =</span> <span class="fu">case_when</span>(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> my_data_raw <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="fu">everything</span>(), <span class="sc">~</span> . <span class="sc">&gt;</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democratic"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Republican"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="describe" class="level3">
-<h3 class="anchored" data-anchor-id="describe">Describe</h3>
-<p>First we’ll find the “marginal means”. These are relevant to testing and interpreting the “main effects”.</p>
-<p>Finding this kind of mean is slightly more complicated than when we just needed to find the mean of each column in a data.frame like we did for the correlation project. This time, we want the mean from one column broken into groups based on the value of a different column; mean trust by party affiliation, and mean trust by life experience. As usual there are a lot of ways of doing this, but one of the most powerful is <code>dplyr</code>’s <code>summarize()</code> function. It allows you to compute summary values using other functions, such as <code>mean(trust)</code> to compute the mean of the trust column, and you can specify a grouping variable using the <code>.by</code> argument. And you aren’t limited to computing a single summary variable; here I also compute the number of observations in each group using the <code>n()</code> function.</p>
+</section>
+<section id="analysis" class="level2">
+<h2 class="anchored" data-anchor-id="analysis">Analysis</h2>
+<section id="describe-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="describe-the-data">Describe the data</h3>
+<p>The ANOVA will be accompanied by descritive statistics–the mean and standard deviation–for each grouping of participants in our data.</p>
+<p>First we’ll find the “marginal means”. These are relevant to testing and interpreting the “main effects”. Finding this kind of mean is slightly more complicated than when we just needed to find the mean of each column in a data.frame like we did for the correlation project. This time, we want the mean from one column broken into groups based on the value of a different column; mean trust by party affiliation, and mean trust by life experience.</p>
+<p>As usual there are a lot of ways of doing this, but one of the most powerful is <code>dplyr</code>’s <code>summarize()</code> function. It allows you to compute summary values using other functions, such as <code>mean(trust)</code> to compute the mean of the trust column, and you can specify a grouping variable using the <code>.by</code> argument. And you aren’t limited to computing a single summary variable; here I also compute the standard deviation (using <code>sd()</code>) and number of observations in each group (using the <code>n()</code> function).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> party) <span class="sc">|&gt;</span> </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> party) <span class="sc">|&gt;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  party       mean     n
-  &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;
-1 Republican  1.75  1176
-2 Democratic  3.14  1666</code></pre>
+<pre><code># A tibble: 2 × 4
+  party       mean    sd     n
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+1 Republican  1.75 0.980  1176
+2 Democratic  3.14 1.08   1666</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> experience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> experience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  experience  mean     n
-  &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;
-1 No          2.53  3763
-2 Yes         2.32    22</code></pre>
+<pre><code># A tibble: 2 × 4
+  experience  mean    sd     n
+  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+1 No          2.53  1.22  3763
+2 Yes         2.32  1.04    22</code></pre>
 </div>
 </div>
-<p>In addition to those marginal means, we need to find all 4 “cell means”.</p>
+<p>In addition to those marginal means, we need to find all 4 “cell means”: a mean trust score for each of the possible combinations of the political party and life experience groups.</p>
 <p>Thinking ahead, I’m going to want to make a graph showing these 4 means, and I’d like the graph to have “error bars” representing the confidence interval for each mean. There’s no built-in function to compute a confidence interval, so I’m going to make my own.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="fu">var</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="fu">var</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now I’m ready to compute the mean, number of observations, and confidence interval for each of the 4 groups.</p>
+<p>Now I’m ready to compute the mean, SD, number of observations, and confidence interval for each of the 4 groups.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> </span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci =</span> <span class="fu">ci</span>(trust),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(party, experience)) <span class="sc">|&gt;</span> </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>my_data_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci =</span> <span class="fu">ci</span>(trust),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(party, experience)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>my_data_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 5
-  party      experience  mean     n     ci
-  &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;
-1 Republican No          1.75  1170 0.0563
-2 Democratic No          3.14  1659 0.0522
-3 Republican Yes         1.5      6 0.878 
-4 Democratic Yes         2.71     7 0.451 </code></pre>
+<pre><code># A tibble: 4 × 6
+  party      experience  mean    sd     n     ci
+  &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;
+1 Republican No          1.75 0.981  1170 0.0563
+2 Democratic No          3.14 1.08   1659 0.0522
+3 Republican Yes         1.5  0.837     6 0.878 
+4 Democratic Yes         2.71 0.488     7 0.451 </code></pre>
 </div>
 </div>
+</section>
+<section id="anova" class="level3">
+<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<p>The <code>aov()</code> function computes an ANOVA. By itself, <code>aov()</code> doesn’t output all the information we want to see; that why I pipe it into the <code>summary()</code> function below.</p>
+<p>The first argument to the <code>aov()</code> function is a formula, in the form <code>DV ~ IV1 * IV2</code>. The second argument is <code>data</code>, to which I supply the name of the data.frame containing my data; that’s how the formula in which we name the columns can work, since supplying the data.frame to the <code>data</code> argument tells the function where to find those columns.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(trust <span class="sc">~</span> party <span class="sc">*</span> experience, <span class="at">data =</span> my_data) <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   Df Sum Sq Mean Sq  F value Pr(&gt;F)    
+party               1 1343.3  1343.3 1238.597 &lt;2e-16 ***
+experience          1    1.5     1.5    1.421  0.233    
+party:experience    1    0.1     0.1    0.098  0.754    
+Residuals        2838 3077.9     1.1                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+943 observations deleted due to missingness</code></pre>
+</div>
+</div>
+<p>You should see three lines with your variable names, followed by a line for “Residuals” (which you can ignore). Those three lines are your three hypothesis tests: two main effects and the interaction. Each line shows the “degrees of freedom” (“Df”), <span class="math inline">\(F\)</span> value, and <span class="math inline">\(p\)</span>-value (“Pr(&gt;F)”). (Sum Sq and Mean Sq don’t need to be reported). If the <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(0.05\)</span>, that test is “statistically significant.”</p>
+<p>Interpreting this can be difficult, so we’ll follow this up in the next lab with some visualization which can make understanding the pattern of results easier.</p>
 
 
 </section>
@@ -422,6 +461,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr>
 <ol>
 <li id="fn1"><p>In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>It would be more elegant if I could pipe the data into <code>aov()</code> and then pipe that into <code>summary()</code>, like this:</p>
+<pre><code>  my_data |&gt; 
+    aov(trust ~ party * experience) |&gt; 
+    summary()</code></pre>
+<p>Unfortunately that won’t work, because piping inserts the output of the previous line of code into the <em>first</em> argument of the next line. Since <code>aov()</code> is a base R function and the pipe is a more recent innovation, <code>aov()</code> wasn’t designed with this in mind. If it was, <code>data</code> would be the first argument and the pipe would work. There is a way to make it work, by using the <code>_</code> special character, which R’s pipe operator understands as a placeholder for the pipe’s output, to specifically place the output into <code>aov()</code>’s <code>data</code> argument:</p>
+<pre><code>  my_data |&gt; 
+    aov(trust ~ party * experience, data = _) |&gt; 
+    summary()</code></pre>
+<p>It’s not very elegant in this case, which is why I didn’t bother, but knowing about the <code>_</code> placeholder can be useful in general.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
