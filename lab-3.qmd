@@ -76,13 +76,13 @@ As you can see, the data.frame contains a *lot* of variables; there are `r scale
 
 There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the `select()` function.[^tidyverse-note] This allows us to simply type in variable names separated by commas.
 
-For this example code I'll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and concern that government might undermine media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
+For this example code I'll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and perceived threat to the media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
 
 ```{r}
 
 my_data <- timeseries_2020 |> 
   select(trust = V201377, 
-         concern = V201376) |> 
+         threat = V201376) |> 
   haven::zap_labels()
 
 ```
@@ -132,7 +132,7 @@ After filtering to keep only rows with complete data, we're left with `r format(
 
 Now that we have selected our columns and filtered out missing/invalid responses, the last thing to do is recode values so they all mean what we want them to mean.
 
-Notice that valid responses for the "undermine the news media" concern item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater concern, so that's fine. 
+Notice that valid responses for the "undermine the news media" threat item are 1 (not at all concerned) through 5 (extremely concerned). I want higher scores on that question to indicate greater perceived threat, so that's fine. 
 
 For the "trust in news media" question, responses are 1 (none) though 5 (a great deal). But I'm thinking of the psychological construct as *dis*trust rather than trust, so I want higher scores to indicate more distrust. The solution is simple: just recode the answers so that a score of 1 becomes a 5 (the most distrust), 2 becomes 4, 3 stays 3, 4 becomes 2 and 5 becomes 1 (the least distrust).
 
@@ -145,7 +145,7 @@ my_data_complete <- my_data_complete |>
 ```
 
 
-Now I have my two variables, concern about the news media, and (reverse-coded) distrust of the news media, for each of the `r scales::label_comma()(nrow(my_data_complete))` participants with complete data. We're ready to start exploring the data.
+Now I have my two variables, perceived threat to the news media, and (reverse-coded) distrust of the news media, for each of the `r scales::label_comma()(nrow(my_data_complete))` participants with complete data. We're ready to start exploring the data.
 
 
 ## Start examining the data
@@ -154,11 +154,11 @@ Now I have my two variables, concern about the news media, and (reverse-coded) d
 
 The most common descriptive statistics are the mean ($M$) and standard deviation ($SD$). You should report these for each variable in your analysis.
 
-There are many ways of doing this, but for now I'll just use the `mean()` and `sd()` functions. I can refer to a particular column in a data.frame using the `$` operator, i.e. `my_data$concern` and so on.
+There are many ways of doing this, but for now I'll just use the `mean()` and `sd()` functions. I can refer to a particular column in a data.frame using the `$` operator, i.e. `my_data$threat` and so on.
 
 ```{r}
-mean(my_data_complete$concern)
-sd(my_data_complete$concern)
+mean(my_data_complete$threat)
+sd(my_data_complete$threat)
 
 mean(my_data_complete$distrust)
 sd(my_data_complete$distrust)
@@ -171,15 +171,15 @@ In addition to reporting the mean and standard deviation, it is useful to visual
 
 As with most things, there are a lot of different ways of producing graphs using R. One of the most widely used and powerful is the `ggplot2` package.^[The `ggplot2` package is part of the `tidyverse`, so because we already ran `library(tidyverse)` earlier the `ggplot2` functions are already available to us. If you needed to, you could always run `library(ggplot2)` to activate it separately.] The name refers to the idea of the "grammar of graphics", and it is built around a layering approach. You first specify your data and aesthetics (what should data will go on the x and y axes), then geometry (do you want data to be represented by points or bars or as a histogram?), any scaling (e.g. what values should be labeled on each axis), and theme elements (how do you want the plot to look generally?). There can be a lot of complexity, but building things up layer by layer, gradually adding and refining elements, is a powerful and satisfying approach.
 
-Here's a simple histogram of the concern item. I pipe the data into the `ggplot()` function, specifying that I want the `concern` column to be represented as the `x` aesthetic. Then I add geometry using `geom_histogram`. That geom function automatically computes bins and counts; here I just specify I want a `binwidth` of 1, i.e. each column of the histogram will represent one scale point. Note that ggplot layers are added using `+` rather than the usual `|>` pipe.
+Here's a simple histogram of the threat item. I pipe the data into the `ggplot()` function, specifying that I want the `threat` column to be represented as the `x` aesthetic. Then I add geometry using `geom_histogram`. That geom function automatically computes bins and counts; here I just specify I want a `binwidth` of 1, i.e. each column of the histogram will represent one scale point. Note that ggplot layers are added using `+` rather than the usual `|>` pipe.
 
 
 ```{r}
-#| label: fig-concern-no-theme
-#| fig-cap: Histogram of responses to "concern about government undermining news media" question
+#| label: fig-threat-no-theme
+#| fig-cap: Histogram of responses to perceived threat to news media question
 
 my_data_complete |> 
-  ggplot(aes(x = concern)) +
+  ggplot(aes(x = threat)) +
   geom_histogram(binwidth = 1)
 
 ```
@@ -200,10 +200,10 @@ I'll also customize the "breaks" and "labels" on the x-axis (to show the verbal 
 
 ```{r}
 #| label: fig-extraverted
-#| fig-cap: Histogram of responses to concern about news being undermined
+#| fig-cap: Histogram of responses to perceived threat to news media
 
 my_data_complete |> 
-  ggplot(aes(x = concern)) +
+  ggplot(aes(x = threat)) +
   geom_histogram(binwidth = 1, color = "white") +
   scale_x_continuous(breaks = 1:5, 
                      labels = c(" Not at all", "A little", "Moderately", "Very", "Extremely")) +
@@ -245,7 +245,7 @@ my_data_complete |>
 
         my_data_complete <- my_data |>
           filter(trust %in% 1:5,
-                 concern %in% 1:5)
+                 threat %in% 1:5)
 
 
 

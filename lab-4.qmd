@@ -25,7 +25,7 @@ data(timeseries_2020)
 
 my_data_complete <- timeseries_2020 |>
   select(trust = V201377, 
-         concern = V201376) |> 
+         threat = V201376) |> 
   haven::zap_labels() |>
   filter(if_all(everything(), ~ . >= 0)) |> 
   mutate(distrust = 6 - trust)
@@ -47,7 +47,7 @@ The correlation between two variables can be found using the `cor()` function.
 
 ```{r}
 
-cor(x = my_data_complete$concern, 
+cor(x = my_data_complete$threat, 
     y = my_data_complete$distrust)
 
 ```
@@ -57,7 +57,7 @@ If you got an answer of `NA` instead of a number, it is probably because your da
 
 ```{r}
 
-cor(x = my_data_complete$concern, 
+cor(x = my_data_complete$threat, 
     y = my_data_complete$distrust,
     use = "pairwise.complete.obs")
 
@@ -67,7 +67,7 @@ The `cor.test()` function goes further than `cor()`, giving you the $p$-value ne
 
 ```{r}
 
-cor.test(x = my_data_complete$concern, 
+cor.test(x = my_data_complete$threat, 
          y = my_data_complete$distrust)
 ```
 
@@ -79,10 +79,10 @@ Lastly, let's make a scatterplot visualizing the correlation.
 
 ```{r}
 #| label: fig-scatter
-#| fig-cap: Scatterplot (with jitter) of concern and distrust
+#| fig-cap: Scatterplot (with jitter) of perceived threat and distrust
 
 my_data_complete |> 
-  ggplot(aes(x = concern, y = distrust)) +
+  ggplot(aes(x = threat, y = distrust)) +
   geom_point(position = position_jitter(width = 0.45, height = 0.45, seed = 1),
              alpha = 0.1) +
   scale_x_continuous(breaks = 1:5, 
@@ -100,7 +100,7 @@ Most of that will look familiar from the previous plots we made. One new element
 
 ## Interpreting your findings
 
-Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people's answers to your concern question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you'll need to consider a number of things:
+Remember, a correlation quantifies the general quantitative relationship between two sets of numbers; people's answers to your perceived threat question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you'll need to consider a number of things:
 
 - What features of how the questions were asked might have affected people's answers?
 - What, if anything, about the context in which the questions were asked might have influenced people's answers?
