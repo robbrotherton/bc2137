@@ -5,12 +5,16 @@ In this session we will begin the first project of the course: performing a corr
 
 ### Goals
 
--   Identify the variables for your correlation analysis
+-   Understand the purpose of a correlational design
+-   Identify the variables for your analysis
 -   Read some relevant research
 -   Articulate your hypothesis
 
 
 ## Project overview
+
+
+### Correlational designs
 
 With this project you will examine a correlation between social psychological constructs using real survey data.
 
@@ -94,7 +98,7 @@ timeseries_2020 |>
 
 The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2020 election, since it's the most recently conducted complete survey.
 
-The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats affect people's trust. What kinds of threats are associated with distrust of the government and/or other people?
+The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats are associated with trust. Does distrust of the government and/or other people tend to go together with feeling threatened in some way?
 
 One of your variables will be a question assessing __perceived threat__:
 
