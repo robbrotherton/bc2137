@@ -26,7 +26,7 @@ schedule <- tibble::tribble(
 )
 ```
 
-__Pre-requisites__: PSYC BC1001 Introduction to Psychology; PSYC BC1101 Statistics; PSYC BC 1024 Research Methods  
+__Pre-requisites__: PSYC BC1001 Introduction to Psychology; PSYC BC1101 Statistics; PSYC BC 1020 Research Methods  
 __Co-requisite__: PSYC BC2138 Social Psychology
 
 ### Time, venue & instructor
