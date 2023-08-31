@@ -96,7 +96,7 @@ timeseries_2020 |>
 
 ```
 
-The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2020 election, since it's the most recently conducted complete survey.
+The dataset we will use is from the [American National Election Studies (ANES)](https://electionstudies.org/), academic surveys of voters in the United States conducted before and after every presidential election, going back to the 1940s. Specifically, for this project we will use data collected around the 2020 election, since it's the most recent survey.
 
 The kind of correlation analysis you will perform examines whether two constructs are related. The full dataset contains more than 1,000 questions reflecting various constructs. Since this is your first project I am going to constrain your choice. You will investigate how perceived threats are associated with trust. Does distrust of the government and/or other people tend to go together with feeling threatened in some way?
 
@@ -123,7 +123,7 @@ To see exactly how these constructs were measured you will look up the variable 
 
 Real research doesn't happen in a vacuum; research plans and expectations should be informed by what has come before. Therefore once you know which variables you will analyze, you will see what other researchers have found about these (or related) constructs.
 
-A real research project would involve an exhaustive literature review, in which you attempt to find and understand all the research relevant to your question. Since this project of ours is just for practice and our time is limited, you don't need to read everything; this paper should give you an idea of what has been found:
+A real research project would involve an exhaustive literature review, in which you attempt to find and understand all the research relevant to your question. Since this project is just for practice and our time is limited, you don't need to read everything; this paper should give you an idea of what has been found:
 
 ::: {.references}
 <!-- Rickert, E. J. (1998). Authoritarianism and economic threat: Implications for political behavior. *Political Psychology, 19(4)*, 707-720. <https://doi.org/10.1111/0162-895X.00128> -->
@@ -146,7 +146,7 @@ By this point you should be able to state your:
 
 Your hypothesis is a formal statement of your expectation about how your constructs are (or aren't) associated, and it will be tested quantitatively by calculating a correlation statistic.
 
-The main question that your hypothesis addresses is: do you think the two variables will be significantly correlated? That is, will you find an association consistent enough that it doesn't just seem to be attributable to chance variation in the data? (Even random data will produce spurious correlations by chance some of the time; see [spuriouscorrelations.com](https://spuriouscorrelations.com#stat897f4cbec4629379cd566c68c3f40c5f))
+The main question that your hypothesis addresses is: do you think the two variables will be significantly correlated? That is, will you find an association consistent enough that it doesn't just seem to be attributable to chance variation in the data?^[Even random data will produce spurious correlations by chance some of the time; see [spuriouscorrelations.com](https://spuriouscorrelations.com#stat897f4cbec4629379cd566c68c3f40c5f)]
 
 If you do expect a significant correlation, you should also specify whether you expect it to be positive or negative, and how strong you expect it to be (i.e. weak, moderate, strong; see [Appendix B](appendix-correlation.html#sec-cor-effect-size)).
 
