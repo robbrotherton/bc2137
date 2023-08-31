@@ -5,12 +5,16 @@ execute:
 
 # Lab 11: Analysis, visualization & interpretation
 
-Groups should have decided on what variables to use and what analysis is appropriate, and begun any preliminary data preparation. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.
+Groups should have decided on what variables to use and what analysis is appropriate. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.
 
 
 ### Data wrangling tips
 
-Compute an average of several variables.
+Since everyone will be doing different things, Professor Brotherton work with groups individually to provide guidance on data preparation and analysis where help is needed. However, here are some hints about how to achieve common tasks.
+
+#### Compute an average of several variables.
+
+Some psychological measures consist of more than one question, and you need to compute the average of each participant's answers to all the relevant questions. `mutate()` and `rowMeans()` can be used.
 
 ```{r}
 my_data |> 
@@ -18,7 +22,9 @@ my_data |>
 ```
 
 
-Compute a sum score.
+#### Compute a sum score.
+
+If you need to add scores across several questions, `rowSums()` can be used.
 
 ```{r}
 my_data |> 
@@ -26,9 +32,19 @@ my_data |>
 ```
 
 
-Ntiles.
+#### Ntiles.
+
+Occasionally you might like to split a continuous measure into "ntiles," meaning a number of roughly equally-sized groups. The `ntile()` function can be used to this.
 
 ```{r}
 my_data |> 
   mutate(income_bracket = ntile(income, 2))
+```
+
+
+#### Arbitrary groups
+
+```{r}
+my_data |> 
+  mutate(age_group = case_when(age < 30 ~ "Young", age >= 30 ~ "Old"))
 ```
