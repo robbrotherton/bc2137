@@ -309,26 +309,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Groups should have decided on what variables to use and what analysis is appropriate, and begun any preliminary data preparation. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.</p>
+<p>Groups should have decided on what variables to use and what analysis is appropriate. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.</p>
 <section id="data-wrangling-tips" class="level3">
 <h3 class="anchored" data-anchor-id="data-wrangling-tips">Data wrangling tips</h3>
-<p>Compute an average of several variables.</p>
+<p>Since everyone will be doing different things, Professor Brotherton work with groups individually to provide guidance on data preparation and analysis where help is needed. However, here are some hints about how to achieve common tasks.</p>
+<section id="compute-an-average-of-several-variables." class="level4">
+<h4 class="anchored" data-anchor-id="compute-an-average-of-several-variables.">Compute an average of several variables.</h4>
+<p>Some psychological measures consist of more than one question, and you need to compute the average of each participant’s answers to all the relevant questions. <code>mutate()</code> and <code>rowMeans()</code> can be used.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(scale_vars))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Compute a sum score.</p>
+</section>
+<section id="compute-a-sum-score." class="level4">
+<h4 class="anchored" data-anchor-id="compute-a-sum-score.">Compute a sum score.</h4>
+<p>If you need to add scores across several questions, <code>rowSums()</code> can be used.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sum =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(<span class="fu">all_of</span>(scale_vars))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Ntiles.</p>
+</section>
+<section id="ntiles." class="level4">
+<h4 class="anchored" data-anchor-id="ntiles.">Ntiles.</h4>
+<p>Occasionally you might like to split a continuous measure into “ntiles,” meaning a number of roughly equally-sized groups. The <code>ntile()</code> function can be used to this.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">income_bracket =</span> <span class="fu">ntile</span>(income, <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="arbitrary-groups" class="level4">
+<h4 class="anchored" data-anchor-id="arbitrary-groups">Arbitrary groups</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">case_when</span>(age <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Young"</span>, age <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">"Old"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
