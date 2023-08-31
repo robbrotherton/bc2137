@@ -96,7 +96,7 @@ my_data_complete |>
 
 ```
 
-Most of that will look familiar from the previous plots we made. One new element is the `position = position_jitter()` part inside the `geom_point()` function. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it'll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.
+Most of that will look familiar from the previous plots we made. The only major difference is that instead of making a histogram I'm making a scatterplot, for which the "geometry" is points rather than histogram bars. Therefore I use `geom_point()` rather than `geom_histogram()` for the geometry layer. One new element is the `position = position_jitter()` part inside `geom_point()`. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it'll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.
 
 ## Interpreting your findings
 
@@ -104,5 +104,5 @@ Remember, a correlation quantifies the general quantitative relationship between
 
 - What features of how the questions were asked might have affected people's answers?
 - What, if anything, about the context in which the questions were asked might have influenced people's answers?
-- How does it fit with the previous research you read about?
+- How does it fit with the previous research you read about, and with your intuition about how the variables should be related?
 
