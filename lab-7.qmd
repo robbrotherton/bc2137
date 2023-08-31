@@ -41,9 +41,9 @@ my_data_raw <- timeseries_2020 |>
 
 ### Recode variables
 
-In its current state, the two categorical quasi-IVs are coded as numbers: 1s and 2s, and some other numeric codes. You'll need to check the codebook to determine exactly what the numbers mean. Our first step is to "recode" the raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into `NA`--R's representation of missing data.
+In the raw data responses to the categorical quasi-IVs are coded as numbers: 1s and 2s for "Democrat"/"Republican" and "yes"/"no", and some other numeric codes for other responses or invalid/missing answers. You'll need to check the codebook to determine exactly what all the numbers mean. Our first step is to "recode" these raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into `NA`--R's representation of missing data.
 
-We'll use `dplyr`'s `mutate()` function, which creates new variables or changes (*mutates*) existing ones. To achieve the desired result we'll use `dplyr`'s `case_when()` function, which allows us to specify a condition and the value to assign if that condition is met. So for example `party == 1 ~ "Democratic"` can be read as "if the value of `party` is `1` then the value becomes "Democratic". Since the original variable is named "party" and I'm using that name for the mutated variable, the column will be changed in place. Not that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become `NA` since I don't specify otherwise.
+We'll use `dplyr`'s `mutate()` function, which creates new variables or changes (*mutates*) existing ones. To achieve the desired result we'll use `dplyr`'s `case_when()` function, which allows us to specify a condition and the value to assign if that condition is met. So for example `party == 1 ~ "Democratic"` can be read as "if the value of `party` is `1` then the value becomes "Democratic". Since the original variable is named "party" and I'm using that name for the mutated variable, the column will be changed in place. Note that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become `NA` since I don't specify otherwise.
 
 
 ```{r}
@@ -62,9 +62,9 @@ my_data <- my_data_raw |>
 
 ## Analysis
 
-### Describe the data
+### Descriptive statistics
 
-The ANOVA will be accompanied by descritive statistics--the mean and standard deviation--for each grouping of participants in our data.
+Before computing the ANOVA itself, the first step is to compute descriptive statistics--the mean and standard deviation--for each grouping of participants in our data. With a 2x2 design there are a few different ways to group up the data, corresponding to the 3 hypotheses we aim to test.
 
 First we'll find the "marginal means". These are relevant to testing and interpreting the "main effects". Finding this kind of mean is slightly more complicated than when we just needed to find the mean of each column in a data.frame like we did for the correlation project. This time, we want the mean from one column broken into groups based on the value of a different column; mean trust by party affiliation, and mean trust by life experience.
 
@@ -111,6 +111,7 @@ my_data_summary <- my_data |>
 my_data_summary
 ```
 
+Note that I assigned this data summary to a new name, `my_data_summary`, so it becomes a new data.frame object in my environment. That's going to be useful later, because it is these summary statistics that I will use to make a graph of the results.
 
 ### ANOVA
 
@@ -136,7 +137,7 @@ Interpreting this can be difficult, so we'll follow this up in the next lab with
             aov(trust ~ party * experience) |> 
             summary()
           
-      Unfortunately that won't work, because piping inserts the output of the previous line of code into the *first* argument of the next line. Since `aov()` is a base R function and the pipe is a more recent innovation, `aov()` wasn't designed with this in mind. If it was, `data` would be the first argument and the pipe would work. There is a way to make it work, by using the `_` special character, which R's pipe operator understands as a placeholder for the pipe's output, to specifically place the output into `aov()`'s `data` argument:
+      Unfortunately that won't work, because by default the pipe operator inserts the output of the previous line of code into the *first* argument of the next line. Since `aov()` is a base R function and the pipe is a more recent innovation, `aov()` wasn't designed with this in mind. If it was, `data` would be the first argument and the pipe would work. There is a way to make it work, by using the `_` special character, which R's pipe operator understands as a placeholder for the pipe's output, to specifically place the output into `aov()`'s `data` argument:
       
           my_data |> 
             aov(trust ~ party * experience, data = _) |> 
