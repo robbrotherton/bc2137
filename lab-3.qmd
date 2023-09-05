@@ -200,7 +200,7 @@ I'll also customize the "breaks" and "labels" on the x-axis (to show the verbal 
 
 ```{r}
 #| label: fig-extraverted
-#| fig-cap: Histogram of responses to perceived threat to news media
+#| fig-cap: Histogram of responses to perceived threat to news media question
 
 my_data_complete |> 
   ggplot(aes(x = threat)) +
@@ -217,7 +217,7 @@ Here's a histogram of the distrust item.
 
 ```{r}
 #| label: fig-distrust
-#| fig-cap: Histogram of responses to "reserved, quiet" TIPI item
+#| fig-cap: Histogram of responses to "distrust" question
 
 my_data_complete |> 
   ggplot(aes(x = distrust)) +

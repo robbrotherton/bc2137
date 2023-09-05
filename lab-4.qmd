@@ -12,7 +12,7 @@ You will start this session with your cleaned data ready to use in R. By the end
 
 ## Correlation
 
-Running with my example from last week, I made a data.frame with just the two variables I needed; filtered the data down to complete, valid responses; and recoded the trust item so higher scores indicate greater distrust. To refresh your memory, here's the entire pipeline from start to finish:
+Running with my example from last week, I made a data.frame with just the two variables I needed; filtered the data down to complete, valid responses; and recoded the trust item so higher scores indicate greater distrust. To refresh your memory, here's the setup and data preparation pipeline from start to finish:
 
 
 ```{r}
