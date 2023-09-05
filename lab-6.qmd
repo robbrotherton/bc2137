@@ -21,7 +21,7 @@ ANOVA will always have a single, continuous dependent variable (DV). ANOVA can h
 
 #### Quasi-independent variables
 
-Researchers often "manipulate" at least one of the IVs in a study, making it an "experiment." In this context, the name "independent variable" implies that the researcher randomly determines which experimental group a participant will be in; therefore, the manipulated variable is theoretically "independent" of other variables in the study. The ANES, however, consists only of survey data; there is no experimental random assignment.[^random-note] Categorical variables that are not randomly assigned are called *quasi*-independent variables; they can still be used to look for differences between groups of participants, but since participants' membership of a group is an existing characteristic of theirs rather than something the research randomly assigns, it isn't truly "independent" of other variables.
+Researchers often "manipulate" at least one of the IVs in a study, making it an "experiment." In this context, the name "independent variable" implies that the researcher randomly determines which experimental group a participant will be in; therefore, the manipulated variable is theoretically "independent" of other variables in the study. The ANES, however, consists only of survey data; there is no experimental random assignment.[^random-note] Categorical variables that are not randomly assigned are called *quasi*-independent variables; they can still be used to look for differences between groups of participants, but since participants' membership of a group is an existing characteristic of theirs rather than something randomly determined, it isn't truly "independent" of other variables.
 
 It may sound like a limitation, but there are good reasons to use quasi-IVs in research. It isn't always possible or ethical to randomly assign group membership, yet there is still value in comparing existing groups. As an example, a participant's age can't be randomly assigned, but it is still often useful to compare different age groups to look for differences on some dependent variable. That said, there are important implications for causal inference that you should consider when it comes time to interpret your findings.
 
@@ -43,7 +43,7 @@ You dependent variable should be continuous (measured on a numeric scale). For t
 
 #### (Quasi)independent variables
 
-The first of your quasi-independent variables will be some indication of participants' political affiliation. There's a whole literature about ideology and partisanship, and I don't expect you to get into the weeds with it. 
+The first of your quasi-independent variables will be some indication of participants' political preferences.^[There's a whole literature about ideology and partisanship and I don't expect you to get into the weeds with it, but I expect you'll have some thoughts about the various strengths/limitations of these few questions.]
 
 - What political party are you registered with, if any? (V201018)
 - Who did you vote for? (V202073)

@@ -25,6 +25,6 @@ Your report should consist of the following sections:
 
 The report is due by the next class (see late policy from [Syllabus @sec-late-policy]).
 
-### Grading
+## Grading
 
-You will receive a score out of 100 for your report. See @sec-rubric for general qualitative criteria which will be assessed in the context of the expectations detailed above.
+As before you will receive a scores out of 100 for your presentation and report. See @sec-rubric for general qualitative criteria which will be assessed in the context of the expectations detailed above.

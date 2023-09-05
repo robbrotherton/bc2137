@@ -1,6 +1,6 @@
 # Lab 10: Project planning {.unnumbered}
 
-My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the projects so far, but that you're also feeling a bit limited by the constrained choice of variables you had. In this lab we'll begin the final project: you will execute a project of your own design, with the freedom to choose any variables you like from the full data set.
+My hope is that at this point you are feeling a sense of accomplishment at what you have achieved through the projects so far, but that you're also feeling a bit limited by the constrained limited choice of variables/topics you had. In this lab we'll begin the final project: you will execute a project of your own design, with the freedom to choose any variables you like from the full data set.
 
 
 ### Goals
@@ -18,7 +18,7 @@ For this project you have free choice of design and constructs. You may look at 
 
 ### Step 1. Decide on your constructs/operational definitions
 
-The full ANES 2020 dataset contains more than 1,000 columns, each representing a different variable that was measured. Not all of these are equally interesting from a social-psychological perspective, but you will find many questions that pertain to fundamental social-psychological concepts. Here are some suggestions for what you might consider analyzing:
+The full ANES 2020 dataset contains more than 1,000 columns, each representing a different variable that was measured. Not all of these are equally interesting from a social-psychological perspective, but you will find many questions that pertain to fundamental social-psychological concepts. Here are some suggestions--constructs the ANES data measures in some way that you might consider from a social psychological perspective:
 
 - Feeling thermometers (affect towards various political actors/groups)
 - Political knowledge
