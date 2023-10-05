@@ -1,0 +1,40 @@
+
+# Describing data
+
+Once you have your data, you need some tools to describe and interpret it. Of course, you could just list the individual observations and try to form an intuition about the general outcome, but there are more formal means to determine whether the experimental manipulation had an effect. A statistical description summarizes the data in a way that permits interpretation.
+
+
+## The mean
+
+The average, or mean, is a measure of typical performance; it summarizes all the scores and produces a single number which represents the most typical value. The basic formula for the mean of a set of scores is:
+
+$$
+M = \dfrac{\Sigma X}{n}
+$$
+
+In this equation, $X$ refers to all the scores in the group, and $n$ is the number of scores in the group. The symbol $\Sigma$ instructs you to sum all the scores. A simple way of saying the formula in words is: Add up all the scores in the group and divide by the number of scores in that group.
+
+
+## Standard deviation
+
+However, there is always variability in the scores in a group. The mean is a *central* value, but some scores fall below it and others above it. Therefore, researchers also need to describe the amount of variability in scores. This puts the mean in context, describing just how representative of all the scores it is. If there is high variability, scores are spread widely and the mean is relatively unrepresentative; if there is low variability, scores are clustered tightly and the mean is relatively representative.
+
+A mathematical way of describing the amount of variability in a group of scores is to calculate the deviation of each score from the mean, square the deviations, and then sum the squared deviations. This quantity is called Sum of Squares (SS). One mathematical formula is:
+
+$$
+SS = \Sigma(X - M)^2
+$$
+
+Dividing $SS$ by the number of scores in the group minus 1 produces a quantity called variance, which is represented by the symbol $s^2$. Variance is the average squared deviation. (Remember that to calculate an average, you add a set of scores and divide by $n$. Here we add a set of deviations and divide by $n – 1$. We use $n – 1$, rather than just $n$, because it is a necessary statistical adjustment to account for the fact that samples tend to underestimate variability.)  
+
+$$
+s^2 = \dfrac{\Sigma(X-M)^2}{n-1}
+$$
+
+Taking the square root of the variance produces another quantity, called standard deviation. It is represented mathematically by the symbol $s$, but in psychology papers you will most often see it represented by the letters SD.
+
+$$
+SD = \sqrt{\dfrac{\Sigma(X-M)^2}{n-1}}
+$$
+
+While variance is the average squared deviation, SD is the average deviation in the original units (i.e. not squared). This is the most intuitive way to convey how much scores typically varied about the mean.

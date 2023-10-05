@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Social Psychology Lab Handbook - Lab 12: Presentation &amp; report</title>
+<title>Social Psychology Lab Handbook - Appendix B — Describing data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./appendix-r-basics.html" rel="next">
-<link href="./lab-11.html" rel="prev">
+<link href="./appendix-correlation.html" rel="next">
+<link href="./appendix-r-basics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -63,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -75,7 +77,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./lab-10.html">Project 3: Own design</a></li><li class="breadcrumb-item"><a href="./lab-12.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Lab 12: Presentation &amp; report</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./appendix-r-basics.html">Appendices</a></li><li class="breadcrumb-item"><a href="./appendix-describing-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Describing data</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -200,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./lab-12.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Lab 12: Presentation &amp; report</span></a>
+  <a href="./lab-12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Lab 12: Presentation &amp; report</span></a>
   </div>
 </li>
       </ul>
@@ -221,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./appendix-describing-data.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Describing data</span></a>
+  <a href="./appendix-describing-data.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Describing data</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -246,13 +248,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#presentation" id="toc-presentation" class="nav-link active" data-scroll-target="#presentation">Presentation</a></li>
-  <li><a href="#sec-report" id="toc-sec-report" class="nav-link" data-scroll-target="#sec-report">Written report</a>
-  <ul class="collapse">
-  <li><a href="#format" id="toc-format" class="nav-link" data-scroll-target="#format">Format</a></li>
-  <li><a href="#deadline" id="toc-deadline" class="nav-link" data-scroll-target="#deadline">Deadline</a></li>
-  </ul></li>
-  <li><a href="#grading" id="toc-grading" class="nav-link" data-scroll-target="#grading">Grading</a></li>
+  <li><a href="#the-mean" id="toc-the-mean" class="nav-link active" data-scroll-target="#the-mean">The mean</a></li>
+  <li><a href="#standard-deviation" id="toc-standard-deviation" class="nav-link" data-scroll-target="#standard-deviation">Standard deviation</a></li>
   </ul>
 </nav>
     </div>
@@ -261,7 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Lab 12: Presentation &amp; report</span></h1>
+<h1 class="title">Appendix B — Describing data</h1>
 </div>
 
 
@@ -276,32 +273,31 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>As for previous projects, this week each project team will present their project to the rest of the class. After that, you will be ready to write up your findings. Note that presentations (and all the preceding work) will be a group effort, but written reports must be completed individually.</p>
-<section id="presentation" class="level2">
-<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
-<p>See again the general <a href="./lab-5.html">tips for delivering an effective presentation</a>. My main advice this time is to remember that every group will likely be working on quite different social psychological topics; your audience will not be experts in the topic you have chosen. Focus on making sure you give a clear overview of your constructs, operational definitions, and hypotheses, all in the context of whatever relevant previous research you have discovered.</p>
+<p>Once you have your data, you need some tools to describe and interpret it. Of course, you could just list the individual observations and try to form an intuition about the general outcome, but there are more formal means to determine whether the experimental manipulation had an effect. A statistical description summarizes the data in a way that permits interpretation.</p>
+<section id="the-mean" class="level2">
+<h2 class="anchored" data-anchor-id="the-mean">The mean</h2>
+<p>The average, or mean, is a measure of typical performance; it summarizes all the scores and produces a single number which represents the most typical value. The basic formula for the mean of a set of scores is:</p>
+<p><span class="math display">\[
+M = \dfrac{\Sigma X}{n}
+\]</span></p>
+<p>In this equation, <span class="math inline">\(X\)</span> refers to all the scores in the group, and <span class="math inline">\(n\)</span> is the number of scores in the group. The symbol <span class="math inline">\(\Sigma\)</span> instructs you to sum all the scores. A simple way of saying the formula in words is: Add up all the scores in the group and divide by the number of scores in that group.</p>
 </section>
-<section id="sec-report" class="level2">
-<h2 class="anchored" data-anchor-id="sec-report">Written report</h2>
-<p>You will again produce a miniature research paper reporting your project. Note that each team member will produce their own individual report; even though the project has been collaborative, your write up will be your own.</p>
-<section id="format" class="level3">
-<h3 class="anchored" data-anchor-id="format">Format</h3>
-<p>Your report should consist of the following sections:</p>
-<ul>
-<li>Introduction (two or three paragraphs, including the general research question; summary of relevant research; and hypothesis)</li>
-<li>Method (a description of your variables, the number of valid responses, and any other information about the procedures that generated the data that you think necessary to report)</li>
-<li>Results (a technical report of any descriptive statistics, figures, and statistics you produced)</li>
-<li>Discussion (a paragraph or two interpreting your results and drawing conclusions)</li>
-</ul>
-</section>
-<section id="deadline" class="level3">
-<h3 class="anchored" data-anchor-id="deadline">Deadline</h3>
-<p>The report is due by the next class (see late policy from <a href="index.html#sec-late-policy">Syllabus&nbsp;<span>3.2</span></a>).</p>
-</section>
-</section>
-<section id="grading" class="level2">
-<h2 class="anchored" data-anchor-id="grading">Grading</h2>
-<p>As before you will receive a scores out of 100 for your presentation and report. See <a href="appendix-rubric.html"><span>Appendix&nbsp;D</span></a> for general qualitative criteria which will be assessed in the context of the expectations detailed above.</p>
+<section id="standard-deviation" class="level2">
+<h2 class="anchored" data-anchor-id="standard-deviation">Standard deviation</h2>
+<p>However, there is always variability in the scores in a group. The mean is a <em>central</em> value, but some scores fall below it and others above it. Therefore, researchers also need to describe the amount of variability in scores. This puts the mean in context, describing just how representative of all the scores it is. If there is high variability, scores are spread widely and the mean is relatively unrepresentative; if there is low variability, scores are clustered tightly and the mean is relatively representative.</p>
+<p>A mathematical way of describing the amount of variability in a group of scores is to calculate the deviation of each score from the mean, square the deviations, and then sum the squared deviations. This quantity is called Sum of Squares (SS). One mathematical formula is:</p>
+<p><span class="math display">\[
+SS = \Sigma(X - M)^2
+\]</span></p>
+<p>Dividing <span class="math inline">\(SS\)</span> by the number of scores in the group minus 1 produces a quantity called variance, which is represented by the symbol <span class="math inline">\(s^2\)</span>. Variance is the average squared deviation. (Remember that to calculate an average, you add a set of scores and divide by <span class="math inline">\(n\)</span>. Here we add a set of deviations and divide by <span class="math inline">\(n – 1\)</span>. We use <span class="math inline">\(n – 1\)</span>, rather than just <span class="math inline">\(n\)</span>, because it is a necessary statistical adjustment to account for the fact that samples tend to underestimate variability.)</p>
+<p><span class="math display">\[
+s^2 = \dfrac{\Sigma(X-M)^2}{n-1}
+\]</span></p>
+<p>Taking the square root of the variance produces another quantity, called standard deviation. It is represented mathematically by the symbol <span class="math inline">\(s\)</span>, but in psychology papers you will most often see it represented by the letters SD.</p>
+<p><span class="math display">\[
+SD = \sqrt{\dfrac{\Sigma(X-M)^2}{n-1}}
+\]</span></p>
+<p>While variance is the average squared deviation, SD is the average deviation in the original units (i.e.&nbsp;not squared). This is the most intuitive way to convey how much scores typically varied about the mean.</p>
 
 
 </section>
@@ -671,13 +667,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./lab-11.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Lab 11: Analysis, visualization &amp; interpretation</span></span>
+      <a href="./appendix-r-basics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Getting started with R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./appendix-r-basics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Getting started with R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./appendix-correlation.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Correlation</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

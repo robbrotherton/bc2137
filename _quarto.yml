@@ -38,6 +38,7 @@ book:
         - lab-12.qmd
   appendices:
     - appendix-r-basics.qmd
+    - appendix-describing-data.qmd
     - appendix-correlation.qmd
     - appendix-rubric.qmd
 
