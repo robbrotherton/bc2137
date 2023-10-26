@@ -62,27 +62,29 @@ my_data_summary |>
 
 ### Line graph
 
-Here I use several aesthetic mappings for the "life experience" variable: the color of the lines and points, the type of point and type of line (solid or dashed) all differ. It's redundant to map the same variable to so many aesthetics, but it can still be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.
+Here I use several aesthetic mappings for the "life experience" variable: the `color` of the lines and points, the `shape` of the points and `linetype` of line (solid or dashed) all differ. It's redundant to map the same variable to so many aesthetics, but the redundancy can be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.
 
 ```{r}
 my_data_summary |> 
   ggplot(aes(x = party, y = mean, group = experience, color = experience, linetype = experience, shape = experience)) +
-  geom_point(size = 2) +
+  geom_point(size = 3) +
   geom_line() +
   geom_errorbar(aes(ymax = mean + ci, ymin = mean - ci), width = 0.1) +
   coord_cartesian(ylim = c(1, 5))
 ```
 
 
+My graphs here are very redimentary; remember, you should customise aspects of the theme and labels to better convey the data and conform to the usual [APA style for figures](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures).
+
 
 ## Interpreting ANOVA
 
-As a reminder, a 2x2 ANOVA tests 3 different hypotheses: 2 main effects and the interaction. The outcome of all 3 is independent: you may find that both main effects are significant, or neither, or one main effect is significant but not the other. And the interaction may be significant (or not) regardless of the (non)significance of the main effects.
+As a reminder, a 2x2 ANOVA tests 3 different hypotheses: 2 main effects and the interaction. The outcomes of all 3 are independent: you may find that both main effects are significant, or neither, or one main effect is significant but not the other. And the interaction may be significant (or not) regardless of the (non)significance of the main effects.
 
 This can get quite complicated to think about, so try to break it down in the context of your design. Think about:
 
 - The main effect of partisanship (do Democrats and Republicans differ in trust?)
 - Main effect of life experience (do people who have and have not had the experience in question differ in trust?)
-- Interaction: does the relationship between the life experience and trust depend on partisanship? I.e., is it different for Democrats vs Republicans?
+- Interaction: does the relationship between the life experience and trust *depend on* partisanship? I.e., is the relationship different for Democrats vs Republicans?
 
 Your report should mention all three of the above issues.

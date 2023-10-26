@@ -337,11 +337,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="line-graph" class="level3">
 <h3 class="anchored" data-anchor-id="line-graph">Line graph</h3>
-<p>Here I use several aesthetic mappings for the “life experience” variable: the color of the lines and points, the type of point and type of line (solid or dashed) all differ. It’s redundant to map the same variable to so many aesthetics, but it can still be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.</p>
+<p>Here I use several aesthetic mappings for the “life experience” variable: the <code>color</code> of the lines and points, the <code>shape</code> of the points and <code>linetype</code> of line (solid or dashed) all differ. It’s redundant to map the same variable to so many aesthetics, but the redundancy can be helpful. If the graph was printed in black and white, for example, it would still be possible to easily tell the groups apart.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="sc">|&gt;</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> party, <span class="at">y =</span> mean, <span class="at">group =</span> experience, <span class="at">color =</span> experience, <span class="at">linetype =</span> experience, <span class="at">shape =</span> experience)) <span class="sc">+</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">ymax =</span> mean <span class="sc">+</span> ci, <span class="at">ymin =</span> mean <span class="sc">-</span> ci), <span class="at">width =</span> <span class="fl">0.1</span>) <span class="sc">+</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -349,16 +349,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="lab-8_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>My graphs here are very redimentary; remember, you should customise aspects of the theme and labels to better convey the data and conform to the usual <a href="https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures">APA style for figures</a>.</p>
 </section>
 </section>
 <section id="interpreting-anova" class="level2">
 <h2 class="anchored" data-anchor-id="interpreting-anova">Interpreting ANOVA</h2>
-<p>As a reminder, a 2x2 ANOVA tests 3 different hypotheses: 2 main effects and the interaction. The outcome of all 3 is independent: you may find that both main effects are significant, or neither, or one main effect is significant but not the other. And the interaction may be significant (or not) regardless of the (non)significance of the main effects.</p>
+<p>As a reminder, a 2x2 ANOVA tests 3 different hypotheses: 2 main effects and the interaction. The outcomes of all 3 are independent: you may find that both main effects are significant, or neither, or one main effect is significant but not the other. And the interaction may be significant (or not) regardless of the (non)significance of the main effects.</p>
 <p>This can get quite complicated to think about, so try to break it down in the context of your design. Think about:</p>
 <ul>
 <li>The main effect of partisanship (do Democrats and Republicans differ in trust?)</li>
 <li>Main effect of life experience (do people who have and have not had the experience in question differ in trust?)</li>
-<li>Interaction: does the relationship between the life experience and trust depend on partisanship? I.e., is it different for Democrats vs Republicans?</li>
+<li>Interaction: does the relationship between the life experience and trust <em>depend on</em> partisanship? I.e., is the relationship different for Democrats vs Republicans?</li>
 </ul>
 <p>Your report should mention all three of the above issues.</p>
 
