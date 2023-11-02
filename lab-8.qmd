@@ -54,7 +54,7 @@ my_data_summary <- my_data |>
 
 ```{r}
 my_data_summary |> 
-  ggplot(aes(x = party, y = mean, group = experience, fill = experience)) +
+  ggplot(aes(x = party, y = mean, fill = experience)) +
   geom_col(position = position_dodge()) +
   geom_errorbar(aes(ymax = mean + ci, ymin = mean - ci), position = position_dodge(width = 0.9), width = 0.3) +
   coord_cartesian(ylim = c(1, 5))
@@ -74,7 +74,7 @@ my_data_summary |>
 ```
 
 
-My graphs here are very redimentary; remember, you should customise aspects of the theme and labels to better convey the data and conform to the usual [APA style for figures](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures).
+My graphs here are very rudimentary; remember, you should customize aspects of the theme and labels to better convey the data and conform to the usual [APA style for figures](https://apastyle.apa.org/style-grammar-guidelines/tables-figures/figures).
 
 
 ## Interpreting ANOVA
