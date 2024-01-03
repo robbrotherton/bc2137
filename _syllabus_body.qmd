@@ -4,26 +4,38 @@
 schedule <- tibble::tribble(
   ~"Date", ~"Topic", ~"Assignment*",
   
-  "9/14",   "Course overview",           "",
+  "1/24",   "Course overview",           "",
   
   # Project 1 header goes here
-  "9/21",   "Project planning",          "",
-  "9/28",   "Data preparation",             "",
-  "10/5",   "Analysis",                  "Presentation slide",
-  "10/12",  "Presentations",             "Project 1 report",
+  "1/31",   "Project planning",          "",
+  "2/7",   "Data preparation",           "",
+  "2/14",   "Analysis",                  "Presentation slide",
+  "2/21",  "Presentations",              "Project 1 report",
   
   # Project 2 header goes here
-  "10/19",  "Project planning",          "",
-  "10/26",  "Data preparation & analysis",  "",
-  "11/2",   "Visualization & interpretation", "Presentation slide",
-  "11/9",   "Presentations",             "Project 2 report",
+  "2/28",  "Project planning",           "",
+  "3/6",  "Data preparation & analysis", "",
+  "3/13",  "No class (Spring Break)",    "",
+  "3/20",   "Visualization & interpretation", "Presentation slide",
+  "3/27",   "Presentations",             "Project 2 report",
   
   # Project 3 header goes here
-  "11/16",  "Project planning",          "",
-  "11/23",  "No class (Thanksgiving)",   "",
-  "11/30",  "Analysis, visualization & interpretation",      "Presentation slide",
-  "12/7",   "Presentation & report",             "Project 3 report",
+  "4/3",  "Project planning",          "",
+  "4/10",  "Analysis",   "",
+  "4/17",  "Visualization & interpretation",      "Presentation slide",
+  "4/24",  "Presentation & report",             "Project 3 report",
 )
+
+no_class_row <- stringr::str_which(schedule$Topic, "No class")
+
+schedule_table <- knitr::kable(schedule) |>
+  kableExtra::row_spec(no_class_row, italic = TRUE, color = "#BBBBBB") |>
+  kableExtra::pack_rows("Project 1: Correlation", 2, 5, indent = FALSE) |>
+  kableExtra::pack_rows("Project 2: ANOVA", 6, 10, indent = FALSE) |>
+  kableExtra::pack_rows("Project 3: Own design", 11, 14, indent = FALSE) |>
+  kableExtra::add_footnote("due by the following class", notation = "symbol") |>
+  kableExtra::kable_styling(full_width = TRUE)
+
 ```
 
 __Pre-requisites__: PSYC BC1001 Introduction to Psychology; PSYC BC1101 Statistics; PSYC BC1020 Research Methods  
@@ -31,12 +43,12 @@ __Co-requisite__: PSYC BC2138 Social Psychology
 
 ### Time, venue & instructor
 
-Section 001: Thursday 10:10-1PM, Milbank 410       
-Section 002: Thursday 1:10-4:00PM, Milbank 410
+Section 001: Wednesday 10:10-1PM, Milbank 410       
+Section 002: Wednesday 1:10-4:00PM, Milbank 410
 
 
 Instructor: Dr. Rob Brotherton (<rbrother@barnard.edu>)       
-Office hour: Wednesday 10-11AM, Milbank 415M
+Office hour: Friday 10-11AM, Milbank 415M
 
 
 
@@ -129,14 +141,6 @@ It is always important to recognize the different pressures, burdens, and stress
 ```{r}
 #| echo: false
 
-no_class_row <- stringr::str_which(schedule$Topic, "No class")
-
-knitr::kable(schedule) |>
-  kableExtra::row_spec(no_class_row, italic = TRUE, color = "#BBBBBB") |>
-  kableExtra::pack_rows("Project 1: Correlation", 2, 5, indent = FALSE) |>
-  kableExtra::pack_rows("Project 2: ANOVA", 6, 9, indent = FALSE) |>
-  kableExtra::pack_rows("Project 3: Own design", 10, 13, indent = FALSE) |>
-  kableExtra::add_footnote("due by the following class", notation = "symbol") |>
-  kableExtra::kable_styling(full_width = TRUE)
+schedule_table
 
 ```
