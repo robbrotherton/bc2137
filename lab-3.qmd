@@ -17,27 +17,11 @@ You will begin this session with variables from the ANES dataset in mind for you
 
 In addition to being a source of high-quality data relevant to social psychology, the ANES dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the data relatively straightforward (not that you won't still run into issues!): `anesr` ([github.com/jamesmartherus/anesr](https://github.com/jamesmartherus/anesr)).
 
-To start exploring the data in R, you first need to set up your environment. This means installing the `anesr` package. Usually packages can be installed from within R using the `install.packages()` function. However since the `anesr` package is hosted on GitHub (as opposed to the official R repository of packages), the easiest way to install it is by first installing the `devtools` package, which has a special function for installing packages from GitHub.
+We will also use some other packages for data wrangling and analysis. Developers have created a collection of packages for R called the `tidyverse` to make coding these common tasks easier. 
 
-```{r}
-#| eval: false
+Generally you would need to install these packages yourself, but one of the advantages of providing you the Projects templates in posit.cloud is that I already installed the packages behind the scenes, so you don't have to.[^installing-packages-note]
 
-install.packages("devtools")
-
-devtools::install_github("jamesmartherus/anesr")
-
-```
-
-We will also use some other packages for data wrangling and analysis. Developers have created a collection of packages for R called the `tidyverse` to make coding these common tasks easier. The `tidyverse` can be installed like so:
-
-```{r}
-#| eval: false
-
-install.packages("tidyverse")
-
-```
-
-If you execute those lines of code the packages will be installed on your system. That step only needs to be done once, but you need to 'activate' the packages using `library()` to make their functions and data available each time to start a new R session.
+Once the packages are installed, however, they still need to be "activated". The `library()` function activates a package, makings its functions and data available for use. (So you will need these two lines of code in your own analysis document.)
 
 ```{r}
 #| warning: false
@@ -230,7 +214,15 @@ my_data_complete |>
 
 ```
 
+[^installing-packages-note]: If I hadn't already installed the packages for you, it generally wouldn't be too much trouble. Most packages, like `tidyverse`, can be installed by running a single like of code:
 
+        install.packages("tidyverse")
+
+    The `anesr` package is slightly more complicated since it exists only on github.com, not R's official repository of packages. Therefore installing it requires two lines of code:
+
+        install.packages("devtools")
+
+        devtools::install_github("jamesmartherus/anesr")
 
 [^tidyverse-note]: The `select()` function, along with `filter()`, `mutate()`, `across()`, `everything()`, and others that you'll see in my example code, is part of the `tidyverse` family of packages (specifically these all come from the `dplyr` package, but we'll also use functions from other `tidyverse` packages like `tidyr` and `ggplot2`). There are other ways to do all these things without using `tidyverse` packages, just relying on what's referred to as "base" R functions. The `tidyverse` approach just makes this kind of data manipulation generally easier and makes the code more interpretable. If you're curious to see how base R and tidyverse functions differ in syntax, a good place to start is <https://dplyr.tidyverse.org/articles/base.html>.
 
