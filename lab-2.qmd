@@ -11,6 +11,15 @@ In this session we will begin the first project of the course: performing a corr
 -   Articulate your hypothesis
 
 
+## Report template
+
+You'll use a template to eventually write up your individual report paper (including the code that you will start writing next week to analyze the data). The template exists in posit.cloud, the cloud-based RStudio interface I mentioned last week. A link to to join the posit.cloud 'space' for the course will be emailed separately.
+
+Once you have joined the 'space' you should see one link there called "Projects." Click into it, and then look for "report_1.qmd" under the "Files" tab in the bottom-right pane. Click that file to open up the first project template.
+
+I strongly encourage you to start keeping notes for your Intro in that document as you start forming your ideas for the project today.
+
+
 ## Project overview
 
 
