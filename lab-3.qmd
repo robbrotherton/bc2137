@@ -221,8 +221,9 @@ my_data_complete |>
     The `anesr` package is slightly more complicated since it exists only on github.com, not R's official repository of packages. Therefore installing it requires two lines of code:
 
         install.packages("devtools")
-
         devtools::install_github("jamesmartherus/anesr")
+        
+    The `devtools` packages provides the `install_github()` function that allows the `anesr` package to be installed from github!
 
 [^tidyverse-note]: The `select()` function, along with `filter()`, `mutate()`, `across()`, `everything()`, and others that you'll see in my example code, is part of the `tidyverse` family of packages (specifically these all come from the `dplyr` package, but we'll also use functions from other `tidyverse` packages like `tidyr` and `ggplot2`). There are other ways to do all these things without using `tidyverse` packages, just relying on what's referred to as "base" R functions. The `tidyverse` approach just makes this kind of data manipulation generally easier and makes the code more interpretable. If you're curious to see how base R and tidyverse functions differ in syntax, a good place to start is <https://dplyr.tidyverse.org/articles/base.html>.
 

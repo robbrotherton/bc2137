@@ -562,9 +562,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>install.packages("tidyverse")</code></pre>
 <p>The <code>anesr</code> package is slightly more complicated since it exists only on github.com, not R’s official repository of packages. Therefore installing it requires two lines of code:</p>
 <pre><code>install.packages("devtools")
-
 devtools::install_github("jamesmartherus/anesr")</code></pre>
-<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></li>
+<p>The <code>devtools</code> packages provides the <code>install_github()</code> function that allows the <code>anesr</code> package to be installed from github!<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>The <code>select()</code> function, along with <code>filter()</code>, <code>mutate()</code>, <code>across()</code>, <code>everything()</code>, and others that you’ll see in my example code, is part of the <code>tidyverse</code> family of packages (specifically these all come from the <code>dplyr</code> package, but we’ll also use functions from other <code>tidyverse</code> packages like <code>tidyr</code> and <code>ggplot2</code>). There are other ways to do all these things without using <code>tidyverse</code> packages, just relying on what’s referred to as “base” R functions. The <code>tidyverse</code> approach just makes this kind of data manipulation generally easier and makes the code more interpretable. If you’re curious to see how base R and tidyverse functions differ in syntax, a good place to start is <a href="https://dplyr.tidyverse.org/articles/base.html" class="uri">https://dplyr.tidyverse.org/articles/base.html</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>Another way would be to <code>mutate()</code> the data, changing the invalid response codes into the value <code>NA</code>, R’s special value to indicate missing data. This could be achieved like so:</p>
 <pre><code>my_data_complete &lt;- my_data |&gt;
