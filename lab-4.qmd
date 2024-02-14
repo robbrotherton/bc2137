@@ -85,6 +85,7 @@ my_data_complete |>
   ggplot(aes(x = threat, y = distrust)) +
   geom_point(position = position_jitter(width = 0.45, height = 0.45, seed = 1),
              alpha = 0.1) +
+  geom_smooth(method = "lm") +
   scale_x_continuous(breaks = 1:5, 
                      labels = c(" Not at all", "A little", "Moderately", "Very", "Extremely")) +
   scale_y_continuous(breaks = 1:5,
@@ -96,7 +97,9 @@ my_data_complete |>
 
 ```
 
-Most of that will look familiar from the previous plots we made. The only major difference is that instead of making a histogram I'm making a scatterplot, for which the "geometry" is points rather than histogram bars. Therefore I use `geom_point()` rather than `geom_histogram()` for the geometry layer. One new element is the `position = position_jitter()` part inside `geom_point()`. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it'll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.
+Most of that will look familiar from the previous plots we made. The main difference is that instead of making a histogram I'm making a scatterplot, for which the "geometry" is points rather than histogram bars. Therefore I use `geom_point()` rather than `geom_histogram()` for the geometry layer. One new element is the `position = position_jitter()` part inside `geom_point()`. Its purpose is to add some random noise to each individual data point, moving it to the left or right a little bit along the x-axis and up or down a little along the y-axis. This is helpful here since there are many data points but only 5 possible answers along each axis. Try making the graph without including the jitter; it'll just look like a grid of 25 points. Any pattern in the data will be impossible to see. It may seem counterintuitive to change the data by adding randomness, but for the purposes of the visualization, doing so actually makes any patterns easier to see.
+
+Another new element is an additional geometry layer: `geom_smooth()`. That adds a best fit line to the scatterplot. There are different ways of 'smoothing' the relationship between the variables. By default, the function computes a complex, nonlinear relationship and so the line will not be quite straight. For our purposes we want a simple, linear line of best fit, so it is necessary to specify `method = "lm"` to general a linear model.
 
 ## Interpreting your findings
 
