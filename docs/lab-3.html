@@ -569,7 +569,7 @@ devtools::install_github("jamesmartherus/anesr")</code></pre>
 <pre><code>my_data_complete &lt;- my_data |&gt;
   mutate(across(everything(), ~replace(., . &lt; 0, NA)))</code></pre>
 <p>That would mutate (i.e.&nbsp;change values) across every column. You can read the second part (after the <code>~</code>) as “replace the original values (indicated by the placeholder <code>.</code>), where the value is less than zero, with <code>NA</code>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>If the data wasn’t as simple or if we just wanted to be more explicit about things, we could filter based on valid responses for each item. For example, valid reponses to the feeling thermometer item are are anything from 0 to 100; anything else is invalid. Therefore we could write a <code>filter()</code> condition stating that <code>feeling_thermometer</code> (the name of the column) values must be <code>%in%</code> the set of values from <code>0:100</code>. Likewise for each of the extraversion columns, rows will be retained only if their values are <code>%in%</code> the range <code>1:7</code>.</p>
+<li id="fn4"><p>If the data wasn’t as simple or if we just wanted to be more explicit about things, we could filter based on valid responses for each item.</p>
 <pre><code>my_data_complete &lt;- my_data |&gt;
   filter(trust %in% 1:5,
          threat %in% 1:5)</code></pre>
