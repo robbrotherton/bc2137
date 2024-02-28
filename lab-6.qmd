@@ -90,7 +90,7 @@ A published, scholarly journal article detailing an empirical finding relevant t
 
 Google Scholar searches the full text of scholarly articles. It casts a wide net, searching across all disciplines, and including books and other materials in addition to journal articles, so will likely find many articles not very relevant to the topic as well as those that are relevant.
 
-##### [APA PsycINFO](http://www.columbia.edu/cgi-bin/cul/resolve?ALD2284)
+##### [APA PsycINFO](https://resolver.library.columbia.edu/ALD2284)
 
 The link above should take you to PsycINFO, a database for scholarly psychology research (you can also search for `psycinfo` in a CLIO quicksearch). PsycInfo gives you the ability to do more focused searching than Google Scholar.
 

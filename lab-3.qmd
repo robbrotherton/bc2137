@@ -183,7 +183,7 @@ theme_apa <- theme(
 I'll also customize the "breaks" and "labels" on the x-axis (to show the verbal scale responses rather than just numeric codes), and the labels for the x and y axes.
 
 ```{r}
-#| label: fig-extraverted
+#| label: fig-threat
 #| fig-cap: Histogram of responses to perceived threat to news media question
 
 my_data_complete |> 
