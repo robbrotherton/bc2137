@@ -1,4 +1,4 @@
-# Lab 13: Presentation & report
+# Lab 12: Presentation & report
 
 As for previous projects, this week each project team will present their project to the rest of the class. After that, you will be ready to write up your findings. Note that presentations (and all the preceding work) will be a group effort, but written reports must be completed individually.
 
@@ -23,7 +23,7 @@ Your report should consist of the following sections:
 
 ### Deadline
 
-The report is due by the next class (see late policy from [Syllabus @sec-late-policy]).
+The report is due one week following your in-class presentation (see late policy from [Syllabus @sec-late-policy]).
 
 ## Grading
 

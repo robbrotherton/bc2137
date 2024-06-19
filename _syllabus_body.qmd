@@ -2,28 +2,27 @@
 #| echo: false
 
 schedule <- tibble::tribble(
-  ~"Date", ~"Topic", ~"Assignment*",
+  ~"Date", ~"Topic",
   
-  "1/24",   "Course overview",           "",
+  "9/10",   "Course overview", 
   
   # Project 1 header goes here
-  "1/31",   "Project planning",          "",
-  "2/7",   "Data preparation",           "",
-  "2/14",   "Analysis",                  "Presentation slide",
-  "2/21",  "Presentations",              "Project 1 report",
+  "9/17",   "Project planning",
+  "9/24",   "Data preparation", 
+  "10/1",   "Analysis",
+  "10/8",  "Presentations",
   
   # Project 2 header goes here
-  "2/28",  "Project planning",           "",
-  "3/6",  "Data preparation & analysis", "",
-  "3/13",  "No class (Spring Break)",    "",
-  "3/20",   "Visualization & interpretation", "Presentation slide",
-  "3/27",   "Presentations",             "Project 2 report",
+  "10/15",  "Project planning",
+  "10/22",  "Data preparation & analysis",
+  "10/29",  "Visualization & interpretation",
+  "11/5",   "No class (Election day)",
+  "11/12",   "Presentations",
   
   # Project 3 header goes here
-  "4/3",  "Project planning",          "",
-  "4/10",  "Analysis",   "",
-  "4/17",  "Visualization & interpretation",      "Presentation slide",
-  "4/24",  "Presentation & report",             "Project 3 report",
+  "11/19",  "Project planning",
+  "11/26",  "Analysis",
+  "12/3",  "Presentations",
 )
 
 no_class_row <- stringr::str_which(schedule$Topic, "No class")
@@ -32,8 +31,18 @@ schedule_table <- knitr::kable(schedule) |>
   kableExtra::row_spec(no_class_row, italic = TRUE, color = "#BBBBBB") |>
   kableExtra::pack_rows("Project 1: Correlation", 2, 5, indent = FALSE) |>
   kableExtra::pack_rows("Project 2: ANOVA", 6, 10, indent = FALSE) |>
-  kableExtra::pack_rows("Project 3: Own design", 11, 14, indent = FALSE) |>
-  kableExtra::add_footnote("due by the following class", notation = "symbol") |>
+  kableExtra::pack_rows("Project 3: Own design", 11, 13, indent = FALSE) |>
+  kableExtra::kable_styling(full_width = TRUE)
+
+deadlines <- tibble::tribble(
+  ~"Assignment", ~"Due Date", 
+  "Report 1", "10/15", 
+  "Report 2", "11/19", 
+  "Report 3", "12/10", 
+)
+
+deadline_table <- deadlines |> 
+  knitr::kable() |> 
   kableExtra::kable_styling(full_width = TRUE)
 
 ```
@@ -43,12 +52,10 @@ __Co-requisite__: PSYC BC2138 Social Psychology
 
 ### Time, venue & instructor
 
-Section 001: Wednesday 10:10-1PM, Milbank 410       
-Section 002: Wednesday 1:10-4:00PM, Milbank 410
-
+Tuesday 10:10-1PM, Milbank 410 
 
 Instructor: Dr. Rob Brotherton (<rbrother@barnard.edu>)       
-Office hour: Friday 10-11AM, Milbank 415M
+Office hour: Wednesday 10-11AM, Milbank 415M
 
 
 
@@ -76,7 +83,7 @@ At a minimum (i.e. for a passing grade), I’ll be looking for some form of part
 
 ### Workload
 
-As a general rule for the amount of time students should expect to commit to classes, the college suggests three hours per week in or outside of class per credit. Since this class is worth 1.5 credits, that corresponds to 4.5 hours per week, split between time in the classroom and time spent completing the associated assignments.
+As a general rule for the amount of time students should expect to commit to classes, the college suggests three hours per week in or outside of class per credit. Since this class is worth 2.5 credits, that corresponds to 7.5 hours per week, split between time in the classroom and time spent completing the associated assignments (reading, working on analyses, writing reports, etc).
 
 
 
@@ -116,7 +123,7 @@ When you are attending, please arrive on time for class. Frequent lateness will 
 
 ### Assignment deadlines & late policy {#sec-late-policy}
 
-Assignments are listed in the class schedule next to the class in which details about completing the assignment will be provided. The assignment must be completed and submitted before the following class, i.e. requirements for the first presentation slide will be explained in class on `r schedule$Date[4]`, and the slide must be submitted before the next class on `r schedule$Date[5]`.
+Each written report is due one week after you present the project in class. The report must be completed and submitted before the following class, i.e. requirements for the first presentation slide will be explained in class on `r schedule$Date[4]`, and the slide must be submitted before the next class on `r schedule$Date[5]`. (For all due dates, see  @sec-deadlines)
 
 For the written project reports, a grade penalty of 5 points will be applied for each day (or part thereof) that an assignment is late (up to a maximum of 6 days; work not submitted before the next lab will receive a score of zero). For example, if your work is A+ quality but is submitted a day-and-a-half late, you will only receive a B+. This policy is intended to incentivize timely submission while easing the stress of genuine emergencies. When things come up that prevent timely submission you can prioritize accordingly, knowing that a small penalty on one assignment for this lab will not tank your final grade.
 
@@ -142,5 +149,16 @@ It is always important to recognize the different pressures, burdens, and stress
 #| echo: false
 
 schedule_table
+
+```
+
+### Report deadlines {#sec-deadlines}
+
+Each written report is due one week after you present the project in class, prior to the following week's session.
+
+```{r}
+#| echo: false
+
+deadline_table
 
 ```

@@ -6,7 +6,7 @@ subtitle: |
   | PSYC BC2137
   | Barnard College
   | Department of Psychology
-  | Spring 2024
+  | Fall 2024
 ---
 
 {{< include _syllabus_body.qmd >}}
