@@ -61,6 +61,5 @@ format:
       light: [flatly, custom.scss]
       dark:  [darkly, custom.scss]
     link-external-newwindow: true
-  pdf: default
 
 
