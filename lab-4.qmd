@@ -20,10 +20,10 @@ Running with my example from last week, I made a data.frame with just the two va
 #| message: false
 
 library(tidyverse)
-library(anesr)
-data(timeseries_2020)
 
-my_data_complete <- timeseries_2020 |>
+data <- read_csv("data/anes_2020.csv")
+
+my_data_complete <- data |>
   select(trust = V201377, 
          threat = V201376) |> 
   haven::zap_labels() |>

@@ -15,48 +15,50 @@ You will begin this session with variables from the ANES dataset in mind for you
 
 ### Getting R ready
 
-In addition to being a source of high-quality data relevant to social psychology, the ANES dataset is convenient for our purposes because someone went to the trouble of creating an R package which makes working with the data relatively straightforward (not that you won't still run into issues!): `anesr` ([github.com/jamesmartherus/anesr](https://github.com/jamesmartherus/anesr)).
+To start exploring the data in R, you first need to set up your environment. While "base" R (meaning all the functions built in to the R language) can do everything we need, a feature of R that makes it well-suited for data analysis is that you can easily install additional "packages" that make common tasks, like data cleaning and visualization, even easier. In particular, we will use a family of related packages called the "tidyverse". Usually this would need to be installed like so:
 
-We will also use some other packages for data wrangling and analysis. Developers have created a collection of packages for R called the `tidyverse` to make coding these common tasks easier. 
+```{r}
+#| eval: false
 
-Generally you would need to install these packages yourself, but one of the advantages of providing you the Projects templates in posit.cloud is that I already installed the packages behind the scenes, so you don't have to.[^installing-packages-note]
+install.packages("tidyverse")
 
-Once the packages are installed, however, they still need to be "activated". The `library()` function activates a package, makings its functions and data available for use. (So you will need these two lines of code in your own analysis document.)
+```
+
+However the Projects template I set up for you in posit.cloud already has the package installed. Packages only need to be installed once, so there's no need for you to do so again. You will, however, need to 'activate' the packages using the `library()` function to make their functions available.
 
 ```{r}
 #| warning: false
 #| message: false
 
-library(anesr)
 library(tidyverse)
 
 ```
 
+
 ### Getting data into R
 
-Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you could download the ANES data file as a .csv from the ANES website and read it into R that way. However, the `anesr` package contains the data so you don't need to download it separately. Instead you can make it available by running this line of code:
+Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you can download the ANES data file as a .csv from the ANES website. For our convenience, I have already done that. Your posit.cloud project has a folder called `data` and inside that folder there is a file named `anes_2020.csv`. That's the complete ANES data for the year 2020. To start working with that data, we first need to 'read' it into R.
 
 ```{r}
 
-data(timeseries_2020)
+data <- read_csv("data/anes_2020.csv")
 
 ```
 
-When you execute the code you won't see any output, but you should see the name `timeseries_2020` appear in your Environment pane. That is now an object in R called a data.frame. You can think of it as a spreadsheet like you're familiar with from Excel or Google Sheets; a set of columns, one for each variable in the dataset, and a row for each participant's answers.
+When you execute the code you won't see any output, but you should see the name `data` (or whatever name you assigned the result of `read_csv()` to) appear in your Environment pane. That is now an object in R called a data.frame. You can think of it as a spreadsheet like you're familiar with from Excel or Google Sheets; a set of columns, one for each variable in the dataset, and a row for each participant's answers.
 
-Typing the name of the data.frame and running that line of code will show the first few columns and rows.
+In fact, you can also click on the name in the Environment pane to view the data in a new tab, just like looking at a spreadsheet. Or you can see a preview of the full spreadsheet using code:
 
 ```{r}
 
-timeseries_2020
+head(data)
 
 ```
 
-You can also click on the name in the Environment pane to view the data in a new tab.
 
 ### Select your variables
 
-As you can see, the data.frame contains a *lot* of variables; there are `r scales::label_comma()(ncol(timeseries_2020))` columns of data, one for each recorded variable. You'll only need two of those. So the first step is selecting just the variables you need to work with.
+As you can see, the data.frame contains a *lot* of variables; there are `r scales::label_comma()(ncol(data))` columns of data, one for each recorded variable. You'll only need two of those. So the first step is selecting just the variables you need to work with.
 
 There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the `select()` function.[^tidyverse-note] This allows us to simply type in variable names separated by commas.
 
@@ -64,19 +66,16 @@ For this example code I'll look at two variables similar to those I had you pick
 
 ```{r}
 
-my_data <- timeseries_2020 |> 
+my_data <- data |> 
   select(trust = V201377, 
-         threat = V201376) |> 
-  haven::zap_labels()
+         threat = V201376) 
 
 ```
-
-I did something else there as well: `haven::zap_labels()`. Even though when you look at the data it's a bunch of numbers, it's actually a special format called "haven-labelled", meaning there is some extra info stored about the numbers behind-the-scenes. That can be useful to have, but it actually interferes with some of the numeric filtering and mutating we need to do momentarily, so the `zap_labels()` function drops that label information and turns the data into plain old numbers.
 
 Let's see what this new data.frame looks like:
 
 ```{r}
-my_data
+head(my_data)
 ```
 
 It all looks good so far. But if you inspect the data more extensively (click the name in your Environment to open a tab showing the data and scroll down a bit) you'll notice that there are some negative numbers in the data. You can see all the unique values recorded for a column in the data like so: 
