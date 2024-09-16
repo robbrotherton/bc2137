@@ -109,3 +109,7 @@ Remember, a correlation quantifies the general quantitative relationship between
 - What, if anything, about the context in which the questions were asked might have influenced people's answers?
 - How does it fit with the previous research you read about, and with your intuition about how the variables should be related?
 
+
+## To do for next time
+
+Prepare your presentation! Share your google slides with Prof. Brotherton in advance. See guidelines under [next week's lab section](lab-5.qmd).
