@@ -214,6 +214,18 @@ my_data_complete |>
 
 ```
 
+
+## To do for next time
+
+Read another paper. The more detailed your understanding of the existing research, the better you will be able to interpret the results of your analysis.
+
+::: {.references}
+
+Kanovsky, M., & Halamová, J. (2020). Perceived threat of the coronavirus and the role of trust in safeguards: A case study in Slovakia. *Frontiers in Psychology, 11,* 554160. <https://doi.org/10.3389/fpsyg.2020.554160>
+:::
+
+
+
 [^installing-packages-note]: If I hadn't already installed the packages for you, it generally wouldn't be too much trouble. Most packages, like `tidyverse`, can be installed by running a single like of code:
 
         install.packages("tidyverse")
@@ -239,6 +251,7 @@ my_data_complete |>
         my_data_complete <- my_data |>
           filter(trust %in% 1:5,
                  threat %in% 1:5)
+
 
 
 
