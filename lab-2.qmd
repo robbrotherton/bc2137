@@ -111,19 +111,19 @@ The kind of correlation analysis you will perform examines whether two construct
 
 One of your variables will be a question assessing __perceived threat__:
 
-- How worried are you about losing your job in the near future? (V201540)
-- So far as you and your family are concerned, how worried are you about your current financial situation? (V201594)
-- How concerned are you about losing your health insurance in the next year? (V201621)
-- How concerned are you about being able to pay health care expenses for you and your family in the next year? (V201622)
-- How worried do you feel about how things are going in the country? (V201120)
-- What do you think about the state of the economy these days in the United States? (V201324)
-- How worried are you that the United States will experience a terrorist attack in the near future? (V202358)
+- How worried are you about losing your job in the near future? (`V201540`)
+- So far as you and your family are concerned, how worried are you about your current financial situation? (`V201594`)
+- How concerned are you about losing your health insurance in the next year? (`V201621`)
+- How concerned are you about being able to pay health care expenses for you and your family in the next year? (`V201622`)
+- How worried do you feel about how things are going in the country? (`V201120`)
+- What do you think about the state of the economy these days in the United States? (`V201324`)
+- How worried are you that the United States will experience a terrorist attack in the near future? (`V202358`)
 
 Your second variable will be a question about __trust__:
 
-- How often can you trust the federal government in Washington to do what is right? (V201233)
-- How many of the people running the government are corrupt? (V201236)
-- Generally speaking, how often can you trust other people? (V201237)
+- How often can you trust the federal government in Washington to do what is right? (`V201233`)
+- How many of the people running the government are corrupt? (`V201236`)
+- Generally speaking, how often can you trust other people? (`V201237`)
 
 To see exactly how these constructs were measured you will look up the variable IDs (the codes beginning with V in parentheses above) in the [Codebook](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf).
 
@@ -139,7 +139,7 @@ A real research project would involve an exhaustive literature review, in which 
 
 <!-- Feldman, S., & Stenner, K. (1997). Perceived threat and authoritarianism. *Political psychology, 18(4)*, 741-770. <https://doi.org/10.1111/0162-895X.00077> -->
 
-Schlipphak, B. (2021). Threat perceptions, blame attribution, and political trust. *Journal of Elections, Public Opinion and Parties*. <https://doi.org/10.1080/17457289.2021.2001474>
+Schlipphak, B. (2021). Threat perceptions, blame attribution, and political trust. *Journal of Elections, Public Opinion and Parties, 34(1),* 59–78. <https://doi.org/10.1080/17457289.2021.2001474>
 
 <!-- Navarro-Carrillo, G., Valor-Segura, I., Lozano, L. M., & Moya, M. (2018). Do economic crises always undermine trust in others? The case of generalized, interpersonal, and in-group trust. Frontiers in psychology, 9, 1955. <https://doi.org/10.3389/fpsyg.2018.01955> -->
 :::
@@ -159,3 +159,11 @@ The main question that your hypothesis addresses is: do you think the two variab
 
 If you do expect a significant correlation, you should also specify whether you expect it to be positive or negative, and how strong you expect it to be (i.e. weak, moderate, strong; see [Appendix B](appendix-correlation.html#sec-cor-effect-size)).
 
+
+## To do for next time
+
+Read another paper. The more detailed your understanding of the existing research, the better you will be able to interpret the results of your analysis.
+
+::: {.references}
+Navarro-Carrillo, G., Valor-Segura, I., Lozano, L. M., & Moya, M. (2018). Do economic crises always undermine trust in others? The case of generalized, interpersonal, and in-group trust. *Frontiers in psychology, 9,* 1955. <https://doi.org/10.3389/fpsyg.2018.01955>
+:::
