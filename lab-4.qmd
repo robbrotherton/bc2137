@@ -26,7 +26,6 @@ data <- read_csv("data/anes_2020.csv")
 my_data_complete <- data |>
   select(trust = V201377, 
          threat = V201376) |> 
-  haven::zap_labels() |>
   filter(if_all(everything(), ~ . >= 0)) |> 
   mutate(distrust = 6 - trust)
 
