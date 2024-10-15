@@ -130,6 +130,13 @@ You should see three lines with your variable names, followed by a line for "Res
 
 Interpreting this can be difficult, so we'll follow this up in the next lab with some visualization which can make understanding the pattern of results easier.
 
+## To do for next time
+
+Read another of the papers you found. The more detailed your understanding of the existing research, the better you will be able to justify your choice of variables and interpret the results of your analysis.
+
+
+
+
 
 [^aov-note]: It would be more elegant if I could pipe the data into `aov()` and then pipe that into `summary()`, like this:
       

@@ -76,13 +76,15 @@ Your second quasi-independent variable will be one of the "life experiences" tha
   <!-- - Have you ever been bitten by a shark, or not? (`V202569`) -->
 
 
-### Step 2. Read relevant research
+### Step 2. Find relevant research
 
-Since you choice is more open-ended, I can't point you towards a particular paper like I did for the previous project. You'll have to think about your constructs and see if you can find relevant research. In particular, what psychological construct do you think your "life experience" variable might reflect or relate to?
+Since your choice of variables is more open-ended, I can't point you towards particular papers like I did for the previous project. You'll have to think about your constructs and see if you can find relevant research. In particular, what psychological construct do you think your "life experience" variable might reflect or relate to?
+
+In class, I want you to find at least 2 or 3 promising-looking sources, which you will read for homework over the next couple of weeks. For now, just read the abstracts to find papers that look most relevant.
 
 #### What to look for
 
-A published, scholarly journal article detailing an empirical finding relevant to your variables of interest. This might be a paper reporting one or several individual studies that the researchers conducted, or it may be a review paper or meta-analysis.^[A meta-analysis pools the findings of many individual studies by different researchers into a single analysis.]
+Published, scholarly journal articles detailing an empirical finding relevant to your variables of interest. This might be a paper reporting one or several individual studies that the researchers conducted, or it may be a review paper or meta-analysis.^[A meta-analysis pools the findings of many individual studies by different researchers into a single analysis.]
 
 #### Where to look
 
@@ -109,5 +111,8 @@ As before, you should be able to state your:
 
 In the context of a 2x2 ANOVA design, you will have three different hypotheses. For each IV, you will hypothesize the existence (or not) of a main effect; that is, do you expect to see a difference between the different categories of that IV by itself (ignoring differences on the other IV). In addition, you will have a hypothesis about the "interaction" of the two IVs; that is, do you expect them to have a *combined* effect? In more technical terms, do you expect that the effect of one IV depends on the level of the other IV?
 
+## To do for next time
+
+Read one of the papers you found. The more detailed your understanding of the existing research, the better you will be able to justify your choice of variables and interpret the results of your analysis.
 
 [^random-note]: That's not *quite* true. Some elements of the survey are randomized, such as the order of certain questions or answer options. And the ANES often tests different versions of questions before including them in the full survey; answers to different versions of questions can be compared to check whether seemingly minor differences to wording substantively affect people's answers.

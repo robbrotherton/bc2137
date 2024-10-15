@@ -87,3 +87,9 @@ This can get quite complicated to think about, so try to break it down in the co
 - Interaction: does the relationship between the life experience and trust *depend on* partisanship? I.e., is the relationship different for Democrats vs Republicans?
 
 Your report should mention all three of the above issues.
+
+
+## To do for next time
+
+Prepare your presentation! Share your google slides with Prof. Brotherton in advance. See guidelines under [next week's lab section](lab-9.qmd).
+

@@ -2,6 +2,21 @@
 
 /*-- scss:rules --*/
 
+section#footnotes::before {
+  content: "Notes";
+  font-weight: bold;
+}
+
+#footnotes > hr {
+  margin-top: 0;
+}
+
+/*
+#footnotes {
+  background: aliceblue;
+}
+*/
+
 .references p {
   text-indent: -2em;
   padding-left: 2em;
