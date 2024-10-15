@@ -19,16 +19,15 @@ There are two main ways of visualizing the interaction: as a bar graph, or as a 
 #| echo: false
 #| message: false
 
-library(anesr)
 library(tidyverse)
-data(timeseries_2020)
+
+data <- read_csv("data/anes_2020.csv")
 
 ci <- function(x) {
   qt(0.975, df = length(x) - 1) * sqrt( var(x) / length(x))
 }
 
-my_data <- timeseries_2020 |> 
-  haven::zap_labels() |> 
+my_data <- data |> 
   select(trust = V201377, 
          party = V201018,
          experience = V202569) |> 

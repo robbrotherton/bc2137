@@ -13,14 +13,15 @@ You will start this lab with your variables determined. By the end, you will hav
 
 ### Set up 
 
-As before, the first step is to prepare your R environment by loading required packages and loading the data. The will be exactly the same as with the previous project.
+As before, the first step is to prepare your R environment by loading required packages and reading in the data from its .csv file. The will be exactly the same as with the previous project.
 
 ```{r}
 #| message: false
 
-library(anesr)
 library(tidyverse)
-data(timeseries_2020)
+
+data <- read_csv("data/anes_2020.csv")
+
 ```
 
 
@@ -30,8 +31,7 @@ For this example, I'm going to use the "trust the media" question--the same one 
 
 ```{r}
 
-my_data_raw <- timeseries_2020 |> 
-  haven::zap_labels() |> 
+my_data_raw <- data |> 
   select(trust = V201377, 
          party = V201018,
          experience = V202569)

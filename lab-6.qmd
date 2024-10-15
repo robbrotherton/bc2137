@@ -36,18 +36,18 @@ The value of a factorial ANOVA design is in revealing the "interaction" between 
 
 You dependent variable should be continuous (measured on a numeric scale). For this project, we will stick with the idea of trust. 
 
-- How often can you trust the federal government in Washington to do what is right? (V201233)
-- How many of the people running the government are corrupt? (V201236)
-- Generally speaking, how often can you trust other people? (V201237)
-- In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly? (V201377)
+- How often can you trust the federal government in Washington to do what is right? (`V201233`)
+- How many of the people running the government are corrupt? (`V201236`)
+- Generally speaking, how often can you trust other people? (`V201237`)
+- In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly? (`V201377`)
 
 #### (Quasi)independent variables
 
 The first of your quasi-independent variables will be some indication of participants' political preferences.^[There's a whole literature about ideology and partisanship and I don't expect you to get into the weeds with it, but I expect you'll have some thoughts about the various strengths/limitations of these few questions.]
 
-- What political party are you registered with, if any? (V201018)
-- Who did you vote for? (V202073)
-- If you had to choose, would you consider yourself a liberal or a conservative? (V201201)
+- What political party are you registered with, if any? (`V201018`)
+- Who did you vote for? (`V202073`)
+- If you had to choose, would you consider yourself a liberal or a conservative? (`V201201`)
 
 <!-- - Racial identity -->
 <!-- - Gender identity -->
@@ -59,21 +59,21 @@ The first of your quasi-independent variables will be some indication of partici
 
 Your second quasi-independent variable will be one of the "life experiences" that the ANES survey asks about:
 
-  - Do you personally know someone who moved to the U.S. from another country, or not? (V202561)
-  - Do you currently owe money on student loans, or not? (V202562)
-  - Have you ever received food stamps or another form of public assistance, or not? (V202563)
-  - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (V202564)
-  - Do you regularly choose products because they are made in America, or not? (V202565)
-  - Have you displayed an American flag on your house or in your yard in the past year, or not? (V202566)
-  - Have you gone hunting or fishing in the past year, or not? (V202567)
-  - Have you used public transportation in the past year, or not? (V202568)
-  - During the past 12 months, were you or any of your family members stopped or questioned by a police officer, or did this not happen in the past 12 months? (V202456)
-  - Have you ever been arrested, or has that never happened to you? (V202457)
-  - During the past 12 months, have you contacted or tried to contact a member of the U.S. Senate or U.S. House of Representatives, or have you not done this in the past 12 months? (V202030)
-  - During the past 12 months, have you joined in a protest march, rally, or demonstration, or have you not done this in the past 12 months? (V202025)
-  - During the past 12 months, have you ever gotten into a political argument with someone, or have you not done this in the past 12 months? (V202024) 
-  - Many people say they have less time these days to do volunteer work. What about you, were you able to devote any time to volunteer work in the past 12 months or did you not do so? (V202033)
-  <!-- - Have you ever been bitten by a shark, or not? (V202569) -->
+  - Do you personally know someone who moved to the U.S. from another country, or not? (`V202561`)
+  - Do you currently owe money on student loans, or not? (`V202562`)
+  - Have you ever received food stamps or another form of public assistance, or not? (`V202563`)
+  - Do you have a pension or a retirement account, such as an IRA, 401k, or similar, or not? (`V202564`)
+  - Do you regularly choose products because they are made in America, or not? (`V202565`)
+  - Have you displayed an American flag on your house or in your yard in the past year, or not? (`V202566`)
+  - Have you gone hunting or fishing in the past year, or not? (`V202567`)
+  - Have you used public transportation in the past year, or not? (`V202568`)
+  - During the past 12 months, were you or any of your family members stopped or questioned by a police officer, or did this not happen in the past 12 months? (`V202456`)
+  - Have you ever been arrested, or has that never happened to you? (`V202457`)
+  - During the past 12 months, have you contacted or tried to contact a member of the U.S. Senate or U.S. House of Representatives, or have you not done this in the past 12 months? (`V202030`)
+  - During the past 12 months, have you joined in a protest march, rally, or demonstration, or have you not done this in the past 12 months? (`V202025`)
+  - During the past 12 months, have you ever gotten into a political argument with someone, or have you not done this in the past 12 months? (`V202024`) 
+  - Many people say they have less time these days to do volunteer work. What about you, were you able to devote any time to volunteer work in the past 12 months or did you not do so? (`V202033`)
+  <!-- - Have you ever been bitten by a shark, or not? (`V202569`) -->
 
 
 ### Step 2. Read relevant research

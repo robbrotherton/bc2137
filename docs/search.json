@@ -118,6 +118,17 @@
     ]
   },
   {
+    "objectID": "lab-3.html#to-do-for-next-time",
+    "href": "lab-3.html#to-do-for-next-time",
+    "title": "Lab 3: Data preparation",
+    "section": "To do for next time",
+    "text": "To do for next time\nRead another paper. The more detailed your understanding of the existing research, the better you will be able to interpret the results of your analysis.\n\nLalot, F., Abrams, D., & Travaglino, G. A. (2021). Aversion amplification in the emerging COVID‐19 pandemic: The impact of political trust and subjective uncertainty on perceived threat. Journal of Community & Applied Social Psychology, 31(2), 213-222. https://doi.org/10.1002/casp.2490",
+    "crumbs": [
+      "Project 1: Correlation",
+      "Lab 3: Data preparation"
+    ]
+  },
+  {
     "objectID": "lab-3.html#footnotes",
     "href": "lab-3.html#footnotes",
     "title": "Lab 3: Data preparation",
@@ -156,6 +167,17 @@
     "title": "Lab 4: Analysis",
     "section": "Interpreting your findings",
     "text": "Interpreting your findings\nRemember, a correlation quantifies the general quantitative relationship between two sets of numbers; people’s answers to your perceived threat question are associated with their answer to the distrust question to the extent indicated by your correlation coefficient. To fully and fairly interpret this for your presentation and report you’ll need to consider a number of things:\n\nWhat features of how the questions were asked might have affected people’s answers?\nWhat, if anything, about the context in which the questions were asked might have influenced people’s answers?\nHow does it fit with the previous research you read about, and with your intuition about how the variables should be related?",
+    "crumbs": [
+      "Project 1: Correlation",
+      "Lab 4: Analysis"
+    ]
+  },
+  {
+    "objectID": "lab-4.html#to-do-for-next-time",
+    "href": "lab-4.html#to-do-for-next-time",
+    "title": "Lab 4: Analysis",
+    "section": "To do for next time",
+    "text": "To do for next time\nPrepare your presentation! Share your google slides with Prof. Brotherton in advance. See guidelines under next week’s lab section.",
     "crumbs": [
       "Project 1: Correlation",
       "Lab 4: Analysis"
@@ -265,7 +287,7 @@
     "href": "lab-7.html#data-preparation",
     "title": "Lab 7: Data preparation & analysis",
     "section": "Data preparation",
-    "text": "Data preparation\n\nSet up\nAs before, the first step is to prepare your R environment by loading required packages and loading the data. The will be exactly the same as with the previous project.\n\nlibrary(anesr)\nlibrary(tidyverse)\ndata(timeseries_2020)\n\n\n\nSelect variables\nFor this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.1 For the partisanship quasi-IV, I’ll use the party registration question. And for the life experience, I’m going to use one I didn’t let you choose from (because not many people said yes, and… well, you’ll see): “Have you ever been bitten by a shark, or not?” (V202569).\n\nmy_data_raw &lt;- timeseries_2020 |&gt; \n  haven::zap_labels() |&gt; \n  select(trust = V201377, \n         party = V201018,\n         experience = V202569)\n\n\n\nRecode variables\nIn the raw data responses to the categorical quasi-IVs are coded as numbers: 1s and 2s for “Democrat”/“Republican” and “yes”/“no”, and some other numeric codes for other responses or invalid/missing answers. You’ll need to check the codebook to determine exactly what all the numbers mean. Our first step is to “recode” these raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into NA–R’s representation of missing data.\nWe’ll use dplyr’s mutate() function, which creates new variables or changes (mutates) existing ones. To achieve the desired result we’ll use dplyr’s case_when() function, which allows us to specify a condition and the value to assign if that condition is met. So for example party == 1 ~ \"Democratic\" can be read as “if the value of party is 1 then assign the value ‘Democratic’.” Since the original variable is named “party” and I’m using that name for the mutated variable, the column will be changed in place. Note that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become NA since I don’t specify otherwise.\n\nmy_data &lt;- my_data_raw |&gt; \n  filter(if_all(everything(), ~ . &gt; 0)) |&gt;\n  mutate(party = case_when(\n    party == 1 ~ \"Democratic\",\n    party == 2 ~ \"Republican\"\n  )) |&gt; \n  mutate(experience = case_when(\n    experience == 1 ~ \"Yes\",\n    experience == 2 ~ \"No\"\n  ))",
+    "text": "Data preparation\n\nSet up\nAs before, the first step is to prepare your R environment by loading required packages and reading in the data from its .csv file. The will be exactly the same as with the previous project.\n\nlibrary(tidyverse)\n\ndata &lt;- read_csv(\"data/anes_2020.csv\")\n\n\n\nSelect variables\nFor this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.1 For the partisanship quasi-IV, I’ll use the party registration question. And for the life experience, I’m going to use one I didn’t let you choose from (because not many people said yes, and… well, you’ll see): “Have you ever been bitten by a shark, or not?” (V202569).\n\nmy_data_raw &lt;- data |&gt; \n  select(trust = V201377, \n         party = V201018,\n         experience = V202569)\n\n\n\nRecode variables\nIn the raw data responses to the categorical quasi-IVs are coded as numbers: 1s and 2s for “Democrat”/“Republican” and “yes”/“no”, and some other numeric codes for other responses or invalid/missing answers. You’ll need to check the codebook to determine exactly what all the numbers mean. Our first step is to “recode” these raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into NA–R’s representation of missing data.\nWe’ll use dplyr’s mutate() function, which creates new variables or changes (mutates) existing ones. To achieve the desired result we’ll use dplyr’s case_when() function, which allows us to specify a condition and the value to assign if that condition is met. So for example party == 1 ~ \"Democratic\" can be read as “if the value of party is 1 then assign the value ‘Democratic’.” Since the original variable is named “party” and I’m using that name for the mutated variable, the column will be changed in place. Note that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become NA since I don’t specify otherwise.\n\nmy_data &lt;- my_data_raw |&gt; \n  filter(if_all(everything(), ~ . &gt; 0)) |&gt;\n  mutate(party = case_when(\n    party == 1 ~ \"Democratic\",\n    party == 2 ~ \"Republican\"\n  )) |&gt; \n  mutate(experience = case_when(\n    experience == 1 ~ \"Yes\",\n    experience == 2 ~ \"No\"\n  ))",
     "crumbs": [
       "Project 2: ANOVA",
       "Lab 7: Data preparation & analysis"
@@ -522,28 +544,6 @@
     "crumbs": [
       "Appendices",
       "<span class='chapter-number'>D</span>  <span class='chapter-title'>Grading rubric</span>"
-    ]
-  },
-  {
-    "objectID": "lab-3.html#to-do-for-next-time",
-    "href": "lab-3.html#to-do-for-next-time",
-    "title": "Lab 3: Data preparation",
-    "section": "To do for next time",
-    "text": "To do for next time\nRead another paper. The more detailed your understanding of the existing research, the better you will be able to interpret the results of your analysis.\n\nLalot, F., Abrams, D., & Travaglino, G. A. (2021). Aversion amplification in the emerging COVID‐19 pandemic: The impact of political trust and subjective uncertainty on perceived threat. Journal of Community & Applied Social Psychology, 31(2), 213-222. https://doi.org/10.1002/casp.2490",
-    "crumbs": [
-      "Project 1: Correlation",
-      "Lab 3: Data preparation"
-    ]
-  },
-  {
-    "objectID": "lab-4.html#to-do-for-next-time",
-    "href": "lab-4.html#to-do-for-next-time",
-    "title": "Lab 4: Analysis",
-    "section": "To do for next time",
-    "text": "To do for next time\nPrepare your presentation! Share your google slides with Prof. Brotherton in advance. See guidelines under next week’s lab section.",
-    "crumbs": [
-      "Project 1: Correlation",
-      "Lab 4: Analysis"
     ]
   }
 ]
