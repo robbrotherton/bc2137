@@ -59,7 +59,7 @@ format:
   html:
     theme:
       light: [flatly, custom.scss]
-      dark:  [darkly, custom.scss]
+      dark:  [darkly, custom.scss, custom_dark.scss]
     link-external-newwindow: true
 
 
