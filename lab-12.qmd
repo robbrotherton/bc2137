@@ -1,4 +1,4 @@
-# Lab 12: Presentation & report
+# Lab 13: Presentation & report
 
 As for previous projects, this week each project team will present their project to the rest of the class. After that, you will be ready to write up your findings. Note that presentations (and all the preceding work) will be a group effort, but written reports must be completed individually.
 

@@ -17,7 +17,9 @@ In this lab, you will start your second project: conducting an ANOVA interaction
 
 ANOVA stands for <b>AN</b>alysis <b>O</b>f <b>VA</b>riance. It is a statistical procedure which quantifies the relative contribution of difference sources of variability (variability between groups and variability within groups) to understand whether there are differences *between* groups over and above what would be expected by chance (i.e, based on the random variability *within* the groups).
 
-ANOVA will always have a single, continuous dependent variable (DV). ANOVA can have any number of independent variables (IV; also called factors), each with any number of conditions (also called levels). The design will be described as something like "a 3x5 ANOVA", which would mean that there were 3 factors with 5 levels each. For this project, your design will be a 2x2 ANOVA, meaning 2 factors, each with 2 levels.
+ANOVA will always have a single, continuous dependent variable (DV). ANOVA can have any number of independent variables (IV; also called factors), each with any number of conditions (also called levels). The design will be described as something like "a 3x5 ANOVA", which would mean that there were 3 factors with 5 levels each. 
+
+__For this project, your design will be a 2x2 ANOVA, meaning 2 factors, each with 2 levels.__
 
 #### Quasi-independent variables
 
@@ -25,9 +27,13 @@ Researchers often "manipulate" at least one of the IVs in a study, making it an 
 
 It may sound like a limitation, but there are good reasons to use quasi-IVs in research. It isn't always possible or ethical to randomly assign group membership, yet there is still value in comparing existing groups. As an example, a participant's age can't be randomly assigned, but it is still often useful to compare different age groups to look for differences on some dependent variable. That said, there are important implications for causal inference that you should consider when it comes time to interpret your findings.
 
-#### Interaction
+#### Main Effects & Interaction
 
-The value of a factorial ANOVA design is in revealing the "interaction" between variables: does the effect of one (quasi)-IV depend on another (quasi)-IV? For this project, we will stick with the idea of trust: it will be the DV. One of the quasi-IVs will be an indicator of political ideology/partisanship. It makes sense that some types of social trust could depend on your political preferences (or something related, like whether your preferred political party is currently "winning"). But political affiliation isn't the only thing that could be associated with trust. Maybe one's life experiences also play a role. Having had, or not had, some particular experience might be associated with expressing more or less trust. But crucially, maybe the two variables *interact*: maybe the relationship (if any) between partisanship and trust depends on what kind of experience a person has had (or not had). It could be that an experience affects trust among people who lean one way but not people who lean the other.
+For each (quasi)-IV in your design, you will examine its "main effect". That is, is that variable associated with a difference on the DV, ignoring the existence of the other IV.
+
+However, the value of a factorial ANOVA design is in revealing the "interaction" between variables: does the effect of one (quasi)-IV depend on another (quasi)-IV? 
+
+For this project, we will stick with the idea of trust: it will be the DV. One of the quasi-IVs will be an indicator of political ideology/partisanship. It makes sense that some types of social trust could depend on your political preferences (or something related, like whether your preferred political party is currently "winning"). But political affiliation isn't the only thing that could be associated with trust. Maybe one's life experiences also play a role. Having had, or not had, some particular experience might be associated with expressing more or less trust. But crucially, maybe the two variables *interact*: maybe the relationship (if any) between partisanship and trust depends on what kind of experience a person has had (or not had). It could be that an experience affects trust among people who lean one way but not people who lean the other.
 
 
 ### Step 1. Examine the data and identify your variables

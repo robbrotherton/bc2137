@@ -1,0 +1,237 @@
+
+# Correlation
+
+When you measure two variables and wish to know if scores on one measure are related to scores on the other, you calculate the correlation coefficient. This quantifies the extent to which changes on one measure are related to changes on the other. For example, if higher scores on measure X are associated with higher scores on measure Y, there is a positive correlation. If higher scores on measure X are associated with lower scores on measure Y, there is a negative correlation. No correlation means that scores on X are unrelated to scores on Y.
+
+## Calculating the correlation coefficient
+
+To calculate the correlation between two variables, you must first calculate the Sum Product, $SP$.  The mathematical formula is:
+
+$$
+SP = (X-M_X)(Y-M_Y)
+$$
+
+Notice that $X - M_X$ and $Y - M_Y$ are deviation scores, just like we calculated for the standard deviation. Here we have two variables, $X$ and $Y$, so the equation is telling us to calculate the deviation of each score from its respective mean. We then multiply each deviation for variable $X$ by its counterpart deviation from variable $Y$. These are the “products,” meaning multiplied deviation scores. Finally, the  tells us to add up all those products, giving the “sum of products,” $SP$.
+
+Once we have calculated $SP$, the correlation coefficient, symbolized by $r$ is calculated using the following equation:
+
+$$
+r = \dfrac{SP}{\sqrt{SS_X SS_Y}}
+$$
+
+Here, $SS_X$ and $SS_Y$ are the Sums of Squares for each variable. Multiplying them and taking the square root gets us a measure of the variability in $X$ and $Y$ separately. The numerator, $SP$, represents the covariability of $X$ and $Y$. So the equation results in covariability as a proportion of all variability. It can range from $-1$, meaning a perfect negative correlation, to $0$, meaning no correlation at all, to $+1$, meaning a perfect positive correlation.
+
+::: {#container style="text-align: center; margin: 1em;"}
+:::
+
+<label for="target-r" class="form-label">Strength of correlation</label>
+<input id="target-r" type="range" class="form-range" min=-1 max = 1 step = 0.01>
+
+<label for="showRegions" class="form-label">Shade deviation regions</label>
+<input id="showRegions" type="checkBox" class="form-checkBox">
+
+```{ojs}
+//| echo: false
+jStat = require("https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js")
+
+chart = {
+
+const width = 500
+const height = 400
+const margins = {top: 10, right: 15, bottom: 15, left: 15}
+const expansion = 0.05;
+
+const xScale = d3.scaleLinear()
+  .domain([0 - expansion, 1 + expansion])
+  .range([margins.left, width - margins.right])
+let yScale = d3.scaleLinear()
+  .domain([0 - expansion, 1 + expansion])
+  .range([height - margins.bottom, margins.top])
+  
+const svg = d3.select("#container").append("svg")
+    .attr("viewBox", `0 0 ${width} ${height}`);
+  
+const regions = svg.append("g");
+const meanLines = svg.append("g");
+const axisLines = svg.append("g");
+
+axisLines.append("line")
+  .attr("class", "axis-line")
+  .attr("x1", xScale(0 - expansion)).attr("x2", xScale(1 + expansion))
+  .attr("y1", yScale(0 - expansion)).attr("y2", yScale(0 - expansion))
+  .style("stroke", "black")
+axisLines.append("line")
+  .attr("class", "axis-line")
+  .attr("x1", xScale(0 - expansion)).attr("x2", xScale(0 - expansion))
+  .attr("y1", yScale(0 - expansion)).attr("y2", yScale(1 + expansion))
+  .style("stroke", "black")
+axisLines.append("text")
+  .attr("class", "TEX-I")
+  .attr("x", xScale(1))
+  .attr("y", height)
+  .text("X")
+axisLines.append("text")
+  .attr("class", "TEX-I")
+  .attr("x", 0)
+  .attr("y", yScale(1))
+  .text("Y")
+
+function makePolygonPoints(x0, y0) {
+  return [
+    [xScale(x0), yScale(y0)],
+    [xScale(x0 + 0.5 + expansion), yScale(y0)],
+    [xScale(x0 + 0.5 + expansion), yScale(y0 - 0.5 - expansion)],
+    [xScale(x0), yScale(y0 - 0.5 - expansion)]
+  ]
+}
+regions.append("polygon").attr("class", "regions")
+    .attr("points", makePolygonPoints(0.5, 0.5))
+    .attr("fill", "red")
+    .attr("opacity", 0.2)
+    .style("visibility", "hidden")
+regions.append("polygon").attr("class", "regions")
+    .attr("points", makePolygonPoints(0 - expansion, 1 + expansion))
+    .attr("fill", "red")
+    .attr("opacity", 0.2)
+    .style("visibility", "hidden")
+regions.append("polygon").attr("class", "regions")
+    .attr("points", makePolygonPoints(0.5, 1 + expansion))
+    .attr("fill", "green")
+    .attr("opacity", 0.2)
+    .style("visibility", "hidden")
+regions.append("polygon").attr("class", "regions")
+    .attr("points", makePolygonPoints(0 - expansion, 0.5))
+    .attr("fill", "green")
+    .attr("opacity", 0.2)
+    .style("visibility", "hidden")
+    
+  meanLines.append("line").attr("class", "regions")
+    .attr("x1", xScale(0 - expansion)).attr("x2", xScale(1 + expansion))
+    .attr("y1", yScale(0.5)).attr("y2", yScale(0.5))
+    .attr("stroke", "black")
+    .attr("stroke-dasharray", [5,5])
+    .style("visibility", "hidden")
+  meanLines.append("line").attr("class", "regions")
+    .attr("x1", xScale(0.5)).attr("x2", xScale(0.5))
+    .attr("y1", yScale(0 - expansion)).attr("y2", yScale(1 + expansion))
+    .attr("stroke", "black")
+    .attr("stroke-dasharray", [5,5])
+    .style("visibility", "hidden")
+
+const rInput = d3.select("#target-r");
+rInput.on("input", () => updateChart(rInput.property("value")))
+
+const shadeInput = d3.select("#showRegions");
+shadeInput.on('input', () => {
+  svg.selectAll(".regions")
+    .style("visibility", shadeInput.property("checked") ? "visible" : "hidden");
+});
+
+let data = makeInitialData(100);
+  
+  
+
+function makeInitialData(n) {
+    let arr = [];
+    for (var i = 0; i < n; i++) {
+        var A = Math.random();
+        var B = Math.random();
+        arr.push({xVal: A, y0: B});
+    }
+
+    return arr;
+}
+
+function computeYValue(x, y, r) {
+ return x * r + y * Math.pow(1 - Math.pow(r, 2), 0.5);
+}
+
+
+function updateChart(targetR) {
+  
+  let newData = [];
+  
+  for (let i = 0; i < data.length; i++) {
+    newData.push({
+      xVal: data[i].xVal,
+      yVal: computeYValue(data[i].xVal, data[i].y0, targetR)
+    });
+  }
+
+
+  let yMin = Math.min(...newData.map(obj => obj.yVal));
+  let yMax = Math.max(...newData.map(obj => obj.yVal));
+  
+  // Normalize the y-values to the range 0 to 1.
+  for (let i = 0; i < newData.length; i++) {
+    newData[i].yVal = (newData[i].yVal - yMin) / (yMax - yMin);
+  }
+  
+  svg.selectAll("circle").remove()
+  svg.selectAll("circle").data(newData).enter().append("circle")
+    .attr("cx", d => xScale(d.xVal))
+    .attr("r", 2)
+    .attr("cy", d => yScale(d.yVal));
+    
+  let xArr = newData.map(obj => obj.xVal);
+  let yArr = newData.map(obj => obj.yVal);
+  
+  let meanX = jStat.mean(xArr);
+  let meanY = jStat.mean(yArr);
+
+  
+  let actualR = jStat.corrcoeff(xArr, yArr);
+  console.log("target r: " + targetR);
+  console.log("actual r: " + actualR);
+  
+}
+
+updateChart(rInput.property("value"));
+
+
+}
+```
+
+<style>
+  input#target-r::before {
+    content: "-1";
+    margin-right: 0.5em;
+    font-family: MJXZERO, MJXTEX-I;
+  }
+  input#target-r::after {
+    content: "+1";
+    margin-left: 0.5em;
+    font-family: MJXZERO, MJXTEX-I;
+  }
+}
+</style>
+
+## Effect size for correlation {#sec-cor-effect-size}
+
+The correlation coefficient is a measure of effect size. It's absolute value can range from 0 to 1.
+
+You may see some "rules of thumb" about interpreting the "effect size" of correlations in psychology. Cohen (1977) proposed that correlations of less than around $\pm 0.30$ should be considered weak; around $\pm 0.30$ to $\pm 0.70$ considered moderate; and greater than around $\pm 0.70$ considered large.
+
+However, more recent researchers have proposed more nuanced and empirically-grounded interpretations. [Funder and Ozer (2019)](https://doi.org/10.1177/2515245919847202) proposed the following:
+
+```{r}
+#| echo: false
+
+
+funder <- tibble::tribble(
+  ~"<i>r</i>", ~"Description",
+  "0.05", "Very small for the explanation of single events but potentially consequential in longer run",
+  "0.10", "Still small at the level of single events but potentially more ultimately consequential",
+  "0.20", "Medium effect of some explanatory and practical use even in the short run",
+  "0.30", "Large effect that is potentially powerful in both the short and the long run",
+  "0.40", "A very large effect in the context of psychological research; likely to be a gross overestimate"
+)
+
+# - .05: Very small for the explanation of single events but potentially consequential in longer run
+# - .10: Still small at the level of single events but potentially more ultimately consequential
+# - .20: Medium effect of some explanatory and practical use even in the short run
+# - .30: Large effect that is potentially powerful in both the short and the long run
+# - .40: A very large effect in the context of psychological research; likely to be a gross overestimate
+
+knitr::kable(funder)
+```
