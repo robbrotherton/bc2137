@@ -3,7 +3,7 @@ execute:
   eval: false
 ---
 
-# Lab 11 & 12: Analysis, visualization & interpretation
+# Lab 11: Analysis, visualization & interpretation
 
 Groups should have decided on what variables to use and what analysis is appropriate. By the end of this session you should have coded your analysis, interpreted the results, and be ready to present and write up your findings.
 

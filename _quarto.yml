@@ -15,7 +15,7 @@ book:
     | PSYC BC2137
   # author: "Professor Rob Brotherton"
   date: "1/31/2023"
-  date-format: "[Spring 2025]"
+  date-format: "[Fall 2025]"
 
   chapters:
     - index.qmd
