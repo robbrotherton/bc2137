@@ -20,21 +20,21 @@ As before, the first step is to prepare your R environment by loading required p
 
 library(tidyverse)
 
-data <- read_csv("data/anes_2020.csv")
+data <- read_csv("data/anes_2024.csv")
 
 ```
 
 
 ### Select variables
 
-For this example, I'm going to use the "trust the media" question--the same one I used for the correlation example--as my dependent variable.^[In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?] For the partisanship quasi-IV, I'll use the party registration question. And for the life experience, I'm going to use one I didn't let you choose from (because not many people said yes, and... well, you'll see): "Have you ever been bitten by a shark, or not?" (V202569).
+For this example, I'm going to use the "trust the media" question--the same one I used for the correlation example--as my dependent variable.^[In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?] For the partisanship quasi-IV, I'll use the party registration question. And for the life experience, I'm going to use one I didn't let you choose from: "During the past 12 months, were you or any of your family members stopped or questioned by a police officer, or did this not happen in the past 12 months?" (`V242506`)
 
 ```{r}
 
 my_data_raw <- data |> 
-  select(trust = V201377, 
-         party = V201018,
-         experience = V202569)
+  select(trust = V241335, 
+         party = V241025,
+         experience = V242506)
 
 ```
 

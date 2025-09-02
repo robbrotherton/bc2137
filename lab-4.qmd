@@ -21,11 +21,11 @@ Running with my example from last week, I made a data.frame with just the two va
 
 library(tidyverse)
 
-data <- read_csv("data/anes_2020.csv")
+data <- read_csv("data/anes_2024.csv")
 
 my_data_complete <- data |>
-  select(trust = V201377, 
-         threat = V201376) |> 
+  select(trust = V241335, 
+         threat = V241334) |> 
   filter(if_all(everything(), ~ . >= 0)) |> 
   mutate(distrust = 6 - trust)
 

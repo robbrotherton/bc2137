@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.7.29">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -69,19 +69,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="./lab-6.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7e9717d9caa9b4d114d189eaeb260ada.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-748b535e376f14d4692bf2b2e5fd6380.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-0815c480559380816a4d1ea211a47e91.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-71e1a4525b3e4f4d7f4c99c3686ba4ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-ad43e4cbde601348f2f4546b6d02a38c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-71e1a4525b3e4f4d7f4c99c3686ba4ac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5e12f9da3c10e32f9388fa4a3752ef24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-f22438dd7a4dc77731e1352d3091cfbe.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-5e12f9da3c10e32f9388fa4a3752ef24.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -124,7 +123,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -296,7 +295,6 @@ window.Quarto = {
       toggleColorMode(toAlternate);
       setStyleSentinel(toAlternate);
       toggleGiscusIfUsed(toAlternate, darkModeDefault);
-      window.dispatchEvent(new Event('resize'));
     };
     // Switch to dark mode if need be
     if (hasAlternateSentinel()) {
@@ -326,9 +324,7 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      </a>
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Social Psychology Lab Handbook</a> 
         <div class="sidebar-tools-main">
@@ -540,25 +536,19 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="set-up">Set up</h3>
 <p>As before, the first step is to prepare your R environment by loading required packages and reading in the data from its .csv file. The will be exactly the same as with the previous project.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/anes_2020.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: One or more parsing issues, call `problems()` on your data frame for details,
-e.g.:
-  dat &lt;- vroom(...)
-  problems(dat)</code></pre>
-</div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/anes_2024.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="select-variables" class="level3">
 <h3 class="anchored" data-anchor-id="select-variables">Select variables</h3>
-<p>For this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For the partisanship quasi-IV, I’ll use the party registration question. And for the life experience, I’m going to use one I didn’t let you choose from (because not many people said yes, and… well, you’ll see): “Have you ever been bitten by a shark, or not?” (V202569).</p>
+<p>For this example, I’m going to use the “trust the media” question–the same one I used for the correlation example–as my dependent variable.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> For the partisanship quasi-IV, I’ll use the party registration question. And for the life experience, I’m going to use one I didn’t let you choose from: “During the past 12 months, were you or any of your family members stopped or questioned by a police officer, or did this not happen in the past 12 months?” (<code>V242506</code>)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data_raw <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V201377, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">party =</span> V201018,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">experience =</span> V202569)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_data_raw <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="at">trust =</span> V241335, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">party =</span> V241025,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">experience =</span> V242506)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="recode-variables" class="level3">
@@ -566,16 +556,16 @@ e.g.:
 <p>In the raw data responses to the categorical quasi-IVs are coded as numbers: 1s and 2s for “Democrat”/“Republican” and “yes”/“no”, and some other numeric codes for other responses or invalid/missing answers. You’ll need to check the codebook to determine exactly what all the numbers mean. Our first step is to “recode” these raw numbers into more meaningful answers, keeping only the ones we need and turning other answers, or negative numbers representing missing data, into <code>NA</code>–R’s representation of missing data.</p>
 <p>We’ll use <code>dplyr</code>’s <code>mutate()</code> function, which creates new variables or changes (<em>mutates</em>) existing ones. To achieve the desired result we’ll use <code>dplyr</code>’s <code>case_when()</code> function, which allows us to specify a condition and the value to assign if that condition is met. So for example <code>party == 1 ~ "Democratic"</code> can be read as “if the value of <code>party</code> is <code>1</code> then assign the value <em>‘Democratic’</em>.” Since the original variable is named “party” and I’m using that name for the mutated variable, the column will be changed in place. Note that I only specify the numeric codes that I want to retain for my analysis; answers other than 1 or 2 will become <code>NA</code> since I don’t specify otherwise.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> my_data_raw <span class="sc">|&gt;</span> </span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="fu">everything</span>(), <span class="sc">~</span> . <span class="sc">&gt;</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democratic"</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Republican"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience =</span> <span class="fu">case_when</span>(</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  )) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> my_data_raw <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_all</span>(<span class="fu">everything</span>(), <span class="sc">~</span> . <span class="sc">&gt;</span> <span class="dv">0</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">party =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Democratic"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    party <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Republican"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">experience =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Yes"</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    experience <span class="sc">==</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"No"</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  )) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -587,58 +577,58 @@ e.g.:
 <p>First we’ll find the “marginal means”. These are relevant to testing and interpreting the “main effects”. Finding this kind of mean is slightly more complicated than when we just needed to find the mean of each column in a data.frame like we did for the correlation project. This time, we want the mean from one column broken into groups based on the value of a different column; mean trust by party affiliation, and mean trust by life experience.</p>
 <p>As usual there are a lot of ways of doing this, but one of the most powerful is <code>dplyr</code>’s <code>summarize()</code> function. It allows you to compute summary values using other functions, such as <code>mean(trust)</code> to compute the mean of the trust column, and you can specify a grouping variable using the <code>.by</code> argument. And you aren’t limited to computing a single summary variable; here I also compute the standard deviation (using the <code>sd()</code> function) and number of observations in each group (using the <code>n()</code> function).</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> party) <span class="sc">|&gt;</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> party) <span class="sc">|&gt;</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   party       mean    sd     n
   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
-1 Republican  1.75 0.980  1176
-2 Democratic  3.14 1.08   1664</code></pre>
+1 Republican  1.96 0.973   735
+2 Democratic  2.97 1.00   1024</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> experience)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_data <span class="sc">|&gt;</span> </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> experience)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 2 × 4
   experience  mean    sd     n
   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
-1 No          2.53  1.22  3760
-2 Yes         2.32  1.04    22</code></pre>
+1 No          2.54  1.10  2050
+2 Yes         2.28  1.10   297</code></pre>
 </div>
 </div>
 <p>In addition to those marginal means we need to find all 4 “cell means,” a mean trust score for each of the possible combinations of the political party and life experience groups: Democrats who have been bitten by a shark; Democrats who haven’t been bitten by a shark; Republicans who have been bitten by a shark; Republicans who haven’t been bitten by a shark. This sounds like a lot of work, but thankfully it can be achieved with a very minor tweak to the <code>summarize()</code> approach we used before: we just supply both grouping variables to the <code>.by</code> argument at the same time, “collecting” the variable names together with the <code>c()</code> function.</p>
 <p>Thinking ahead, I’m going to want to make a graph showing these 4 means, and I’d like the graph to have “error bars” representing the confidence interval for each mean. There’s no built-in function to compute a confidence interval, so I’m going to make my own.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="fu">var</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ci <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">qt</span>(<span class="fl">0.975</span>, <span class="at">df =</span> <span class="fu">length</span>(x) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> <span class="fu">sqrt</span>( <span class="fu">var</span>(x) <span class="sc">/</span> <span class="fu">length</span>(x))</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now I’m ready to compute the mean, SD, number of observations, and confidence interval for each of the 4 groups.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci =</span> <span class="fu">ci</span>(trust),</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(party, experience)) <span class="sc">|&gt;</span> </span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>my_data_summary</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_data_summary <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean =</span> <span class="fu">mean</span>(trust), </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(trust),</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">ci =</span> <span class="fu">ci</span>(trust),</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">.by =</span> <span class="fu">c</span>(party, experience)) <span class="sc">|&gt;</span> </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>my_data_summary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 6
   party      experience  mean    sd     n     ci
   &lt;chr&gt;      &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;  &lt;dbl&gt;
-1 Republican No          1.75 0.981  1170 0.0563
-2 Democratic No          3.14 1.08   1657 0.0522
-3 Republican Yes         1.5  0.837     6 0.878 
-4 Democratic Yes         2.71 0.488     7 0.451 </code></pre>
+1 Republican No          1.98 0.968   632 0.0757
+2 Democratic Yes         2.86 0.957   109 0.182 
+3 Democratic No          2.98 1.01    915 0.0655
+4 Republican Yes         1.78 0.989   103 0.193 </code></pre>
 </div>
 </div>
 <p>Note that I assigned this data summary to a new name, <code>my_data_summary</code>, so it becomes a new data.frame object in my environment. That’s going to be useful later, because it is these summary statistics that I will use to make a graph of the results.</p>
@@ -648,17 +638,17 @@ e.g.:
 <p>The <code>aov()</code> function computes an ANOVA. By itself, <code>aov()</code> doesn’t output all the information we want to see; that’s why I pipe it into the <code>summary()</code> function below.</p>
 <p>The first argument to the <code>aov()</code> function is a formula, in the form <code>DV ~ IV1 * IV2</code>. The second argument is <code>data</code>, to which I supply the name of the data.frame containing my data; that’s how the formula in which we name the columns can work, since supplying the data.frame to the <code>data</code> argument tells the function where to find those columns.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(trust <span class="sc">~</span> party <span class="sc">*</span> experience, <span class="at">data =</span> my_data) <span class="sc">|&gt;</span> </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">aov</span>(trust <span class="sc">~</span> party <span class="sc">*</span> experience, <span class="at">data =</span> my_data) <span class="sc">|&gt;</span> </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summary</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                   Df Sum Sq Mean Sq  F value Pr(&gt;F)    
-party               1 1341.8  1341.8 1236.649 &lt;2e-16 ***
-experience          1    1.5     1.5    1.419  0.234    
-party:experience    1    0.1     0.1    0.098  0.754    
-Residuals        2836 3077.1     1.1                    
+<pre><code>                   Df Sum Sq Mean Sq F value Pr(&gt;F)    
+party               1  441.3   441.3 449.950 &lt;2e-16 ***
+experience          1    4.9     4.9   4.994 0.0256 *  
+party:experience    1    0.3     0.3   0.352 0.5531    
+Residuals        1755 1721.4     1.0                   
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-942 observations deleted due to missingness</code></pre>
+588 observations deleted due to missingness</code></pre>
 </div>
 </div>
 <p>You should see three lines with your variable names, followed by a line for “Residuals” (which you can ignore). Those three lines are your three hypothesis tests: two main effects and the interaction. Each line shows the “degrees of freedom” (“Df”), <span class="math inline">\(F\)</span> value, and <span class="math inline">\(p\)</span>-value (“Pr(&gt;F)”). (Sum Sq and Mean Sq don’t need to be reported). If the <span class="math inline">\(p\)</span>-value is less than <span class="math inline">\(0.05\)</span>, that test is “statistically significant.”</p>

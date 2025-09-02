@@ -21,16 +21,16 @@ There are two main ways of visualizing the interaction: as a bar graph, or as a 
 
 library(tidyverse)
 
-data <- read_csv("data/anes_2020.csv")
+data <- read_csv("data/anes_2024.csv")
 
 ci <- function(x) {
   qt(0.975, df = length(x) - 1) * sqrt( var(x) / length(x))
 }
 
 my_data <- data |> 
-  select(trust = V201377, 
-         party = V201018,
-         experience = V202569) |> 
+  select(trust = V241335, 
+         party = V241025,
+         experience = V242506) |> 
   filter(if_all(everything(), ~ . > 0)) |>
   mutate(party = case_when(
     party == 1 ~ "Democratic",

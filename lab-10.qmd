@@ -18,7 +18,7 @@ For this project you have free choice of design and constructs. You may look at 
 
 ### Step 1. Decide on your constructs/operational definitions
 
-The full ANES 2020 dataset contains more than 1,000 columns, each representing a different variable that was measured. To navigate this, see the [codebook](https://electionstudies.org/wp-content/uploads/2022/02/anes_timeseries_2020_userguidecodebook_20220210.pdf), or the [Methodology Report](https://electionstudies.org/wp-content/uploads/2022/08/anes_timeseries_2020_methodology_report.pdf#page=16) which organizes things into "modules". Not all of these are equally interesting from a social-psychological perspective, but you will find many questions that pertain to fundamental social-psychological concepts. Here are some suggestions--constructs the ANES data measures in some way that you might consider from a social psychological perspective:
+The full ANES 2024 dataset contains more than 1,000 columns, each representing a different variable that was measured. To navigate this, see the [codebook](https://electionstudies.org/wp-content/uploads/2025/08/anes_timeseries_2024_questionnaire_20240808.pdf), or the [list of variables](https://electionstudies.org/wp-content/uploads/2025/08/anes_timeseries_2024_varlist_20250808.pdf). Not all of these are equally interesting from a social-psychological perspective, but you will find many questions that pertain to fundamental social-psychological concepts. Here are some suggestions--constructs the ANES data measures in some way that you might consider from a social psychological perspective:
 
 - Feeling thermometers (affect towards various political actors/groups)
 - Political knowledge

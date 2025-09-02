@@ -37,11 +37,11 @@ library(tidyverse)
 
 ### Getting data into R
 
-Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you can download the ANES data file as a .csv from the ANES website. For our convenience, I have already done that. Your posit.cloud project has a folder called `data` and inside that folder there is a file named `anes_2020.csv`. That's the complete ANES data for the year 2020. To start working with that data, we first need to 'read' it into R.
+Getting data into R often involves reading in a .csv (comma-separated values) spreadsheet file that you downloaded to your computer. Indeed, you can download the ANES data file as a .csv from the ANES website. For our convenience, I have already done that. Your posit.cloud project has a folder called `data` and inside that folder there is a file named `anes_2024.csv`. That's the complete ANES data for the year 2024. To start working with that data, we first need to 'read' it into R.
 
 ```{r}
 
-data <- read_csv("data/anes_2020.csv")
+data <- read_csv("data/anes_2024.csv")
 
 ```
 
@@ -62,13 +62,13 @@ As you can see, the data.frame contains a *lot* of variables; there are `r scale
 
 There are a lot of ways to do this. The simplest would be to make a note of the variable IDs from the codebook and use the `select()` function.[^tidyverse-note] This allows us to simply type in variable names separated by commas.
 
-For this example code I'll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and perceived threat to the media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V201377 and V201376 respectively. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
+For this example code I'll look at two variables similar to those I had you pick from: trust in news media (In general, how much trust and confidence do you have in the news media when it comes to reporting the news fully, accurately, and fairly?) and perceived threat to the media (How concerned are you that some people in the government today might want to undermine the news media’s ability to serve as a check on governmental power?). Their variable IDs are V241335 and V241334 respectively. Since I'll probably forget which ID is which, I'll give the columns more meaningful names as I select them.
 
 ```{r}
 
 my_data <- data |> 
-  select(trust = V201377, 
-         threat = V201376) 
+  select(trust = V241335, 
+         threat = V241334) 
 
 ```
 
