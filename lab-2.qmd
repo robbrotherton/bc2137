@@ -61,11 +61,11 @@ The kind of correlation analysis you will perform examines whether two construct
 
 One of your variables will be a question assessing __perceived threat__:
 
-- How worried are you about losing your job in the near future? (`V241492`)
+- How worried do you feel about how things are going in the country? (`V241123`)
 - So far as you and your family are concerned, how worried are you about your current financial situation? (`V241539`)
+- How worried are you about losing your job in the near future? (`V241492`)
 - How concerned are you about losing your health insurance in the next year? (`V241572`)
 - How concerned are you about being able to pay health care expenses for you and your family in the next year? (`V241573`)
-- How worried do you feel about how things are going in the country? (`V241123`)
 - How worried are you that the United States will experience a terrorist attack in the near future? (`V242343`)
 
 Your second variable will be a question about __trust__:
