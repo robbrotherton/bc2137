@@ -98,7 +98,7 @@ To implement this as a `filter()`, we can use the `if_all()` function; i.e., we 
 
 ```{r}
 my_data_complete <- my_data |> 
-  filter(if_all(everything(), ~ . >= 0))
+  filter(trust >= 0, threat >= 0)
 ```
 
 Notice that the number of rows in the data.frame has changed, because rows that didn't meet that condition have been dropped.

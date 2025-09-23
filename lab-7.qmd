@@ -38,6 +38,18 @@ my_data_raw <- data |>
 
 ```
 
+### Filter
+
+As before, we need to remove invalid or missing responses, which the ANES codes using negative numbers. Last time, we used a simple `filter()` statement defining a condition for each specific column in the data (`filter(trust >= 0, threat >= 0)`). When you're dealing with more columns, there are some useful function that allow you to evaluate every column according to the same condition, so you don't have to type each one separately.
+
+Here, we can use the `if_all()` function; i.e., we are going to select some columns and *if all* the values in those columns meet some condition the row will be retained. To select the columns we can use the `everything()` function, since the positive-valid/negative-invalid rule is true of every column in our data. The part after the comma, `~ . >= 0`, articulates the condition. The `~` prefix is necessary because instead of naming one specific column to refer to its values we use `.` as a placeholder representing the values in each of the selected columns; the value must be greater than or equal to 0 to be retained.
+
+```{r}
+
+my_data <- my_data_raw |> 
+  filter(if_all(everything(), ~ . >= 0))
+
+```
 
 ### Recode variables
 
@@ -47,8 +59,7 @@ We'll use `dplyr`'s `mutate()` function, which creates new variables or changes 
 
 
 ```{r}
-my_data <- my_data_raw |> 
-  filter(if_all(everything(), ~ . > 0)) |>
+my_data <- my_data |> 
   mutate(party = case_when(
     party == 1 ~ "Democratic",
     party == 2 ~ "Republican"
