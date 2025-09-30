@@ -94,7 +94,7 @@ There are a lot of different ways we could handle this. One way is to `filter()`
 
 The ANES coding scheme uses negative values for the various kinds of missing or inappropriate data, which makes things simple: only positive values are valid and should be retained.
 
-To implement this as a `filter()`, we can use the `if_all()` function; i.e., we are going to select some columns and *if all* the values in those columns meet some condition the row will be retained. To select the columns we can use the `everything()` function, since the positive-valid/negative-invalid rule is true of every column in our data. The part after the comma, `~ . >= 0`, articulates the condition. The `~` prefix is necessary because instead of naming one specific column to refer to its values we use `.` as a placeholder representing the values in each of the selected columns; the value must be greater than or equal to 0 to be retained.[^2] 
+To implement this as a `filter()`, we can use the column name, followed by the condition. So, `trust >= 0` is telling R "check each value in the `trust` column and tell me if it is greater than or equal to 0." Rows where this evaluates to `TRUE` will be kept, and rows for which it is `FALSE` will be dropped. We can do this for any columns we like, separating the arguments with commas. Rows for which all conditions are met will be retained in the resulting dataframe. [^2] 
 
 ```{r}
 my_data_complete <- my_data |> 
